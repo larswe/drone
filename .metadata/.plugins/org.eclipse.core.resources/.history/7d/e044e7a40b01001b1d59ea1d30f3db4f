@@ -1,0 +1,31 @@
+package uk.ac.ed.inf.heatmap;
+
+import java.io.File;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+	/*
+	 * Input: 
+	 */
+    public static void main(String[] args) throws IllegalArgumentException
+    {
+        validateInput(args);
+        
+        System.out.println("Input is okay!");
+    }
+    
+    public static File validateInput(String[] args) throws IllegalArgumentException {
+    	if (args.length != 1) {
+        	throw new IllegalArgumentException("The application expected 1 argument but received " + args.length);
+        }
+    	
+    	File file = new File(args[0]);
+    	if (!file.exists()) {
+    		throw new FileNotFoundException("The file \"" + args[0] + "\" does not exist or cannot be accessed.");
+    	}
+    }
+}

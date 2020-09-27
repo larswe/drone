@@ -1,1 +1,7 @@
-INDEX VERSION 1.131+/home/dude/drone/.metadata/.plugins/org.eclipse.jdt.core
+INDEX VERSION 1.131+C:\Users\larsw\drone\.metadata\.plugins\org.eclipse.jdt.core
+556231658.index
+1962120542.index
+1877491294.index
+2871574292.index
+1984013771.index
+3168191457.index

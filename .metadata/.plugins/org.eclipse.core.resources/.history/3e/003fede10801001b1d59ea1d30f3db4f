@@ -1,0 +1,16 @@
+package uk.ac.ed.inf.heatmap;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+	/*
+	 * Input: 
+	 */
+    public static void main(String[] args)
+    {
+        assert(args.length == 1);
+    }
+}

@@ -1,0 +1,24 @@
+package uk.ac.ed.inf.heatmap;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+	/*
+	 * Input: 
+	 */
+    public static void main(String[] args) throws IllegalArgumentException
+    {
+        validateInput(args);
+        
+        System.out.println("Input is okay!");
+    }
+    
+    public static void validateInput(String[] args) throws IllegalArgumentException {
+    	if (args.length != 1) {
+        	throw new IllegalArgumentException("The application expected 1 argument but received " + args.length);
+        }
+    }
+}
