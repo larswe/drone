@@ -1,0 +1,66 @@
+package uk.ac.ed.inf.heatmap;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+	/*
+	 * Input: Name of a file containing 10 lines, where each line consists of 10 comma-separated numbers.
+	 */
+    public static void main(String[] args) {
+    	
+    	if (args.length != 1) {
+        	IllegalArgumentException e = new IllegalArgumentException("The application expected 1 argument but received " + args.length);
+        	e.printStackTrace();
+        	System.exit(1);
+        }
+    	
+    	int[][] grid = readGrid(args[0]);
+    	
+    	for (int i = 0; i < 10; i++) {
+    		for (int j = 0; j < 10; j++) {
+    			System.out.print(grid[i][j]+ " ");
+    		}
+    		System.out.println();
+    	}
+    }
+    
+    /*
+     * Given the list of program arguments, this method returns the prediction file if we received exactly one argument, containing the name of an existing & accessible file. 
+     */
+    public static int[][] readGrid(String fileName) {
+    	
+    	File file = new File(fileName);
+    	BufferedReader reader = null;
+    	try {
+    		reader = new BufferedReader(new FileReader(file));
+    	} catch (FileNotFoundException e) {
+    		e.printStackTrace();
+    		System.exit(1);
+    	}
+    		
+    	int[][] grid = new int[10][10];
+    	for (int i = 0; i < 10; i++) {
+    		String predRowStr = "";
+			try {
+				predRowStr = reader.readLine();
+			} catch (IOException e) {
+				e.printStackTrace();
+				System.exit(1);
+			}
+    		String[] predRowStrArray = predRowStr.split(",");
+    		for (int j = 0; j < 10; j++) {
+    			grid[i][j] = Integer.parseInt(predRowStrArray[j]);
+    		}
+    	}   	
+    	return grid;
+    }
+}

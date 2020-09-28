@@ -1,7 +1,10 @@
 package uk.ac.ed.inf.heatmap;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 
 /**
  * Hello world!
@@ -9,36 +12,87 @@ import java.io.FileNotFoundException;
  */
 public class App 
 {
+	
+	private static final int NUM_ROWS = 10;
+	private static final int NUM_COLS = 10;
+	private static final int MIN_PREDICTION = 0;
+	private static final int MAX_PREDICTION = 255;
+	
 	/*
 	 * Input: Name of a file containing 10 lines, where each line consists of 10 comma-separated numbers.
 	 */
     public static void main(String[] args) {
-    
-    	File predictionFile = null;
-    	try {
-    		predictionFile = fetchInputFile(args);
-    	} catch (IllegalArgumentException | FileNotFoundException e) {
-    		e.printStackTrace();
-    		System.exit(1);
-    	} 
     	
-    	System.out.println("Input is okay: " + predictionFile.getName());
+    	if (args.length != 1) {
+        	exitWithIllegalArgumentException("The application expected 1 argument but received " + args.length);
+        }
     	
+    	int[][] grid = readGrid(args[0]);
+    	
+    	for (int i = 0; i < NUM_ROWS; i++) {
+    		for (int j = 0; j < NUM_COLS; j++) {
+    			System.out.print(grid[i][j] + " ");
+    		}
+    		System.out.println();
+    	}
     }
     
-    /*
-     * Given the list of program arguments, this method returns the prediction file if we received exactly one argument, containing the name of an existing & accessible file. 
-     */
-    public static File fetchInputFile(String[] args) throws IllegalArgumentException, FileNotFoundException {
-    	if (args.length != 1) {
-        	throw new IllegalArgumentException("The application expected 1 argument but received " + args.length);
-        }
-    	 
-    	File file = new File(args[0]);
-    	if (!file.exists()) {
-    		throw new FileNotFoundException("The file \"" + args[0] + "\" does not exist or cannot be accessed.");
-    	} else {
-    		return file;
+    public static int[][] readGrid(String fileName) {
+    	BufferedReader reader = getReaderForFile(fileName);
+    	
+    	int[][] grid = new int[NUM_ROWS][NUM_COLS];
+    	String predRowStr;
+    	int rowIndex = 0;
+    	try {
+			while ((predRowStr = reader.readLine()) != null) {
+				
+				if (rowIndex >= NUM_ROWS) {
+					exitWithIllegalArgumentException("The input file contains more than " + NUM_ROWS + " lines!");
+				}
+				
+				String[] predRowStrArray = predRowStr.split(",");
+				if (predRowStrArray.length != 10) {
+					exitWithIllegalArgumentException("Line " + (rowIndex+1) + " of the input file does not contain the required " + NUM_COLS + " predictions!");
+				}
+				 
+				for (int j = 0; j < 10; j++) {
+					int x = Integer.parseInt(predRowStrArray[j]);
+					if (x < MIN_PREDICTION || x > MAX_PREDICTION) {
+						exitWithIllegalArgumentException("All predictions must lie between " + MIN_PREDICTION + " and " + MAX_PREDICTION);
+					}
+					grid[rowIndex][j] = x;
+				}
+				rowIndex++;
+			}
+		} catch (IOException | NumberFormatException e) {
+			e.printStackTrace();
+			System.exit(1);
+		}  
+    	
+    	if (rowIndex < 10) {
+    		exitWithIllegalArgumentException("The input file contains less than " + NUM_ROWS + " lines of predictions!");
     	}
+    	
+    	return grid;
+    }
+    
+    
+    public static BufferedReader getReaderForFile(String fileName) {
+    	File file = new File(fileName);
+    	BufferedReader reader = null;
+    	try {
+    		reader = new BufferedReader(new FileReader(file));
+    	} catch (FileNotFoundException e) {
+    		e.printStackTrace();
+    		System.exit(1);
+    	}
+    	return reader;
+    }
+    
+    
+    public static void exitWithIllegalArgumentException(String errorMessage) {
+    	IllegalArgumentException e = new IllegalArgumentException(errorMessage);
+		e.printStackTrace();
+		System.exit(1);
     }
 }
