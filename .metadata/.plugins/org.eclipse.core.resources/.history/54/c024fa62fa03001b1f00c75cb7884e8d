@@ -152,7 +152,7 @@ public class HeatmapGenerator {
     	}
     	
 		return FeatureCollection.fromFeatures(listOfRectFeatures);
-    }
+	}
     
     
     private static String getRgbStringForQuality(int quality) {

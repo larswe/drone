@@ -1408,3 +1408,5 @@
 2020-10-01 16:17:46,506 [Worker-78: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\heatmap\src\main\resources
 2020-10-01 16:17:46,506 [Worker-78: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2020-10-01 16:17:46,507 [Worker-78: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\heatmap\src\test\resources
+2020-10-01 16:25:50,363 [Worker-78: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-01 16:25:50,363 [Worker-78: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\heatmap\src\main\resources
