@@ -1,0 +1,206 @@
+package uk.ac.ed.inf.heatmap;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.mapbox.geojson.Feature;
+import com.mapbox.geojson.FeatureCollection;
+import com.mapbox.geojson.Geometry;
+import com.mapbox.geojson.Point;
+import com.mapbox.geojson.Polygon;
+
+/**
+ * The HeatmapGenerator program implements an application that takes in a 10x10
+ * grid of predicted air pollution readings on George Square, generates a heat
+ * map representing the predictions, before saving it as a .geojson file.
+ * 
+ * @author Lars Werne
+ * @version 0.0.1-SNAPSHOT
+ */
+public class HeatmapGenerator {
+
+    /* The expected number of rows and columns in the preparation grid */
+    private static final int NUM_ROWS = 10;
+    private static final int NUM_COLS = 10;
+
+    /* The smallest and largest legal values of an air pollution prediction */
+    private static final int MIN_PREDICTION = 0;
+    private static final int MAX_PREDICTION = 255;
+
+    /* The coordinates that define the drone confinement area */
+    private static final double MIN_LONGITUDE = -3.192473;
+    private static final double MAX_LONGITUDE = -3.184319;
+    private static final double MIN_LATITUDE = 55.942617;
+    private static final double MAX_LATITUDE = 55.946233;
+
+    /* The destined file name of the output .geojson file */
+    private static final String TARGET_JSON_FILE_NAME = "heatmap.geosjon";
+
+    /*
+     * A map which assigns to each "air pollution tier" its associated colour as an
+     * RGB String. Each pollution tier accounts for an equal part of the legal
+     * prediction interval (e.g. tier 0 for values from 0 to 31).
+     */
+    private static Map<Integer, String> pollutionTierToRgb;
+    static {
+        pollutionTierToRgb = new HashMap<>();
+        pollutionTierToRgb.put(0, "#00ff00");
+        pollutionTierToRgb.put(1, "#40ff00");
+        pollutionTierToRgb.put(2, "#80ff00");
+        pollutionTierToRgb.put(3, "#c0ff00");
+        pollutionTierToRgb.put(4, "#ffc000");
+        pollutionTierToRgb.put(5, "#ff8000");
+        pollutionTierToRgb.put(6, "#ff4000");
+        pollutionTierToRgb.put(7, "#ff0000");
+    }
+
+    /**
+     * The main method, responsible for the functionality of this class. If more or
+     * less than one argument is provided, the program exits, "doing nothing".
+     * 
+     * @param args Command line arguments - should contain only the name of the
+     *             prediction file
+     */
+    public static void main(String[] args) {
+
+        if (args.length != 1) {
+            exitWithIllegalArgumentException("The application expected 1 argument but received " + args.length);
+        }
+
+        int[][] grid = readGrid(args[0]);
+        FeatureCollection fc = generateFeatureCollection(grid);
+        writeFeatureCollectionToFile(fc, TARGET_JSON_FILE_NAME);
+    }
+
+    /**
+     * Reads a file containing predicted air pollution readings for each "sector" of
+     * George Square, and returns it as a 2-dimensional array of integers. This
+     * fails if the specified file cannot be accessed, if the specified grid does
+     * not have the right dimensions, or if it contains a prediction which does not
+     * lie in the allowed value range.
+     * 
+     * @param fileName the name of the prediction file
+     * @return a grid of integer air pollution readings
+     */
+    private static int[][] readGrid(String fileName) {
+        
+        int[][] grid = new int[NUM_ROWS][NUM_COLS];
+        String currentLine;
+        int rowIndex = 0;
+
+        try {
+            /*
+             * Each line of the input is read and processed, until our BufferedReader has
+             * reached the end of the file.
+             */
+            File file = new File(fileName);
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+            while ((currentLine = reader.readLine()) != null) {
+
+                if (rowIndex >= NUM_ROWS) {
+                    exitWithIllegalArgumentException("The input file contains more than " + NUM_ROWS + " lines!");
+                }
+
+                String[] currentLineArray = currentLine.split(",");
+                if (currentLineArray.length != NUM_COLS) {
+                    exitWithIllegalArgumentException("Line " + (rowIndex + 1)
+                            + " of the input file does not contain the required " + NUM_COLS + " predictions!");
+                }
+
+                for (int j = 0; j < NUM_COLS; j++) {
+                    int x = Integer.parseInt(currentLineArray[j]);
+                    if (x < MIN_PREDICTION || x > MAX_PREDICTION) {
+                        exitWithIllegalArgumentException(
+                                "All predictions must lie between " + MIN_PREDICTION + " and " + MAX_PREDICTION);
+                    }
+                    grid[rowIndex][j] = x;
+                }
+                rowIndex++;
+            }
+            reader.close();
+        } catch (IOException | NumberFormatException e) {
+            e.printStackTrace();
+            System.exit(1);
+        }
+
+        if (rowIndex < NUM_ROWS) {
+            exitWithIllegalArgumentException(
+                    "The input file contains less than " + NUM_ROWS + " lines of predictions!");
+        }
+
+        return grid;
+    }
+
+    private static void exitWithIllegalArgumentException(String errorMessage) {
+        IllegalArgumentException e = new IllegalArgumentException(errorMessage);
+        e.printStackTrace();
+        System.exit(1);
+    }
+
+    private static FeatureCollection generateFeatureCollection(int[][] grid) {
+        ArrayList<Feature> listOfRectFeatures = new ArrayList<Feature>();
+
+        double rectWidth = (MAX_LONGITUDE - MIN_LONGITUDE) / NUM_COLS;
+        double rectHeight = (MAX_LATITUDE - MIN_LATITUDE) / NUM_ROWS;
+
+        double currentLong, currentLat;
+        for (int i = 0; i < NUM_ROWS; i++) {
+            for (int j = 0; j < NUM_COLS; j++) {
+                currentLong = MIN_LONGITUDE + j * rectWidth;
+                currentLat = MAX_LATITUDE - i * rectHeight;
+                List<Point> rectCoordinates = getRectCoordinates(currentLong, currentLat, rectWidth, rectHeight);
+
+                Polygon rectPolygon = Polygon.fromLngLats(List.of(rectCoordinates));
+                Geometry rectGeometry = (Geometry) rectPolygon;
+                Feature rectFeature = Feature.fromGeometry(rectGeometry);
+                String rectRgbString = getRgbStringForpollution(grid[i][j]);
+                rectFeature.addNumberProperty("fill-opacity", 0.75);
+                rectFeature.addStringProperty("rgb-string", rectRgbString);
+                rectFeature.addStringProperty("fill", rectRgbString);
+                listOfRectFeatures.add(rectFeature);
+            }
+        }
+
+        return FeatureCollection.fromFeatures(listOfRectFeatures);
+    }
+
+    private static String getRgbStringForpollution(int pollution) {
+        int numTiers = pollutionTierToRgb.size();
+        int pollutionTier = (numTiers * pollution) / (MAX_PREDICTION + 1);
+
+        return pollutionTierToRgb.get(pollutionTier);
+    }
+
+    private static List<Point> getRectCoordinates(double upperLeftLong, double upperLeftLat, double width,
+            double height) {
+        Point upperLeftPoint = Point.fromLngLat(upperLeftLong, upperLeftLat);
+        Point upperRightPoint = Point.fromLngLat(upperLeftLong + width, upperLeftLat);
+        Point lowerRightPoint = Point.fromLngLat(upperLeftLong + width, upperLeftLat - height);
+        Point lowerLeftPoint = Point.fromLngLat(upperLeftLong, upperLeftLat - height);
+
+        return List.of(upperLeftPoint, upperRightPoint, lowerRightPoint, lowerLeftPoint, upperLeftPoint);
+    }
+
+    private static void writeFeatureCollectionToFile(FeatureCollection featCollection, String fileName) {
+        String outputString = featCollection.toJson();
+
+        try {
+            FileWriter fileWriter = new FileWriter(fileName);
+            PrintWriter printWriter = new PrintWriter(fileWriter);
+            printWriter.print(outputString);
+            printWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.exit(1);
+        }
+    }
+}

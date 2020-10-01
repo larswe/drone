@@ -1,0 +1,271 @@
+package uk.ac.ed.inf.heatmap;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.mapbox.geojson.Feature;
+import com.mapbox.geojson.FeatureCollection;
+import com.mapbox.geojson.Geometry;
+import com.mapbox.geojson.Point;
+import com.mapbox.geojson.Polygon;
+
+/**
+ * The HeatmapGenerator program implements an application that takes in a 10x10
+ * grid of predicted air pollution readings on George Square, generates a heat
+ * map representing the predictions, before saving it as a .geojson file.
+ * 
+ * @author Lars Werne
+ * @version 0.0.1-SNAPSHOT
+ */
+public class HeatmapGenerator {
+
+    /* The expected number of rows and columns in the preparation grid */
+    private static final int NUM_ROWS = 10;
+    private static final int NUM_COLS = 10;
+
+    /* The smallest and largest legal values of an air pollution prediction */
+    private static final int MIN_PREDICTION = 0;
+    private static final int MAX_PREDICTION = 255;
+
+    /* The coordinates that define the drone confinement area */
+    private static final double MIN_LONGITUDE = -3.192473;
+    private static final double MAX_LONGITUDE = -3.184319;
+    private static final double MIN_LATITUDE = 55.942617;
+    private static final double MAX_LATITUDE = 55.946233;
+
+    /* The destined file name of the output .geojson file */
+    private static final String TARGET_JSON_FILE_NAME = "heatmap.geosjon";
+
+    /*
+     * A map which assigns to each "air pollution tier" its associated colour as an
+     * RGB String. Each pollution tier accounts for an equal part of the legal
+     * prediction interval (e.g. for our standard values, tier 0 accounts for values
+     * from 0 to 31).
+     */
+    private static Map<Integer, String> pollutionTierToRgb;
+    static {
+        pollutionTierToRgb = new HashMap<>();
+        pollutionTierToRgb.put(0, "#00ff00");
+        pollutionTierToRgb.put(1, "#40ff00");
+        pollutionTierToRgb.put(2, "#80ff00");
+        pollutionTierToRgb.put(3, "#c0ff00");
+        pollutionTierToRgb.put(4, "#ffc000");
+        pollutionTierToRgb.put(5, "#ff8000");
+        pollutionTierToRgb.put(6, "#ff4000");
+        pollutionTierToRgb.put(7, "#ff0000");
+    }
+
+    /**
+     * The main method, responsible for the functionality of this class. If more or
+     * less than one argument is provided, the program exits, "doing nothing".
+     * 
+     * @param args Command line arguments - should contain only the name of the
+     *             prediction file
+     */
+    public static void main(String[] args) {
+
+        if (args.length != 1) {
+            exitWithIllegalArgumentException("The application expected 1 argument but received " + args.length);
+        }
+
+        int[][] grid = readGrid(args[0]);
+        FeatureCollection fc = generateFeatureCollection(grid);
+        writeFeatureCollectionToFile(fc, TARGET_JSON_FILE_NAME);
+    }
+
+    /**
+     * This method reads a file containing predicted air pollution readings for each
+     * area of the drone confinement area, and returns it as a 2-dimensional array
+     * of integers. This fails if the specified file cannot be accessed, if the
+     * specified grid does not have the right dimensions, or if it contains a
+     * prediction which does not lie in the allowed value range.
+     * 
+     * @param fileName the name of the prediction file
+     * @return a grid of predicted integer air pollution readings
+     */
+    private static int[][] readGrid(String fileName) {
+
+        int[][] grid = new int[NUM_ROWS][NUM_COLS];
+        String currentLine; // The line we are currently processing.
+        int rowIndex = 0; // Index of the row of our grid which we are currently filling in.
+
+        try {
+            /*
+             * Each line of the input is read and processed, until our BufferedReader has
+             * reached the end of the file.
+             */
+            File file = new File(fileName);
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+            while ((currentLine = reader.readLine()) != null) {
+
+                if (rowIndex >= NUM_ROWS) {
+                    exitWithIllegalArgumentException("The input file contains more than " + NUM_ROWS + " lines!");
+                }
+
+                String[] currentLineArray = currentLine.split(","); // We split the current row into its integer
+                                                                    // components (they are still of type String).
+                if (currentLineArray.length != NUM_COLS) {
+                    exitWithIllegalArgumentException("Line " + (rowIndex + 1)
+                            + " of the input file does not contain the required " + NUM_COLS + " predictions!");
+                }
+
+                /*
+                 * We convert each prediction in the current row to type int and insert it into
+                 * our grid.
+                 */
+                for (int j = 0; j < NUM_COLS; j++) {
+                    int x = Integer.parseInt(currentLineArray[j]);
+                    if (x < MIN_PREDICTION || x > MAX_PREDICTION) {
+                        exitWithIllegalArgumentException(
+                                "All predictions must lie between " + MIN_PREDICTION + " and " + MAX_PREDICTION);
+                    }
+                    grid[rowIndex][j] = x;
+                }
+                rowIndex++; // We increment the row index, preparing for the next line of input.
+            }
+            reader.close();
+        } catch (IOException | NumberFormatException e) {
+            e.printStackTrace();
+            System.exit(1);
+        }
+
+        if (rowIndex < NUM_ROWS) {
+            exitWithIllegalArgumentException(
+                    "The input file contains less than " + NUM_ROWS + " lines of predictions!");
+        }
+
+        return grid;
+    }
+
+    /**
+     * A helper method, which is called when the program was provided with an
+     * illegal input, and which makes the program exit with the given error message.
+     * 
+     * @param errorMessage a message describing why the user's input is illegal
+     */
+    private static void exitWithIllegalArgumentException(String errorMessage) {
+
+        IllegalArgumentException e = new IllegalArgumentException(errorMessage);
+        e.printStackTrace();
+        System.exit(1);
+    }
+
+    /**
+     * This method accepts a 2-dimensional array of predicted air pollution
+     * readings, turning it into a Mapbox Feature Collection consisting of one
+     * rectangle for each area of the drone confinement area. Each rectangle is
+     * coloured according to its predicted air pollution.
+     * 
+     * @param grid the grid of air pollution predictions as integer values
+     * @return the feature collection corresponding to the heatmap to be generated
+     */
+    private static FeatureCollection generateFeatureCollection(int[][] grid) {
+
+        ArrayList<Feature> listOfRectFeatures = new ArrayList<Feature>(); // Using an array of fixed size may be
+                                                                          // slightly more performant, but this approach
+                                                                          // was chosen mainly for readability.
+
+        double rectWidth = (MAX_LONGITUDE - MIN_LONGITUDE) / NUM_COLS;
+        double rectHeight = (MAX_LATITUDE - MIN_LATITUDE) / NUM_ROWS;
+
+        double currentLong, currentLat; // the longitude/latitude of the upper left corner of the current rectangle
+
+        for (int i = 0; i < NUM_ROWS; i++) {
+            for (int j = 0; j < NUM_COLS; j++) {
+                currentLong = MIN_LONGITUDE + j * rectWidth; // longitude increases from the first to last column
+                currentLat = MAX_LATITUDE - i * rectHeight; // latitude decreases from the first to last row
+
+                /*
+                 * Using a "pipeline" approach, we transform the coordinates and dimensions of
+                 * the current rectangle into a Mapbox Feature instance.
+                 */
+                List<Point> rectCoordinates = getRectCoordinates(currentLong, currentLat, rectWidth, rectHeight);
+                Polygon rectPolygon = Polygon.fromLngLats(List.of(rectCoordinates));
+                Geometry rectGeometry = (Geometry) rectPolygon;
+                Feature rectFeature = Feature.fromGeometry(rectGeometry);
+
+                /*
+                 * We assign the appropriate colour properties to the rectangle before adding it
+                 * to our list of Feature instances.
+                 */
+                String rectRgbString = getRgbStringForPrediction(grid[i][j]);
+                rectFeature.addNumberProperty("fill-opacity", 0.75);
+                rectFeature.addStringProperty("rgb-string", rectRgbString);
+                rectFeature.addStringProperty("fill", rectRgbString);
+                listOfRectFeatures.add(rectFeature);
+            }
+        }
+
+        return FeatureCollection.fromFeatures(listOfRectFeatures);
+    }
+
+    /**
+     * A helper method, which computes the "pollution tier" for a given air
+     * pollution prediction, and returns the colour which corresponds to the tier.
+     * 
+     * @param prediction an air pollution prediction for a single area
+     * @return the RGB string of the colour corresponding to the input
+     */
+    private static String getRgbStringForPrediction(int prediction) {
+
+        int numTiers = pollutionTierToRgb.size();
+
+        /*
+         * The following formula works out nicely if the number of tiers divides the
+         * max. prediction value plus 1, and if predictions start at 0. Under these
+         * assumptions, prediction x qualifies for tier k only if x/(m+1) >= k/t, where
+         * m is the max. prediction and t the number of tiers. -> E.g. if t=8 and
+         * (m+1)=256, x reaches the highest tier 7 iff x/256>=7/8, i.e. iff x>=224
+         */
+        int pollutionTier = (numTiers * prediction) / (MAX_PREDICTION + 1);
+
+        return pollutionTierToRgb.get(pollutionTier);
+    }
+
+    /**
+     * A helper method, which produces a list of Points from which we can generate a
+     * rectangle as a Mapbox Polygon. To do so, it requires the longitude and
+     * latitude of the upper left corner of the desired rectangle, as well as its
+     * dimensions. The returned list contains 5 points, the first and last of which
+     * are identical.
+     * 
+     * @param upperLeftLong the longitude of the upper left corner of the desired
+     *                      rectangle
+     * @param upperLeftLat  the latitude of the upper left corner of the rectangle
+     * @param width         the width of the desired rectangle
+     * @param height        the height of the desired rectangle
+     * @return a list of Points, denoting the corners of a rectangle
+     */
+    private static List<Point> getRectCoordinates(double upperLeftLong, double upperLeftLat, double width,
+            double height) {
+        Point upperLeftPoint = Point.fromLngLat(upperLeftLong, upperLeftLat);
+        Point upperRightPoint = Point.fromLngLat(upperLeftLong + width, upperLeftLat);
+        Point lowerRightPoint = Point.fromLngLat(upperLeftLong + width, upperLeftLat - height);
+        Point lowerLeftPoint = Point.fromLngLat(upperLeftLong, upperLeftLat - height);
+
+        return List.of(upperLeftPoint, upperRightPoint, lowerRightPoint, lowerLeftPoint, upperLeftPoint);
+    }
+
+    private static void writeFeatureCollectionToFile(FeatureCollection featCollection, String fileName) {
+        String outputString = featCollection.toJson();
+
+        try {
+            FileWriter fileWriter = new FileWriter(fileName);
+            PrintWriter printWriter = new PrintWriter(fileWriter);
+            printWriter.print(outputString);
+            printWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.exit(1);
+        }
+    }
+}
