@@ -2,7 +2,6 @@ package uk.ac.ed.inf.heatmap;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -19,14 +18,14 @@ import com.mapbox.geojson.Point;
 import com.mapbox.geojson.Polygon;
 
 /**
- * The HeatmapGenerator program implements an application that takes in a 10x10
- * grid of predicted air pollution readings on George Square, generates a heat
- * map representing the predictions, before saving it as a .geojson file.
+ * This Heatmap Generator program implements an application that takes in a
+ * 10x10 grid of predicted air pollution readings on George Square, generates a
+ * heat map representing the predictions, before saving it as a .geojson file.
  * 
  * @author Lars Werne
  * @version 0.0.1-SNAPSHOT
  */
-public class HeatmapGenerator {
+public class App {
 
     /* The expected number of rows and columns in the preparation grid */
     private static final int NUM_ROWS = 10;
@@ -49,7 +48,7 @@ public class HeatmapGenerator {
      * A map which assigns to each "air pollution tier" its associated colour as an
      * RGB String. Each pollution tier accounts for an equal part of the legal
      * prediction interval (e.g. for our standard values, tier 0 accounts for values
-     * from 0 to 31).
+     * from 0 to 31, etc).
      */
     private static Map<Integer, String> pollutionTierToRgb;
     static {
@@ -74,10 +73,21 @@ public class HeatmapGenerator {
     public static void main(String[] args) {
 
         if (args.length != 1) {
-            exitWithIllegalArgumentException("The application expected 1 argument but received " + args.length);
+            exitDueToIllegalInput("The application expected 1 argument but received " + args.length);
         }
 
-        int[][] grid = readGrid(args[0]);
+        /*
+         * An I/O Error might occur while trying to read the specified prediction file.
+         * If that's the case, we simply log the exception and exit.
+         */
+        int[][] grid = null;
+        try {
+            grid = readGrid(args[0]);
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.exit(1);
+        }
+
         FeatureCollection fc = generateFeatureCollection(grid);
         writeFeatureCollectionToFile(fc, TARGET_JSON_FILE_NAME);
     }
@@ -91,58 +101,56 @@ public class HeatmapGenerator {
      * 
      * @param fileName the name of the prediction file
      * @return a grid of predicted integer air pollution readings
+     * @throws IOException if an I/O error occurs while reading the file
      */
-    private static int[][] readGrid(String fileName) {
+    private static int[][] readGrid(String fileName) throws IOException {
 
-        int[][] grid = new int[NUM_ROWS][NUM_COLS];
-        String currentLine; // The line we are currently processing.
+        var file = new File(fileName);
+        var reader = new BufferedReader(new FileReader(file));
+
+        var grid = new int[NUM_ROWS][NUM_COLS];
+        String currentLine = reader.readLine(); // The line we are currently processing.
         int rowIndex = 0; // Index of the row of our grid which we are currently filling in.
 
-        try {
-            /*
-             * Each line of the input is read and processed, until our BufferedReader has
-             * reached the end of the file.
-             */
-            File file = new File(fileName);
-            BufferedReader reader = new BufferedReader(new FileReader(file));
-            while ((currentLine = reader.readLine()) != null) {
+        /*
+         * Each line of the input is read and processed, until our BufferedReader has
+         * reached the end of the file.
+         */
+        while (currentLine != null) {
 
-                if (rowIndex >= NUM_ROWS) {
-                    exitWithIllegalArgumentException("The input file contains more than " + NUM_ROWS + " lines!");
-                }
-
-                String[] currentLineArray = currentLine.split(","); // We split the current row into its integer
-                                                                    // components (they are still of type String).
-                if (currentLineArray.length != NUM_COLS) {
-                    exitWithIllegalArgumentException("Line " + (rowIndex + 1)
-                            + " of the input file does not contain the required " + NUM_COLS + " predictions!");
-                }
-
-                /*
-                 * We convert each prediction in the current row to type int and insert it into
-                 * our grid.
-                 */
-                for (int j = 0; j < NUM_COLS; j++) {
-                    int x = Integer.parseInt(currentLineArray[j]);
-                    if (x < MIN_PREDICTION || x > MAX_PREDICTION) {
-                        exitWithIllegalArgumentException(
-                                "All predictions must lie between " + MIN_PREDICTION + " and " + MAX_PREDICTION);
-                    }
-                    grid[rowIndex][j] = x;
-                }
-                rowIndex++; // We increment the row index, preparing for the next line of input.
+            if (rowIndex >= NUM_ROWS) {
+                exitDueToIllegalInput("The input file contains more than " + NUM_ROWS + " lines!");
             }
-            reader.close();
-        } catch (IOException | NumberFormatException e) {
-            e.printStackTrace();
-            System.exit(1);
+
+            String[] currentLineArray = currentLine.split(","); // We split the current row into its integer components.
+
+            if (currentLineArray.length != NUM_COLS) {
+                exitDueToIllegalInput("Line " + (rowIndex + 1) + " does not contain " + NUM_COLS + " predictions!");
+            }
+
+            for (int j = 0; j < NUM_COLS; j++) {
+
+                int x = Integer.parseInt(currentLineArray[j]); // We convert each prediction to type int.
+                if (x < MIN_PREDICTION || x > MAX_PREDICTION) {
+                    exitDueToIllegalInput(
+                            "All predictions must lie between " + MIN_PREDICTION + " and " + MAX_PREDICTION);
+                }
+                grid[rowIndex][j] = x;
+            }
+
+            /*
+             * We prepare for the next iteration, by incrementing the row index and reading
+             * the next line.
+             */
+            rowIndex++;
+            currentLine = reader.readLine();
         }
 
         if (rowIndex < NUM_ROWS) {
-            exitWithIllegalArgumentException(
-                    "The input file contains less than " + NUM_ROWS + " lines of predictions!");
+            exitDueToIllegalInput("The input file contains less than " + NUM_ROWS + " lines of predictions!");
         }
 
+        reader.close(); // We close the stream, releasing any system resources associated with it.
         return grid;
     }
 
@@ -152,11 +160,11 @@ public class HeatmapGenerator {
      * 
      * @param errorMessage a message describing why the user's input is illegal
      */
-    private static void exitWithIllegalArgumentException(String errorMessage) {
+    private static void exitDueToIllegalInput(String errorMessage) {
 
-        IllegalArgumentException e = new IllegalArgumentException(errorMessage);
+        var e = new IllegalArgumentException(errorMessage);
         e.printStackTrace();
-        System.exit(1);
+        System.exit(2);
     }
 
     /**
@@ -170,19 +178,25 @@ public class HeatmapGenerator {
      */
     private static FeatureCollection generateFeatureCollection(int[][] grid) {
 
-        ArrayList<Feature> listOfRectFeatures = new ArrayList<Feature>(); // Using an array of fixed size may be
-                                                                          // slightly more performant, but this approach
-                                                                          // was chosen mainly for readability.
+        var listOfRectFeatures = new ArrayList<Feature>(); // Using an array of fixed size may be slightly more
+                                                           // performant, but this approach was chosen mainly for
+                                                           // readability.
 
         double rectWidth = (MAX_LONGITUDE - MIN_LONGITUDE) / NUM_COLS;
         double rectHeight = (MAX_LATITUDE - MIN_LATITUDE) / NUM_ROWS;
 
-        double currentLong, currentLat; // the longitude/latitude of the upper left corner of the current rectangle
+        /*
+         * currentLong and currentLat stand for the coordinates of the upper left corner
+         * of the rectangle we are currently wanting to construct. We start in the upper
+         * left corner of our grid, corresponding to minimum longitude and maximum
+         * latitude. We then move through our grid, row for row, from left to right.
+         */
+        double currentLong, currentLat;
 
         for (int i = 0; i < NUM_ROWS; i++) {
             for (int j = 0; j < NUM_COLS; j++) {
-                currentLong = MIN_LONGITUDE + j * rectWidth; // longitude increases from the first to last column
-                currentLat = MAX_LATITUDE - i * rectHeight; // latitude decreases from the first to last row
+                currentLat = MAX_LATITUDE - i * rectHeight; // As we move down in our grid, the latitude decreases.
+                currentLong = MIN_LONGITUDE + j * rectWidth; // As we move right in our grid, the longitude increases.
 
                 /*
                  * Using a "pipeline" approach, we transform the coordinates and dimensions of
@@ -222,12 +236,17 @@ public class HeatmapGenerator {
         /*
          * The following formula works out nicely if the number of tiers divides the
          * max. prediction value plus 1, and if predictions start at 0. Under these
-         * assumptions, prediction x qualifies for tier k only if x/(m+1) >= k/t, where
-         * m is the max. prediction and t the number of tiers. -> E.g. if t=8 and
-         * (m+1)=256, x reaches the highest tier 7 iff x/256>=7/8, i.e. iff x>=224
+         * assumptions, the prediction range is split into (numTiers) equal parts and
+         * the tier corresponds to which of these intervals the prediction falls into.
+         * -> E.g. if t=8 and (m+1)=256, x reaches the highest tier 7 iff x/256>=7/8,
+         * i.e. iff x>=224
          */
         int pollutionTier = (numTiers * prediction) / (MAX_PREDICTION + 1);
 
+        /*
+         * We query the relevant dictionary and return the appropriate colour for the
+         * previously computed tier.
+         */
         return pollutionTierToRgb.get(pollutionTier);
     }
 
@@ -268,12 +287,17 @@ public class HeatmapGenerator {
      * @param fileName       the intended name of the output file
      */
     private static void writeFeatureCollectionToFile(FeatureCollection featCollection, String fileName) {
-        String outputString = featCollection.toJson();
+        String output = featCollection.toJson();
 
+        /*
+         * We catch possible IO Exceptions immediately, without throwing them back to
+         * our main method first. This differs from the approach I chose in the
+         * readGrid() method, where try-catch blocks would decrease readability.
+         */
         try {
-            FileWriter fileWriter = new FileWriter(fileName);
-            PrintWriter printWriter = new PrintWriter(fileWriter);
-            printWriter.print(outputString);
+            var fileWriter = new FileWriter(fileName);
+            var printWriter = new PrintWriter(fileWriter);
+            printWriter.print(output);
             printWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
