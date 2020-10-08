@@ -42,7 +42,7 @@ public class App {
     private static final double MAX_LATITUDE = 55.946233;
 
     /* The destined file name of the output .geojson file */
-    private static final String TARGET_JSON_FILE_NAME = "heatmap.geosjon";
+    private static final String TARGET_JSON_FILE_NAME = "heatmap.geojson";
 
     /*
      * A map which assigns to each "air pollution tier" its associated colour as an
