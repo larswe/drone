@@ -75,7 +75,7 @@ public class App {
         if (args.length != 1) {
             exitDueToIllegalInput("The application expected 1 argument but received " + args.length);
         }
-
+        
         /*
          * An I/O Error might occur while trying to read the specified prediction file.
          * If that's the case, we simply log the exception and exit.

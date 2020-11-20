@@ -4,4 +4,17 @@
     <fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
     <fullyQualifiedTypeName name="java.io.BufferedReader"/>
     <fullyQualifiedTypeName name="java.io.FileReader"/>
+    <fullyQualifiedTypeName name="java.lang.Math"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="java.net.http.HttpResponse.BodyHandlers"/>
+    <fullyQualifiedTypeName name="java.net.URI"/>
+    <fullyQualifiedTypeName name="java.net.ConnectException"/>
+    <fullyQualifiedTypeName name="java.awt.Color"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.mapbox.geojson.FeatureCollection"/>
+    <fullyQualifiedTypeName name="com.mapbox.geojson.Feature"/>
+    <fullyQualifiedTypeName name="com.mapbox.geojson.Polygon"/>
+    <fullyQualifiedTypeName name="com.mapbox.geojson.Geometry"/>
+    <fullyQualifiedTypeName name="com.mapbox.geojson.Point"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>
