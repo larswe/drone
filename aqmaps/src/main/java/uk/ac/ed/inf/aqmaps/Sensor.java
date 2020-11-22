@@ -1,38 +1,51 @@
 package uk.ac.ed.inf.aqmaps;
 
+import com.mapbox.geojson.Point;
+
 public class Sensor {
-    
+
     private final double battery;
     private final double reading;
-    private final CoordinatePair coordinates;
+    private final Point position;
     private final What3WordsLocation w3wLocation;
-    
+
+    /*
+     * This field denotes whether the sensor has been read since the start of the
+     * day. When a Sensor object is initialized, we want its value to be false. It
+     * is set to true once it is read by our drone.
+     */
+    private boolean read = false;
+
     public Sensor(double battery, double reading, What3WordsLocation w3wLocation) {
         this.battery = battery;
         this.reading = reading;
         this.w3wLocation = w3wLocation;
-        
-        double longitude = w3wLocation.getCoordinates().getLongitude();
-        double latitude = w3wLocation.getCoordinates().getLatitude();
-        this.coordinates = new FixedCoordinatePair(longitude, latitude);
+
+        double longitude = w3wLocation.getPosition().longitude();
+        double latitude = w3wLocation.getPosition().latitude();
+        this.position = Point.fromLngLat(longitude, latitude);
     }
-    
-    public SensorInfo outputReading() {
-        
-        double reading;
-        
+
+    public double outputReading() {
+
+        double officialReading;
+
+        /*
+         * If the battery is too low, the reading should already be NaN. But for the
+         * case in which the data on the server was faulty in this regard, we make sure
+         * whether the 
+         */
         if (this.battery < 0.1) {
-            reading = Double.NaN;
+            officialReading = Double.NaN;
         } else {
-            reading = 128.0;
-         // TODO: Produce actual reading value
+            officialReading = this.reading;
         }
-        
-        return new SensorInfo(reading, this.battery);
+
+        return officialReading;
     }
-    
-    public CoordinatePair getCoordinates() {
-        return coordinates;
+
+    public Point getPosition() {
+        return position;
     }
 
     public double getReading() {

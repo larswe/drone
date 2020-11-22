@@ -1,6 +1,6 @@
 package uk.ac.ed.inf.aqmaps.jsonstubs;
 
-public class JsonCoordinatePairStub {
+public class JsonPointStub {
     private double lng, lat;
 
     public double getLng() {

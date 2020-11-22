@@ -1,13 +1,13 @@
 package uk.ac.ed.inf.aqmaps.jsonstubs;
 
 public class JsonRectangleStub {
-    private JsonCoordinatePairStub southwest, northeast;
+    private JsonPointStub southwest, northeast;
 
-    public JsonCoordinatePairStub getSouthwest() {
+    public JsonPointStub getSouthwest() {
         return southwest;
     }
 
-    public JsonCoordinatePairStub getNortheast() {
+    public JsonPointStub getNortheast() {
         return northeast;
     }
 }

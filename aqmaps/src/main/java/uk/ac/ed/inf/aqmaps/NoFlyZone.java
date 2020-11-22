@@ -17,7 +17,7 @@ public class NoFlyZone {
     private String name;
     private String rgbColourString;
     private Polygon polygon;
-    private List<CoordinatePair> corners;
+    private List<Point> corners;
 
     public NoFlyZone(Feature feature) {
 
@@ -44,10 +44,10 @@ public class NoFlyZone {
          * We convert the Mapbox points into instances of our own Location class, for
          * consistency
          */
-        corners = new ArrayList<CoordinatePair>();
+        corners = new ArrayList<Point>();
         var pointList = polygon.coordinates().get(0);
         for (Point p : pointList) {
-            var corner = new FixedCoordinatePair(p.longitude(), p.latitude());
+            var corner = Point.fromLngLat(p.longitude(), p.latitude());
             corners.add(corner);
         }
 
@@ -63,4 +63,8 @@ public class NoFlyZone {
                 + this.corners.toString();
     }
 
+    public Polygon getPolygon() {
+        return this.polygon;
+    }
+    
 }

@@ -1,5 +1,6 @@
 package uk.ac.ed.inf.aqmaps;
 
+import com.mapbox.geojson.Point;
 import com.mapbox.geojson.Polygon;
 
 public class What3WordsLocation {
@@ -9,10 +10,10 @@ public class What3WordsLocation {
     private final String country, language, mapWebsite, nearestPlace;
 
     private final Polygon square;
-    private final FixedCoordinatePair coordinates;
+    private final Point position;
 
     public What3WordsLocation(String words, String country, String language, String mapWebsite, String nearestPlace,
-            Polygon square, FixedCoordinatePair coordinates) {
+            Polygon square, Point position) {
 
         var w3wParts = words.split("\\.");
         assert (w3wParts.length == 3);
@@ -29,7 +30,7 @@ public class What3WordsLocation {
         this.nearestPlace = nearestPlace;
 
         this.square = square;
-        this.coordinates = coordinates;
+        this.position = position;
     }
 
     public String toString() {
@@ -72,8 +73,8 @@ public class What3WordsLocation {
         return square;
     }
 
-    public FixedCoordinatePair getCoordinates() {
-        return coordinates;
+    public Point getPosition() {
+        return position;
     }
 
 }

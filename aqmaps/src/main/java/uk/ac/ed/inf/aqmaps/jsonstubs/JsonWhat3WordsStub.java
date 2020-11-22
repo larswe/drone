@@ -5,7 +5,7 @@ public class JsonWhat3WordsStub {
     private String country;
     private JsonRectangleStub square;
     private String nearestPlace;
-    private JsonCoordinatePairStub coordinates;
+    private JsonPointStub coordinates;
     private String words;
     private String language;
     private String map;
@@ -30,7 +30,7 @@ public class JsonWhat3WordsStub {
         return square;
     }
 
-    public JsonCoordinatePairStub getCoordinates() {
+    public JsonPointStub getCoordinates() {
         return coordinates;
     }
 

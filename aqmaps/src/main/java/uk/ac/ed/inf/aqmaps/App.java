@@ -39,7 +39,7 @@ public class App {
      * from 0 to 31, etc).
      */
     private static Map<Integer, Marker> pollutionTierToRgb;
-
+    private static List<NoFlyZone> noFlyZones;
     private static List<Sensor> sensorsToBeReadToday;
 
     static {
@@ -71,7 +71,8 @@ public class App {
         port = startInfo.getPort();
         seed = startInfo.getSeed();
 
-        var noFlyZones = loadNoFlyZonesFromServer(startInfo.getPort());
+        noFlyZones = loadNoFlyZonesFromServer(startInfo.getPort());
+        
         var sensorStubs = loadSensorStubsForDateFromServer(startInfo.getDay(), startInfo.getMonth(),
                 startInfo.getYear());
 
@@ -82,13 +83,14 @@ public class App {
         var sensors = processSensorStubs(sensorStubs);
 
         for (Sensor s : sensors) {
-            System.out.println(s.getCoordinates());
+            System.out.println(s.getPosition());
         }
 
         // TODO: Find best path
+        SensorTourPlanner.findShortestSensorTour(sensors);
 
         // TODO: Actually make drone fly
-        Drone drone = new Drone(startInfo.getDroneStartLongitude(), startInfo.getDroneStartLatitude());
+        Drone drone = new Drone(startInfo.getDroneStartLongitude(), startInfo.getDroneStartLatitude(), null);
 
         // TODO: Print output to file
 
@@ -205,9 +207,9 @@ public class App {
 
         var square = Polygon.fromLngLats(List.of(squareCoordinates));
 
-        var coordinatesLongitude = stub.getCoordinates().getLng();
-        var coordinatesLatitude = stub.getCoordinates().getLat();
-        var coordinates = new FixedCoordinatePair(coordinatesLongitude, coordinatesLatitude);
+        var longitude = stub.getCoordinates().getLng();
+        var latitude = stub.getCoordinates().getLat();
+        var position = Point.fromLngLat(longitude, latitude);
 
         var words = stub.getWords();
         var country = stub.getCountry();
@@ -215,7 +217,7 @@ public class App {
         var map = stub.getMap();
         var nearestPlace = stub.getNearestPlace();
 
-        var w3wLocation = new What3WordsLocation(words, country, language, map, nearestPlace, square, coordinates);
+        var w3wLocation = new What3WordsLocation(words, country, language, map, nearestPlace, square, position);
         return w3wLocation;
     }
 
@@ -229,6 +231,10 @@ public class App {
 
     public static void setSensorsToBeReadToday(List<Sensor> sensors) {
         sensorsToBeReadToday = sensors;
+    }
+
+    public static List<NoFlyZone> getNoFlyZones() {
+        return noFlyZones;
     }
 
 }
