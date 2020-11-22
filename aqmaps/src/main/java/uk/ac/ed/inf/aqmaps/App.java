@@ -90,7 +90,7 @@ public class App {
         SensorTourPlanner.findShortestSensorTour(sensors);
 
         // TODO: Actually make drone fly
-        Drone drone = new Drone(startInfo.getDroneStartLongitude(), startInfo.getDroneStartLatitude(), null);
+        MainDrone mainDrone = new MainDrone(startInfo.getDroneStartLongitude(), startInfo.getDroneStartLatitude(), null);
 
         // TODO: Print output to file
 

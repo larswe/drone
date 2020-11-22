@@ -1,48 +1,44 @@
 package uk.ac.ed.inf.aqmaps;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import com.mapbox.geojson.Point;
 import com.mapbox.geojson.Polygon;
 
-public class Drone {
-
-    /* Made final to ensure the position is updated in the intended way */
-    private Point position;
-    private int stepsMade;
-
-    private static final double MOVE_DISTANCE = 0.0003;
-    private static final double MAX_READ_DISTANCE = 0.0002;
-    /* Radius of circle in which drone can land, returning to the starting point */
-    private static final double MAX_LANDING_DISTANCE = 0.0003;
-    private static final int MAX_MOVES = 150;
-
-    private static ArrayList<Sensor> sensorTour;
-
-    public Drone(double longitude, double latitude, ArrayList<Sensor> tour) {
-        this.position = Point.fromLngLat(longitude, latitude);
-        this.stepsMade = 0;
-        this.sensorTour = tour;
-    }
-
-    public void completeTour() {
-        // Main method of sorts.. .TODO
-    }
-
-    public boolean canGetToDestinationInStraightLine(Point destination) {
-        
-        // TODO
-        
-        return false;
-    }
+public abstract class Drone {
     
-    private void makeMove(Point nextPos) {
+    protected static enum DroneAction {READ, LAND};
+
+    protected Point currentPosition;
+    protected int stepsMade;
+
+    /* Our drone can move at an angle of 10, 20,..., but not e.g. 26 degrees*/
+    protected static final int ANGLE_GRANULARITY = 10;
+    protected static final double MOVE_DISTANCE = 0.0003;
+    protected static final double MAX_READ_DISTANCE = 0.0002;
+    /* Radius of circle in which drone can land, returning to the starting point */
+    protected static final double MAX_LANDING_DISTANCE = 0.0003;
+
+    public Drone(double longitude, double latitude) {
+        this.currentPosition = Point.fromLngLat(longitude, latitude);
+        this.stepsMade = 0;
+    }
+
+    /*
+     * This method  determines whether the the drone can get to its current destination without leaving
+     * the confinement area or entering any no-fly-zones. The method is made abstract because our main drone
+     * and "shadow drones" have different ways of finding out if this is the case. 
+     * 
+     * Requires radius that defines the max range around the destination which the drone can end up in. 
+     */
+    public abstract boolean canGetToDestinationInStraightLine(Point destination, double maxFinalDistance);
+
+    protected void makeMove(Point nextPos) {
         if (!this.canMove(nextPos)) {
             // TODO: Error Handling
             return;
         } else {
-            this.position = nextPos;
+            this.currentPosition = nextPos;
             this.stepsMade++;
         }
     }
@@ -53,9 +49,9 @@ public class Drone {
      * distance if and only if none of the borders of any of these polygons are
      * crossed.
      */
-    private boolean canMove(Point nextPos) {
+    protected boolean canMove(Point nextPos) {
 
-        var moveLineSegment = new LineSegment(this.position, nextPos);
+        var moveLineSegment = new LineSegment(this.currentPosition, nextPos);
 
         var forbiddenPolygons = new ArrayList<Polygon>();
 
@@ -73,40 +69,17 @@ public class Drone {
 
         /*
          * If we have made it here without returning false, none of the forbidden
-         * boundaries are crossed. q.e.d, return true. 
+         * boundaries are crossed. q.e.d, return true.
          */
         return true;
     }
 
-    private boolean isInRangeOfSensor(Sensor sensor) {
-
-        // TODO: Implement... maybe also check for all sensors, if it doesn't take too
-        // long
-
-        return true;
-    }
-
-    public double downloadReadingsFromSensor(Sensor sensor) {
-
-        if (isInRangeOfSensor(sensor)) {
-            return sensor.outputReading();
-        } else {
-            // TODO: Error Handling
-            return 0.0;
-        }
-
+    protected boolean isInRangeOfPoint(Point point, double radius) {
+        return EuclideanUtils.computeDistance(this.currentPosition, point) <= radius;
     }
 
     public int getStepsMade() {
         return this.stepsMade;
     }
-
-    public static ArrayList<Sensor> getSensorTour() {
-        return sensorTour;
-    }
-
-    public static void setSensorTour(ArrayList<Sensor> sensorTour) {
-        Drone.sensorTour = sensorTour;
-    }
-
+    
 }

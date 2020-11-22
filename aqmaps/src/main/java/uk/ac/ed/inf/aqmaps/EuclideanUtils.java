@@ -25,10 +25,26 @@ public class EuclideanUtils {
 
     public static Point getNextPosition(Point position, int angle, double distance) {
 
-        double newLong = position.longitude() + distance * Math.cos(angle);
-        double newLat = position.latitude() + distance * Math.sin(angle);
+        //System.out.println("GET NEXT POS");
+        //System.out.println(position);
+        //System.out.println(angle);
+        //System.out.println(distance);
+        
+        var angleInRads = Math.toRadians(angle);
+        
+        /*
+         * Note that a move towards East increases the latitude, thus acting as our conventional "x" in this case.
+         * Likewise, longitude corresponds to y, since a move North increases it. 
+         */
+        double newLong = position.longitude() + distance * Math.sin(angleInRads);
+        double newLat = position.latitude() + distance * Math.cos(angleInRads);
 
-        return Point.fromLngLat(newLong, newLat);
+        var nextPosition = Point.fromLngLat(newLong, newLat);
+        
+        //System.out.println(nextPosition);
+        //System.out.println();
+        
+        return nextPosition;
     }
 
     /*
@@ -39,17 +55,28 @@ public class EuclideanUtils {
      */
     public static boolean lineSegmentAndPolygonIntersect(LineSegment lineSegment, Polygon polygon) {
 
-        var polygonBoundaries = new ArrayList<LineSegment>();
-        int n = polygon.coordinates().get(0).size(); // the number of corners/edges of the polygon + 1
-
-        for (var polygonSegment : polygonBoundaries) {
+        var polygonEdges = new ArrayList<LineSegment>();
+        var polygonCorners = polygon.coordinates().get(0);
+        int n = polygonCorners.size(); // the number of corners/edges of the polygon + 1
+        
+        /*
+         * We add all edges of the polygon to the list.
+         */
+        for (int i = 0; i < n-1; i++) {
+            var startingCorner = polygonCorners.get(i);
+            var endCorner = polygonCorners.get(i+1);
+            
+            polygonEdges.add(new LineSegment(startingCorner, endCorner));
+        }
+        
+        for (var polygonSegment : polygonEdges) {
             if (lineSegmentsIntersect(lineSegment, polygonSegment)) {
-                return true; // return false as soon as a collision occurs, for efficiency
+                return true; // return true as soon as a collision occurs, for efficiency
             }
         }
 
         /*
-         * If we have not returned false yet, the line segment and polygon do not
+         * If we have not returned true yet, the line segment and polygon do not
          * intersect
          */
         return false;
