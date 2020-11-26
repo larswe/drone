@@ -1,14 +1,16 @@
 package uk.ac.ed.inf.aqmaps;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class SensorTourPlanner {
 
-    public static List<Sensor> findShortestSensorTour(List<Sensor> sensors) {
+    public static ArrayList<Sensor> findShortestSensorTour(ArrayList<Sensor> sensors) {
 
         var distanceMatrix = computeDistanceMatrix(sensors);
 
-        return null; // TODO
+        return sensors; // TODO
     }
 
     private static double[][] computeDistanceMatrix(List<Sensor> sensors) {
@@ -22,10 +24,20 @@ public class SensorTourPlanner {
          */
         for (int i = 0; i < numSensors; i++) {
             for (int j = 0; j < numSensors; j++) {
-                var positionA = sensors.get(i).getPosition();
-                var positionB = sensors.get(j).getPosition();
-                distanceMatrix[i][j] = EuclideanUtils.computeDistance(positionA, positionB);
-                System.out.println(i + " , " + j + " : " + distanceMatrix[i][j]);
+                var pointA = sensors.get(i).getPosition();
+                var sensorB = sensors.get(j);
+                
+                /*
+                 * Create a drone which flies from sensor A to sensor B.
+                 * See how many steps it needs. 
+                 * That is the relevant distance. 
+                 */
+                var listContainingSensorB = new ArrayList<Sensor>(Arrays.asList(sensorB));
+                MainDrone drone = new MainDrone(pointA.longitude(), pointA.latitude(), listContainingSensorB);
+                drone.flyToCurrentDestination();
+                
+                distanceMatrix[i][j] = drone.stepsMade;
+                System.out.println("i " + i + " , j " + j + " : " + drone.stepsMade);
             }
         }
         

@@ -7,6 +7,8 @@ import java.util.Map;
 
 import com.mapbox.geojson.Feature;
 import com.mapbox.geojson.FeatureCollection;
+import com.mapbox.geojson.Geometry;
+import com.mapbox.geojson.LineString;
 import com.mapbox.geojson.Point;
 import com.mapbox.geojson.Polygon;
 
@@ -15,6 +17,10 @@ import uk.ac.ed.inf.aqmaps.jsonstubs.JsonWhat3WordsStub;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.lang.reflect.Type;
 
 public class App {
@@ -28,7 +34,7 @@ public class App {
     private static final double MAX_LONGITUDE = -3.184319;
     private static final double MIN_LATITUDE = 55.942617;
     private static final double MAX_LATITUDE = 55.946233;
-
+    
     private static Polygon confinementArea;
     private static int port, seed;
 
@@ -41,6 +47,8 @@ public class App {
     private static Map<Integer, Marker> pollutionTierToRgb;
     private static List<NoFlyZone> noFlyZones;
     private static List<Sensor> sensorsToBeReadToday;
+    
+    private static AppStartInfo startInfo;
 
     static {
         pollutionTierToRgb = new HashMap<>();
@@ -67,7 +75,7 @@ public class App {
     public static void main(String[] args) {
 
         // TODO: Load Data
-        var startInfo = parseInputArguments(args);
+        startInfo = parseInputArguments(args);
         port = startInfo.getPort();
         seed = startInfo.getSeed();
 
@@ -76,10 +84,6 @@ public class App {
         var sensorStubs = loadSensorStubsForDateFromServer(startInfo.getDay(), startInfo.getMonth(),
                 startInfo.getYear());
 
-        for (var s : sensorStubs) {
-            System.out.println(s.getReading());
-        }
-
         var sensors = processSensorStubs(sensorStubs);
 
         for (Sensor s : sensors) {
@@ -87,12 +91,18 @@ public class App {
         }
 
         // TODO: Find best path
-        SensorTourPlanner.findShortestSensorTour(sensors);
+        var sensorTour = SensorTourPlanner.findShortestSensorTour(sensors);
 
         // TODO: Actually make drone fly
-        MainDrone mainDrone = new MainDrone(startInfo.getDroneStartLongitude(), startInfo.getDroneStartLatitude(), null);
+        MainDrone mainDrone = new MainDrone(startInfo.getDroneStartLongitude(), startInfo.getDroneStartLatitude(), sensorTour);
+        mainDrone.completeTour();
 
-        // TODO: Print output to file
+        // TODO: Print output to GeoJSON file
+        var dronePositionHistory = mainDrone.getPositionHistory();
+        var sensorsVisitedArray = mainDrone.getSensorsVisitedArray();
+        var readingsForAllSensors = mainDrone.getReadingsForAllSensors();
+        var featCollection = generateFeatureCollection(dronePositionHistory, sensorsVisitedArray, readingsForAllSensors);
+        writeFeatureCollectionToFile(featCollection);
 
     }
 
@@ -108,6 +118,69 @@ public class App {
         return new AppStartInfo(day, month, year, latitude, longitude, seed, port);
     }
 
+    private static FeatureCollection generateFeatureCollection(List<Point> positionHistory, boolean[] visitedArray, double[] readings) {
+        var listOfFeatures = new ArrayList<Feature>();
+        
+        /*
+         * Draw a line for each adjacent pair of points in the given position history of the main drone.
+         */
+        var dronePath = LineString.fromLngLats(positionHistory);
+        var dronePathGeometry = (Geometry) dronePath;
+        var dronePathFeature = Feature.fromGeometry(dronePathGeometry);
+        listOfFeatures.add(dronePathFeature);
+        
+        /*
+         * TODO: Add markers for all sensors 
+         */
+        
+        /*
+         * Add all features to a collection and return it. 
+         */
+        var featCollection = FeatureCollection.fromFeatures(listOfFeatures);
+        return featCollection;
+    }
+    
+    /**
+     * This method generates a String in JSON format for a given Mapbox GeoJSON
+     * FeatureCollection and writes it to a file with the specified name.
+     * 
+     * @param featCollection a FeatureCollection corresponding to the sensor information and drone flight path
+     * @param fileName       the intended name of the output file
+     */
+    private static void writeFeatureCollectionToFile(FeatureCollection featCollection) {
+        var output = featCollection.toJson();
+
+        var fileName = generateReadingsFileName();
+
+        /*
+         * We catch possible IO Exceptions immediately, without throwing them back to
+         * our main method first. This differs from the approach I chose in the
+         * readGrid() method, where try-catch blocks would decrease readability.
+         */
+        try {
+            var fileWriter = new FileWriter(fileName);
+            var printWriter = new PrintWriter(fileWriter);
+            printWriter.print(output);
+            printWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.exit(1);
+        }
+    }
+    
+    private static String generateReadingsFileName() {
+        var stringBuilder = new StringBuilder();
+        stringBuilder.append("readings");
+        stringBuilder.append("-");
+        stringBuilder.append(String.format("%02d",  startInfo.getDay()));
+        stringBuilder.append("-");
+        stringBuilder.append(String.format("%02d",  startInfo.getMonth()));
+        stringBuilder.append("-");
+        stringBuilder.append(String.format("%04d",  startInfo.getYear()));
+        stringBuilder.append("geojson");
+        return stringBuilder.toString();
+    }
+    
     private static ArrayList<NoFlyZone> loadNoFlyZonesFromServer(int port) {
         /* Load Geo-JSON file from server and extract FeatureCollection */
         var jsonNoFlyZonesString = WebServerFileFetcher.getBuildingsGeojsonFromServer(port);
@@ -139,7 +212,7 @@ public class App {
         return sensorStubs;
     }
 
-    private static ArrayList<Sensor> processSensorStubs(ArrayList<JsonSensorStub> sensorStubs) {
+    private static ArrayList<Sensor> processSensorStubs(List<JsonSensorStub> sensorStubs) {
 
         var sensors = new ArrayList<Sensor>();
 

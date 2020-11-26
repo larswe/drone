@@ -23,7 +23,7 @@ public class EuclideanUtils {
         return Math.sqrt(Math.pow(a.longitude() - b.longitude(), 2) + Math.pow(a.latitude() - b.latitude(), 2));
     }
 
-    public static Point getNextPosition(Point position, int angle, double distance) {
+    public static Point getNextPosition(Point position, double angle, double distance) {
 
         //System.out.println("GET NEXT POS");
         //System.out.println(position);
@@ -36,8 +36,8 @@ public class EuclideanUtils {
          * Note that a move towards East increases the latitude, thus acting as our conventional "x" in this case.
          * Likewise, longitude corresponds to y, since a move North increases it. 
          */
-        double newLong = position.longitude() + distance * Math.sin(angleInRads);
-        double newLat = position.latitude() + distance * Math.cos(angleInRads);
+        double newLong = position.longitude() + distance * Math.cos(angleInRads);
+        double newLat = position.latitude() + distance * Math.sin(angleInRads);
 
         var nextPosition = Point.fromLngLat(newLong, newLat);
         
@@ -103,7 +103,7 @@ public class EuclideanUtils {
      * simple.
      */
     public static boolean lineSegmentsIntersect(LineSegment firstLine, LineSegment secondLine) {
-
+                
         /*
          * We take care of the special case in which one of the segments is a single
          * point.
@@ -181,6 +181,8 @@ public class EuclideanUtils {
          } else {
              return true;
          }
+         
+         
         
     }
 

@@ -16,10 +16,10 @@ public class LineSegment {
          * If the segment has infinite slope, its angle to the "x-axis" is 90 or 270
          * degrees, depending on the longitude. Otherwise, we can use atan.
          */
-        if (start.latitude() == end.latitude()) {
-            this.angleInDegrees = start.longitude() <= end.longitude() ? 90 : 270;
+        if (start.longitude() == end.longitude()) {
+            this.angleInDegrees = start.latitude() <= end.latitude() ? 90 : 270;
         } else {
-            double slope = (end.longitude() - start.longitude()) / (end.latitude() - start.latitude());
+            double slope = (end.latitude() - start.latitude()) / (end.longitude() - start.longitude());
 
             var angleInRadians = Math.atan(slope);
 
@@ -31,7 +31,7 @@ public class LineSegment {
              * If we are moving from East to West, we need to add 180 degrees to the angle we computed from the slope.
              * That is because it is like we are moving down the graph of a linear function "from right to left". 
              */
-            if (start.latitude() > end.latitude()) {
+            if (start.longitude() > end.longitude()) {
                 tempAngleInDegrees += 180;
             }
             

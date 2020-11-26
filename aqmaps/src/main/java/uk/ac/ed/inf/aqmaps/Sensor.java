@@ -33,7 +33,7 @@ public class Sensor {
         /*
          * If the battery is too low, the reading should already be NaN. But for the
          * case in which the data on the server was faulty in this regard, we make sure
-         * whether the 
+         * whether the battery is low. 
          */
         if (this.battery < 0.1) {
             officialReading = Double.NaN;
@@ -50,6 +50,10 @@ public class Sensor {
 
     public double getReading() {
         return reading;
+    }
+
+    public What3WordsLocation getW3wLocation() {
+        return w3wLocation;
     }
 
 }

@@ -30,7 +30,7 @@ public class WebServerFileFetcher {
         var stringBuilder = new StringBuilder();
         stringBuilder.append(SENSOR_MAP_FOLDER_PATH);
         stringBuilder.append("/");
-        stringBuilder.append(String.format("%02d",  year));
+        stringBuilder.append(String.format("%04d",  year));
         stringBuilder.append("/");
         stringBuilder.append(String.format("%02d",  month));
         stringBuilder.append("/");
