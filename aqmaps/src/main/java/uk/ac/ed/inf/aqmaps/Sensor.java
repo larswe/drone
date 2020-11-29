@@ -4,10 +4,12 @@ import com.mapbox.geojson.Point;
 
 public class Sensor {
 
-    private final double battery;
+    private final float battery;
     private final double reading;
     private final Point position;
     private final What3WordsLocation w3wLocation;
+    
+    private static final float TRUST_THRESHOLD = 0.1f;
 
     /*
      * This field denotes whether the sensor has been read since the start of the
@@ -16,7 +18,7 @@ public class Sensor {
      */
     private boolean read = false;
 
-    public Sensor(double battery, double reading, What3WordsLocation w3wLocation) {
+    public Sensor(float battery, double reading, What3WordsLocation w3wLocation) {
         this.battery = battery;
         this.reading = reading;
         this.w3wLocation = w3wLocation;
@@ -35,7 +37,7 @@ public class Sensor {
          * case in which the data on the server was faulty in this regard, we make sure
          * whether the battery is low. 
          */
-        if (this.battery < 0.1) {
+        if (this.battery < TRUST_THRESHOLD) {
             officialReading = Double.NaN;
         } else {
             officialReading = this.reading;

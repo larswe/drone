@@ -25,16 +25,16 @@ import java.lang.reflect.Type;
 
 public class App {
 
-    /* The smallest and largest legal values of an air pollution prediction */
-    private static final int MIN_PREDICTION = 0;
-    private static final int MAX_PREDICTION = 255;
+    /* The smallest and largest legal values of an air pollution reading */
+    private static final double MIN_READING = 0.0;
+    private static final double MAX_READING = 256.0;
 
     /* The coordinates that define the drone confinement area */
     private static final double MIN_LONGITUDE = -3.192473;
     private static final double MAX_LONGITUDE = -3.184319;
     private static final double MIN_LATITUDE = 55.942617;
     private static final double MAX_LATITUDE = 55.946233;
-    
+
     private static Polygon confinementArea;
     private static int port, seed;
 
@@ -44,24 +44,39 @@ public class App {
      * prediction interval (e.g. for our standard values, tier 0 accounts for values
      * from 0 to 31, etc).
      */
-    private static Map<Integer, Marker> pollutionTierToRgb;
+    private static Map<Integer, String> pollutionTierToRgb;
+    private static Map<Integer, String> pollutionTierToMarkerSymbol;
+
     private static List<NoFlyZone> noFlyZones;
     private static List<Sensor> sensorsToBeReadToday;
-    
+
     private static AppStartInfo startInfo;
 
     static {
-        pollutionTierToRgb = new HashMap<>();
-        pollutionTierToRgb.put(0, new Marker("#00ff00", Symbol.LIGHTHOUSE));
-        pollutionTierToRgb.put(1, new Marker("#40ff00", Symbol.LIGHTHOUSE));
-        pollutionTierToRgb.put(2, new Marker("#80ff00", Symbol.LIGHTHOUSE));
-        pollutionTierToRgb.put(3, new Marker("#c0ff00", Symbol.LIGHTHOUSE));
-        pollutionTierToRgb.put(4, new Marker("#ffc000", Symbol.DANGER));
-        pollutionTierToRgb.put(5, new Marker("#ff8000", Symbol.DANGER));
-        pollutionTierToRgb.put(6, new Marker("#ff4000", Symbol.DANGER));
-        pollutionTierToRgb.put(7, new Marker("#ff0000", Symbol.DANGER));
-        pollutionTierToRgb.put(-1, new Marker("#000000", Symbol.CROSS));
-        pollutionTierToRgb.put(404, new Marker("#aaaaaa", Symbol.NONE));
+        pollutionTierToRgb = new HashMap<Integer, String>();
+        pollutionTierToRgb.put(0, "#00ff00");
+        pollutionTierToRgb.put(1, "#40ff00");
+        pollutionTierToRgb.put(2, "#80ff00");
+        pollutionTierToRgb.put(3, "#c0ff00");
+        pollutionTierToRgb.put(4, "#ffc000");
+        pollutionTierToRgb.put(5, "#ff8000");
+        pollutionTierToRgb.put(6, "#ff4000");
+        pollutionTierToRgb.put(7, "#ff0000");
+        pollutionTierToRgb.put(-1, "#000000");
+        pollutionTierToRgb.put(404, "#aaaaaa");
+
+        pollutionTierToMarkerSymbol = new HashMap<Integer, String>();
+        pollutionTierToMarkerSymbol.put(0, "lighthouse");
+        pollutionTierToMarkerSymbol.put(1, "lighthouse");
+        pollutionTierToMarkerSymbol.put(2, "lighthouse");
+        pollutionTierToMarkerSymbol.put(3, "lighthouse");
+        pollutionTierToMarkerSymbol.put(4, "danger");
+        pollutionTierToMarkerSymbol.put(5, "danger");
+        pollutionTierToMarkerSymbol.put(6, "danger");
+        pollutionTierToMarkerSymbol.put(7, "danger");
+        pollutionTierToMarkerSymbol.put(-1, "cross");
+        pollutionTierToMarkerSymbol.put(404, "");
+        
 
         var upperLeftPoint = Point.fromLngLat(MIN_LONGITUDE, MAX_LATITUDE);
         var upperRightPoint = Point.fromLngLat(MAX_LONGITUDE, MAX_LATITUDE);
@@ -80,28 +95,41 @@ public class App {
         seed = startInfo.getSeed();
 
         noFlyZones = loadNoFlyZonesFromServer(startInfo.getPort());
-        
+
+        var droneStartingPoint = Point.fromLngLat(startInfo.getDroneStartLongitude(),
+                startInfo.getDroneStartLatitude());
         var sensorStubs = loadSensorStubsForDateFromServer(startInfo.getDay(), startInfo.getMonth(),
                 startInfo.getYear());
 
         var sensors = processSensorStubs(sensorStubs);
+        var tourNodes = new ArrayList<Point>();
 
         for (Sensor s : sensors) {
             System.out.println(s.getPosition());
+            tourNodes.add(s.getPosition());
         }
+        tourNodes.add(droneStartingPoint);
 
-        // TODO: Find best path
-        var sensorTour = SensorTourPlanner.findShortestSensorTour(sensors);
+        /*
+         * Disclaimer: Not actually guaranteed to be the shortest tour - that problem is
+         * NP-hard!
+         */
+        var tourPlanner = new TourPlanner(tourNodes);
+        var shortestTourIndices = tourPlanner.findShortestTour();
+        var shortestTour = new ArrayList<Sensor>();
+        for (int i = 0; i < shortestTourIndices.length; i++) {
+            shortestTour.add(sensors.get(shortestTourIndices[i]));
+            
+            System.out.println(i + " : " + sensors.get(shortestTourIndices[i]).getPosition());
+        }
+        
 
         // TODO: Actually make drone fly
-        MainDrone mainDrone = new MainDrone(startInfo.getDroneStartLongitude(), startInfo.getDroneStartLatitude(), sensorTour);
+        MainDrone mainDrone = new MainDrone(droneStartingPoint, shortestTour);
         mainDrone.completeTour();
 
         // TODO: Print output to GeoJSON file
-        var dronePositionHistory = mainDrone.getPositionHistory();
-        var sensorsVisitedArray = mainDrone.getSensorsVisitedArray();
-        var readingsForAllSensors = mainDrone.getReadingsForAllSensors();
-        var featCollection = generateFeatureCollection(dronePositionHistory, sensorsVisitedArray, readingsForAllSensors);
+        var featCollection = generateFeatureCollection(shortestTour, mainDrone);
         writeFeatureCollectionToFile(featCollection);
 
     }
@@ -118,33 +146,83 @@ public class App {
         return new AppStartInfo(day, month, year, latitude, longitude, seed, port);
     }
 
-    private static FeatureCollection generateFeatureCollection(List<Point> positionHistory, boolean[] visitedArray, double[] readings) {
-        var listOfFeatures = new ArrayList<Feature>();
+    private static FeatureCollection generateFeatureCollection(List<Sensor> sensors,
+            MainDrone drone) {
+        var positionHistory = drone.getPositionHistory();
+        var visitedArr = drone.getSensorsVisitedArray();
+        var allReadings = drone.getReadingsForAllSensors();
         
+        var listOfFeatures = new ArrayList<Feature>();
+
         /*
-         * Draw a line for each adjacent pair of points in the given position history of the main drone.
+         * Draw a line for each adjacent pair of points in the given position history of
+         * the main drone.
          */
         var dronePath = LineString.fromLngLats(positionHistory);
         var dronePathGeometry = (Geometry) dronePath;
         var dronePathFeature = Feature.fromGeometry(dronePathGeometry);
         listOfFeatures.add(dronePathFeature);
-        
+
         /*
-         * TODO: Add markers for all sensors 
+         * TODO: Add markers for all sensors
          */
-        
+        for (int i = 0; i < visitedArr.length; i++) {
+            var sensor = sensors.get(i);
+            var marker = sensor.getPosition();
+            var markerGeometry = (Geometry) marker;
+            var markerFeature = Feature.fromGeometry(markerGeometry);
+
+            int pollutionTier;
+            if (!visitedArr[i]) {
+                pollutionTier = 404;
+            } else if (Double.isNaN(allReadings[i])) {
+                pollutionTier = -1;
+            } else {
+                pollutionTier = computeTierForReading(allReadings[i]);
+            }
+            
+            markerFeature.addStringProperty("location", sensor.getW3wLocation().toString());
+            markerFeature.addStringProperty("rgb-string", pollutionTierToRgb.get(pollutionTier));
+            markerFeature.addStringProperty("marker-symbol", pollutionTierToMarkerSymbol.get(pollutionTier));
+            markerFeature.addStringProperty("marker-color", pollutionTierToRgb.get(pollutionTier));
+            
+            listOfFeatures.add(markerFeature);
+        }
+
         /*
-         * Add all features to a collection and return it. 
+         * Add all features to a collection and return it.
          */
         var featCollection = FeatureCollection.fromFeatures(listOfFeatures);
         return featCollection;
     }
-    
+
+    private static int computeTierForReading(double reading) {
+        /*
+         * We need the number of pollution tiers that correspond to legal readings -
+         * this excludes the tiers -1(Battery low) and 404(Reading missing).
+         */
+        var numLegalReadingTiers = pollutionTierToRgb.size() - 2;
+        var tierSize = MAX_READING / numLegalReadingTiers;
+
+        for (int i = 1; i <= numLegalReadingTiers; i++) {
+            if (reading < i * tierSize) {
+                return i - 1;
+            }
+        }
+
+        /*
+         * If the reading is greater than the expected maximum, we simply return the
+         * value corresponding to the "missing" tier
+         */
+        return 404;
+    }
+
     /**
      * This method generates a String in JSON format for a given Mapbox GeoJSON
      * FeatureCollection and writes it to a file with the specified name.
      * 
-     * @param featCollection a FeatureCollection corresponding to the sensor information and drone flight path
+     * @param featCollection a FeatureCollection corresponding to the sensor
+     *                       information and drone flight path
      * @param fileName       the intended name of the output file
      */
     private static void writeFeatureCollectionToFile(FeatureCollection featCollection) {
@@ -167,20 +245,20 @@ public class App {
             System.exit(1);
         }
     }
-    
+
     private static String generateReadingsFileName() {
         var stringBuilder = new StringBuilder();
         stringBuilder.append("readings");
         stringBuilder.append("-");
-        stringBuilder.append(String.format("%02d",  startInfo.getDay()));
+        stringBuilder.append(String.format("%02d", startInfo.getDay()));
         stringBuilder.append("-");
-        stringBuilder.append(String.format("%02d",  startInfo.getMonth()));
+        stringBuilder.append(String.format("%02d", startInfo.getMonth()));
         stringBuilder.append("-");
-        stringBuilder.append(String.format("%04d",  startInfo.getYear()));
-        stringBuilder.append("geojson");
+        stringBuilder.append(String.format("%04d", startInfo.getYear()));
+        stringBuilder.append(".geojson");
         return stringBuilder.toString();
     }
-    
+
     private static ArrayList<NoFlyZone> loadNoFlyZonesFromServer(int port) {
         /* Load Geo-JSON file from server and extract FeatureCollection */
         var jsonNoFlyZonesString = WebServerFileFetcher.getBuildingsGeojsonFromServer(port);
@@ -218,7 +296,7 @@ public class App {
 
         for (var sensorStub : sensorStubs) {
 
-            var battery = Double.parseDouble(sensorStub.getBattery());
+            var battery = Float.parseFloat(sensorStub.getBattery());
 
             var readingString = sensorStub.getReading();
 

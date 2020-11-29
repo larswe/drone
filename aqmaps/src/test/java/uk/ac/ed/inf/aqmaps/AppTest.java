@@ -134,15 +134,15 @@ public class AppTest {
 
         Point destination = Point.fromLngLat(55.944, -3.187);
         What3WordsLocation w3w = new What3WordsLocation("a.b.c", "", "", "", "", null, destination);
-        Sensor s = new Sensor(0.0, 0.0, w3w);
+        Sensor s = new Sensor(0.0f, 0.0, w3w);
         
         ArrayList<Sensor> arr = new ArrayList<Sensor>(Arrays.asList(s));
         
         System.out.println(arr.size());
         
-        MainDrone d = new MainDrone(55.9461, -3.1924, arr);
+        MainDrone d = new MainDrone(Point.fromLngLat(55.9461, -3.1924), arr);
 
-        assertTrue(d.canGetTowardsDestinationInStraightLine(0.0003));
+        assertTrue(d.canGetTowardsDestinationInStraightLine());
 
     }
 
@@ -153,13 +153,13 @@ public class AppTest {
         Point destination = Point.fromLngLat(-3.193, 55.947);
         
         What3WordsLocation w3w = new What3WordsLocation("a.b.c", "", "", "", "", null, destination);
-        Sensor s = new Sensor(0.0, 0.0, w3w);
+        Sensor s = new Sensor(0.0f, 0.0, w3w);
         
         ArrayList<Sensor> arr = new ArrayList<Sensor>(Arrays.asList(s));
         
-        MainDrone d = new MainDrone(-3.192472, 55.94623, arr);
+        MainDrone d = new MainDrone(Point.fromLngLat(-3.192472, 55.94623), arr);
 
-        assertFalse(d.canGetTowardsDestinationInStraightLine(0.0003));
+        assertFalse(d.canGetTowardsDestinationInStraightLine());
     }
     
     @Test
@@ -169,11 +169,11 @@ public class AppTest {
         Point destination = Point.fromLngLat(-3.185, 55.9427);
         
         What3WordsLocation w3w = new What3WordsLocation("a.b.c", "", "", "", "", null, destination);
-        Sensor s = new Sensor(0.0, 0.0, w3w);
+        Sensor s = new Sensor(0.0f, 0.0, w3w);
         
-        MainDrone d = new MainDrone(-3.18971, 55.94284, new ArrayList<Sensor>(Arrays.asList(s)));
+        MainDrone d = new MainDrone(Point.fromLngLat(-3.18971, 55.94284), new ArrayList<Sensor>(Arrays.asList(s)));
 
-        assertFalse(d.canGetTowardsDestinationInStraightLine(0.0003));
+        assertFalse(d.canGetTowardsDestinationInStraightLine());
     }
     
     @Test
@@ -182,7 +182,7 @@ public class AppTest {
         
         Point destination = Point.fromLngLat(-3.18825, 55.9426170001);
         
-        ShadowDrone d = new ShadowDrone(-3.18962, 55.9426170001, destination);
+        ShadowDrone d = new ShadowDrone(Point.fromLngLat(-3.18962, 55.9426170001), destination);
 
         var obst = App.getNoFlyZones().get(2).getPolygon();
         
@@ -200,7 +200,7 @@ public class AppTest {
         
         Point destination = Point.fromLngLat(-3.18962, 55.9426170001);
         
-        ShadowDrone d = new ShadowDrone(-3.18825, 55.9426170001, destination);
+        ShadowDrone d = new ShadowDrone(Point.fromLngLat(-3.18825, 55.9426170001), destination);
 
         var obst = App.getNoFlyZones().get(2).getPolygon();
         
@@ -218,7 +218,7 @@ public class AppTest {
         
         Point destination = Point.fromLngLat(-3.18962, 55.9426170001);
         
-        ShadowDrone d = new ShadowDrone(-3.18825, 55.9426170001, destination);
+        ShadowDrone d = new ShadowDrone(Point.fromLngLat(-3.18825, 55.9426170001), destination);
 
         var obst = App.getNoFlyZones().get(2).getPolygon();
         
@@ -236,7 +236,7 @@ public class AppTest {
         
         Point destination = Point.fromLngLat(-3.18925, 55.9426170001);
         
-        ShadowDrone d = new ShadowDrone(-3.18962, 55.9426170001, destination);
+        ShadowDrone d = new ShadowDrone(Point.fromLngLat(-3.18962, 55.9426170001), destination);
 
         var obst = App.getNoFlyZones().get(2).getPolygon();
         
@@ -254,9 +254,9 @@ public class AppTest {
         
         Point destination = Point.fromLngLat(-3.18825, 55.9426170001);
         What3WordsLocation w3w = new What3WordsLocation("a.b.c", "", "", "", "", null, destination);
-        Sensor s = new Sensor(0.0, 0.0, w3w);
+        Sensor s = new Sensor(0.0f, 0.0, w3w);
         
-        MainDrone d = new MainDrone(-3.18962, 55.9426170001, new ArrayList<Sensor>(Arrays.asList(s)));
+        MainDrone d = new MainDrone(Point.fromLngLat(-3.18962, 55.9426170001), new ArrayList<Sensor>(Arrays.asList(s)));
 
         var obst = App.getNoFlyZones().get(2).getPolygon();
         
@@ -275,9 +275,9 @@ public class AppTest {
         
         Point destination = Point.fromLngLat(-3.18962, 55.9426170001);
         What3WordsLocation w3w = new What3WordsLocation("a.b.c", "", "", "", "", null, destination);
-        Sensor s = new Sensor(0.0, 0.0, w3w);
+        Sensor s = new Sensor(0.0f, 0.0, w3w);
         
-        MainDrone d = new MainDrone(-3.18825, 55.9426170001, new ArrayList<Sensor>(Arrays.asList(s)));
+        MainDrone d = new MainDrone(Point.fromLngLat(-3.18825, 55.9426170001), new ArrayList<Sensor>(Arrays.asList(s)));
 
         var obst = App.getNoFlyZones().get(2).getPolygon();
         
@@ -296,9 +296,9 @@ public class AppTest {
         
         Point destination = Point.fromLngLat(-3.18432, 55.942618);
         What3WordsLocation w3w = new What3WordsLocation("a.b.c", "", "", "", "", null, destination);
-        Sensor s = new Sensor(0.0, 0.0, w3w);
+        Sensor s = new Sensor(0.0f, 0.0, w3w);
         
-        MainDrone d = new MainDrone(-3.19247, 55.942618, new ArrayList<Sensor>(Arrays.asList(s)));
+        MainDrone d = new MainDrone(Point.fromLngLat(-3.19247, 55.942618), new ArrayList<Sensor>(Arrays.asList(s)));
         
         System.out.println("Initial Position: " + d.getCurrentPosition());
         
@@ -316,9 +316,9 @@ public class AppTest {
         
         Point destination = Point.fromLngLat(-3.192473, 55.946233);
         What3WordsLocation w3w = new What3WordsLocation("a.b.c", "", "", "", "", null, destination);
-        Sensor s = new Sensor(0.0, 0.0, w3w);
+        Sensor s = new Sensor(0.0f, 0.0, w3w);
         
-        MainDrone d = new MainDrone(-3.19247, 55.942618, new ArrayList<Sensor>(Arrays.asList(s)));
+        MainDrone d = new MainDrone(Point.fromLngLat(-3.19247, 55.942618), new ArrayList<Sensor>(Arrays.asList(s)));
         
         System.out.println("Initial Position: " + d.getCurrentPosition());
         
@@ -336,9 +336,9 @@ public class AppTest {
         
         Point destination = Point.fromLngLat(-3.184319, 55.946233);
         What3WordsLocation w3w = new What3WordsLocation("a.b.c", "", "", "", "", null, destination);
-        Sensor s = new Sensor(0.0, 0.0, w3w);
+        Sensor s = new Sensor(0.0f, 0.0, w3w);
         
-        MainDrone d = new MainDrone(-3.19247, 55.942618, new ArrayList<Sensor>(Arrays.asList(s)));
+        MainDrone d = new MainDrone(Point.fromLngLat(-3.19247, 55.942618), new ArrayList<Sensor>(Arrays.asList(s)));
         
         System.out.println("Initial Position: " + d.getCurrentPosition());
         

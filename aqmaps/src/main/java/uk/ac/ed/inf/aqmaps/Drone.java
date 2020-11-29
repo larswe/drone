@@ -22,7 +22,7 @@ public abstract class Drone {
     /* Our drone can move at an angle of 10, 20,..., but not e.g. 26 degrees */
     protected static final double ANGLE_GRANULARITY = 10.0;
     protected static final double MOVE_DISTANCE = 0.0003;
-    protected static final double MAX_READ_DISTANCE = 0.0002;
+    protected static final double MAX_READ_DISTANCE = 0.00016;
     /* Radius of circle in which drone can land, returning to the starting point */
     protected static final double MAX_LANDING_DISTANCE = 0.0003;
     /*
@@ -31,8 +31,8 @@ public abstract class Drone {
      */
     protected static final int NUM_MOVES_TO_BE_CHECKED_TOWARDS_GOAL = 1; // TODO - figure out if only checking the next step actually leads to consistent results. Otherwise fix system
 
-    public Drone(double longitude, double latitude) {
-        this.currentPosition = Point.fromLngLat(longitude, latitude);
+    public Drone(Point startingPoint) {
+        this.currentPosition = startingPoint;
         this.stepsMade = 0;
     }
 
@@ -45,7 +45,7 @@ public abstract class Drone {
      * Requires radius that defines the max range around the destination which the
      * drone can end up in.
      */
-    public abstract boolean canGetTowardsDestinationInStraightLine(double maxFinalDistance);
+    public abstract boolean canGetTowardsDestinationInStraightLine();
 
     protected abstract void makeMove(double angle);
 
@@ -83,6 +83,103 @@ public abstract class Drone {
         return true;
     }
 
+    /*
+     * This is a sort of last resort - if a sensor is very close to a building or an
+     * edge of the confinement zone, accessing it may be very tricky, because the
+     * move distance is greater than the radius in which we can read the sensor. In
+     * this (quite literally) edge case, we will need an "in between move" to enter
+     * the radius, because flying straight at the destination will make the drone
+     * crash.
+     * 
+     * This is also relevant if we need to make a waiting move because we cannot
+     * take two sensor readings on the same step.
+     * 
+     * The idea is simple: Just try all angles! As soon as we find one that lets us
+     * enter the required range in two (or preferably only one) steps, that one will
+     * do.
+     */
+    public boolean park(double maxFinalDistance) {
+
+        var numAngles = 360 / ANGLE_GRANULARITY;
+
+        Double chosenInBetweenMoveAngle = null;
+        Double chosenParkingMoveAngle = null;
+
+        for (int i = 0; i < numAngles; i++) {
+            var angleForCandidateInBetweenMove = i * ANGLE_GRANULARITY;
+
+            /*
+             * If the in between move we would like to consider is not possible, we don't
+             * need to consider it as an option. Try the next angle without further ado!
+             */
+            if (canMove(angleForCandidateInBetweenMove)) {
+                var posAfterCandidateInBetweenMove = EuclideanUtils.getNextPosition(this.currentPosition,
+                        angleForCandidateInBetweenMove, MOVE_DISTANCE);
+
+                var shadowForSecondStep = new ShadowDrone(posAfterCandidateInBetweenMove, this.currentDestination);
+
+                //System.out.println("Distance: " + EuclideanUtils.computeDistance(shadowForSecondStep.getCurrentPosition(), currentDestination));
+                
+                /*
+                 * Maybe this random step was actually the one we needed - that would be even
+                 * better! Then we would only need one step that does not aim directly at the
+                 * destination but takes us into the relevant range.
+                 * 
+                 * Otherwise, we check if a two-move parking maneuver is possible - but only if
+                 * none has been found yet.
+                 */
+                if (shadowForSecondStep.isInRangeOfPoint(this.currentDestination, maxFinalDistance)) {
+                    this.makeMove(angleForCandidateInBetweenMove);
+                    System.out.println("Successful parking attempt in 1 move");
+                    return true;
+
+                } else if (chosenInBetweenMoveAngle == null) {
+                    var posAfterParkingAttempt = shadowForSecondStep.getNextPosTowardsGoal();
+
+                    if (EuclideanUtils.computeDistance(posAfterParkingAttempt,
+                            this.currentDestination) <= maxFinalDistance) {
+                        var parkingAttempt = new LineSegment(shadowForSecondStep.currentPosition, posAfterParkingAttempt);
+                        var parkingAngle = parkingAttempt.getAngleInDegrees();
+
+                        if (shadowForSecondStep.canMove(parkingAngle)) {
+                            chosenInBetweenMoveAngle = angleForCandidateInBetweenMove;
+                            chosenParkingMoveAngle = parkingAngle;
+                        }
+                    }
+                }
+            }
+
+            
+        }
+
+        /*
+         * If we get here, no single move was enough to bring us into the required range
+         * - but hopefully we have found a 2-step maneuver, which we now go for.
+         */
+        if (chosenInBetweenMoveAngle == null) {
+            System.out.println("The parking attempt was not successful.");
+            return false;
+        } else {
+            System.out.println(this.currentPosition);
+            System.out.println(this.currentDestination);
+            System.out.println(EuclideanUtils.computeDistance(this.currentDestination, this.currentPosition));
+            System.out.println("-");
+            this.makeMove(chosenInBetweenMoveAngle);
+            System.out.println(this.currentPosition);
+            System.out.println(this.currentDestination);
+            System.out.println(EuclideanUtils.computeDistance(this.currentDestination, this.currentPosition));
+            System.out.println("-");
+            this.makeMove(chosenParkingMoveAngle);
+            System.out.println(this.currentPosition);
+            System.out.println(this.currentDestination);
+            System.out.println(EuclideanUtils.computeDistance(this.currentDestination, this.currentPosition));
+
+            System.out.println("Successful parking attempt in 2 moves");
+            return true;
+        }
+
+    }
+    
     protected boolean isInRangeOfPoint(Point point, double radius) {
         return EuclideanUtils.computeDistance(this.currentPosition, point) <= radius;
     }
@@ -97,6 +194,13 @@ public abstract class Drone {
 
     public Polygon getObstacleInOurWay() {
         return obstacleInOurWay;
+    }
+    
+    /*
+     * This method is needed because the tour planner calls the drone's flyToCurrentDestination method
+     */
+    public static double getMaxReadDistance() {
+        return MAX_READ_DISTANCE;
     }
 
 }
