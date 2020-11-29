@@ -14350,3 +14350,1207 @@
 2020-11-29 15:43:22,789 [Worker-2836: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
 2020-11-29 15:43:22,789 [Worker-2836: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2020-11-29 15:43:22,789 [Worker-2836: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 15:49:12,830 [Worker-2838: Launching AppTest] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 15:49:12,839 [Worker-2838: Launching AppTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 15:49:12,839 [Worker-2838: Launching AppTest] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 15:49:12,839 [Worker-2838: Launching AppTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 15:49:12,839 [Worker-2838: Launching AppTest] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 15:55:30,347 [Worker-2838: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 15:55:30,348 [Worker-2838: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 15:55:30,348 [Worker-2838: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 15:55:30,348 [Worker-2838: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 15:55:30,348 [Worker-2838: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 15:55:31,482 [Worker-2846: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 15:55:31,483 [Worker-2846: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 15:55:31,483 [Worker-2846: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 15:55:31,484 [Worker-2846: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 15:55:31,484 [Worker-2846: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 15:56:58,746 [Worker-2846: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 15:56:58,747 [Worker-2846: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 15:56:58,748 [Worker-2846: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 15:56:58,748 [Worker-2846: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 15:56:58,748 [Worker-2846: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 15:57:14,865 [Worker-2850: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 15:57:14,866 [Worker-2850: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 15:57:14,867 [Worker-2850: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 15:57:14,867 [Worker-2850: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 15:57:14,867 [Worker-2850: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 15:57:56,985 [Worker-2847: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 15:57:56,987 [Worker-2847: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 15:57:56,987 [Worker-2847: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 15:57:56,987 [Worker-2847: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 15:57:56,987 [Worker-2847: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 15:58:34,873 [Worker-2847: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 15:58:34,874 [Worker-2847: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 15:58:34,874 [Worker-2847: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 15:58:34,874 [Worker-2847: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 15:58:34,874 [Worker-2847: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 15:58:43,935 [Worker-2847: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 15:58:43,937 [Worker-2847: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 15:58:43,937 [Worker-2847: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 15:58:43,937 [Worker-2847: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 15:58:43,937 [Worker-2847: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 15:58:53,479 [Worker-2838: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 15:58:53,480 [Worker-2838: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 15:58:53,480 [Worker-2838: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 15:58:53,480 [Worker-2838: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 15:58:53,480 [Worker-2838: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 15:59:50,155 [Worker-2838: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 15:59:50,156 [Worker-2838: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 15:59:50,157 [Worker-2838: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 15:59:50,157 [Worker-2838: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 15:59:50,157 [Worker-2838: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 16:00:11,154 [Worker-2848: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 16:00:11,156 [Worker-2848: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:00:11,157 [Worker-2848: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 16:00:11,157 [Worker-2848: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:00:11,157 [Worker-2848: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 16:00:16,269 [Worker-2847: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 16:00:16,270 [Worker-2847: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:00:16,270 [Worker-2847: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 16:00:16,271 [Worker-2847: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:00:16,271 [Worker-2847: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 16:00:33,415 [Worker-2847: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 16:00:33,416 [Worker-2847: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:00:33,416 [Worker-2847: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 16:00:33,416 [Worker-2847: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:00:33,416 [Worker-2847: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 16:01:35,624 [Worker-2848: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 16:01:35,625 [Worker-2848: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:01:35,626 [Worker-2848: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 16:01:35,626 [Worker-2848: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:01:35,626 [Worker-2848: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 16:03:10,858 [Worker-2838: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 16:03:10,859 [Worker-2838: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:03:10,860 [Worker-2838: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 16:03:10,860 [Worker-2838: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:03:10,860 [Worker-2838: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 16:07:22,121 [Worker-2853: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 16:07:22,123 [Worker-2853: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:07:22,123 [Worker-2853: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 16:07:22,123 [Worker-2853: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:07:22,123 [Worker-2853: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 16:07:41,854 [Worker-2852: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 16:07:41,856 [Worker-2852: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:07:41,856 [Worker-2852: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 16:07:41,856 [Worker-2852: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:07:41,856 [Worker-2852: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 16:07:51,768 [Worker-2855: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 16:07:51,769 [Worker-2855: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:07:51,769 [Worker-2855: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 16:07:51,770 [Worker-2855: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:07:51,770 [Worker-2855: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 16:07:59,165 [Worker-2854: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 16:07:59,166 [Worker-2854: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:07:59,167 [Worker-2854: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 16:07:59,167 [Worker-2854: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:07:59,167 [Worker-2854: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 16:08:14,440 [Worker-2853: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 16:08:14,441 [Worker-2853: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:08:14,441 [Worker-2853: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 16:08:14,442 [Worker-2853: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:08:14,442 [Worker-2853: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 16:13:27,980 [Worker-2851: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 16:13:27,982 [Worker-2851: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:13:27,982 [Worker-2851: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 16:13:27,982 [Worker-2851: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:13:27,982 [Worker-2851: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 16:13:28,991 [Worker-2853: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 16:13:28,992 [Worker-2853: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:13:28,993 [Worker-2853: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 16:13:28,993 [Worker-2853: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:13:28,993 [Worker-2853: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 16:13:37,575 [Worker-2851: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 16:13:37,576 [Worker-2851: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:13:37,577 [Worker-2851: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 16:13:37,577 [Worker-2851: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:13:37,577 [Worker-2851: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 16:13:47,356 [Worker-2853: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 16:13:47,357 [Worker-2853: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:13:47,357 [Worker-2853: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 16:13:47,357 [Worker-2853: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:13:47,358 [Worker-2853: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 16:18:41,067 [Worker-2861: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 16:18:41,069 [Worker-2861: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:18:41,069 [Worker-2861: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 16:18:41,069 [Worker-2861: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:18:41,069 [Worker-2861: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 16:18:42,077 [Worker-2857: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 16:18:42,079 [Worker-2857: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:18:42,079 [Worker-2857: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 16:18:42,079 [Worker-2857: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:18:42,080 [Worker-2857: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 16:18:49,432 [Worker-2851: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 16:18:49,433 [Worker-2851: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:18:49,433 [Worker-2851: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 16:18:49,434 [Worker-2851: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:18:49,434 [Worker-2851: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 16:19:33,144 [Worker-2859: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 16:19:33,145 [Worker-2859: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:19:33,145 [Worker-2859: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 16:19:33,145 [Worker-2859: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:19:33,145 [Worker-2859: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 16:24:37,134 [Worker-2867: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 16:24:37,135 [Worker-2867: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:24:37,135 [Worker-2867: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 16:24:37,135 [Worker-2867: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:24:37,136 [Worker-2867: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 16:25:12,365 [Worker-2866: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 16:25:12,367 [Worker-2866: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:25:12,367 [Worker-2866: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 16:25:12,367 [Worker-2866: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:25:12,367 [Worker-2866: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 16:25:17,092 [Worker-2866: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 16:25:17,093 [Worker-2866: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:25:17,093 [Worker-2866: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 16:25:17,093 [Worker-2866: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:25:17,093 [Worker-2866: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 16:27:18,340 [Worker-2871: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 16:27:18,341 [Worker-2871: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:27:18,342 [Worker-2871: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 16:27:18,342 [Worker-2871: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:27:18,342 [Worker-2871: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 16:28:04,729 [Worker-2871: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 16:28:04,731 [Worker-2871: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:28:04,731 [Worker-2871: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 16:28:04,731 [Worker-2871: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:28:04,731 [Worker-2871: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 16:46:55,733 [Worker-2882: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 16:46:55,734 [Worker-2882: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:46:55,734 [Worker-2882: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 16:46:55,735 [Worker-2882: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:46:55,735 [Worker-2882: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 16:47:02,369 [Worker-2884: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 16:47:02,371 [Worker-2884: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:47:02,371 [Worker-2884: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 16:47:02,371 [Worker-2884: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:47:02,371 [Worker-2884: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 16:47:08,871 [Worker-2887: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 16:47:08,873 [Worker-2887: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:47:08,873 [Worker-2887: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 16:47:08,873 [Worker-2887: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:47:08,873 [Worker-2887: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 16:47:21,093 [Worker-2887: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 16:47:21,094 [Worker-2887: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:47:21,094 [Worker-2887: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 16:47:21,094 [Worker-2887: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:47:21,094 [Worker-2887: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 16:47:30,149 [Worker-2886: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 16:47:30,150 [Worker-2886: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:47:30,150 [Worker-2886: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 16:47:30,151 [Worker-2886: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:47:30,151 [Worker-2886: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 16:47:42,696 [Worker-2885: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 16:47:42,697 [Worker-2885: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:47:42,698 [Worker-2885: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 16:47:42,698 [Worker-2885: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:47:42,698 [Worker-2885: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 16:52:13,611 [Worker-2892: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 16:52:13,613 [Worker-2892: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:52:13,613 [Worker-2892: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 16:52:13,613 [Worker-2892: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:52:13,613 [Worker-2892: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 16:53:53,965 [Worker-2892: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 16:53:53,967 [Worker-2892: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:53:53,967 [Worker-2892: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 16:53:53,967 [Worker-2892: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:53:53,967 [Worker-2892: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 16:54:07,523 [Worker-2886: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 16:54:07,525 [Worker-2886: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:54:07,525 [Worker-2886: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 16:54:07,525 [Worker-2886: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:54:07,525 [Worker-2886: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 16:54:15,121 [Worker-2893: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 16:54:15,122 [Worker-2893: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:54:15,122 [Worker-2893: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 16:54:15,122 [Worker-2893: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:54:15,122 [Worker-2893: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 16:54:39,093 [Worker-2887: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 16:54:39,095 [Worker-2887: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:54:39,095 [Worker-2887: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 16:54:39,095 [Worker-2887: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:54:39,095 [Worker-2887: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 16:55:12,613 [Worker-2891: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 16:55:12,614 [Worker-2891: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:55:12,614 [Worker-2891: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 16:55:12,614 [Worker-2891: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:55:12,614 [Worker-2891: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 16:55:20,942 [Worker-2894: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 16:55:20,944 [Worker-2894: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:55:20,944 [Worker-2894: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 16:55:20,944 [Worker-2894: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:55:20,944 [Worker-2894: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 16:55:37,797 [Worker-2887: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 16:55:37,799 [Worker-2887: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:55:37,799 [Worker-2887: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 16:55:37,799 [Worker-2887: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:55:37,799 [Worker-2887: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 16:55:44,204 [Worker-2892: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 16:55:44,205 [Worker-2892: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:55:44,205 [Worker-2892: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 16:55:44,205 [Worker-2892: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:55:44,205 [Worker-2892: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 16:56:19,502 [Worker-2894: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 16:56:19,503 [Worker-2894: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:56:19,503 [Worker-2894: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 16:56:19,503 [Worker-2894: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:56:19,503 [Worker-2894: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 16:56:21,867 [Worker-2892: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 16:56:21,869 [Worker-2892: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:56:21,869 [Worker-2892: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 16:56:21,869 [Worker-2892: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:56:21,869 [Worker-2892: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 16:57:55,192 [Worker-2887: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 16:57:55,193 [Worker-2887: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:57:55,193 [Worker-2887: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 16:57:55,194 [Worker-2887: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:57:55,194 [Worker-2887: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 16:57:57,877 [Worker-2892: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 16:57:57,878 [Worker-2892: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:57:57,878 [Worker-2892: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 16:57:57,878 [Worker-2892: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:57:57,878 [Worker-2892: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 16:58:31,016 [Worker-2887: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 16:58:31,017 [Worker-2887: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:58:31,017 [Worker-2887: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 16:58:31,018 [Worker-2887: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:58:31,018 [Worker-2887: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 16:59:21,269 [Worker-2887: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 16:59:21,271 [Worker-2887: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:59:21,271 [Worker-2887: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 16:59:21,271 [Worker-2887: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 16:59:21,271 [Worker-2887: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 17:00:00,207 [Worker-2892: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 17:00:00,208 [Worker-2892: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:00:00,208 [Worker-2892: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 17:00:00,209 [Worker-2892: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:00:00,209 [Worker-2892: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 17:00:31,260 [Worker-2894: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 17:00:31,261 [Worker-2894: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:00:31,261 [Worker-2894: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 17:00:31,262 [Worker-2894: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:00:31,262 [Worker-2894: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 17:01:24,137 [Worker-2892: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 17:01:24,138 [Worker-2892: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:01:24,138 [Worker-2892: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 17:01:24,139 [Worker-2892: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:01:24,139 [Worker-2892: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 17:02:30,836 [Worker-2891: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 17:02:30,837 [Worker-2891: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:02:30,837 [Worker-2891: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 17:02:30,838 [Worker-2891: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:02:30,838 [Worker-2891: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 17:02:36,501 [Worker-2893: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 17:02:36,502 [Worker-2893: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:02:36,503 [Worker-2893: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 17:02:36,503 [Worker-2893: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:02:36,503 [Worker-2893: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 17:03:03,766 [Worker-2895: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 17:03:03,768 [Worker-2895: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:03:03,768 [Worker-2895: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 17:03:03,768 [Worker-2895: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:03:03,768 [Worker-2895: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 17:03:11,597 [Worker-2892: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 17:03:11,598 [Worker-2892: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:03:11,598 [Worker-2892: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 17:03:11,599 [Worker-2892: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:03:11,599 [Worker-2892: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 17:03:34,241 [Worker-2892: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 17:03:34,243 [Worker-2892: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:03:34,243 [Worker-2892: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 17:03:34,243 [Worker-2892: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:03:34,243 [Worker-2892: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 17:03:35,314 [Worker-2887: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 17:03:35,318 [Worker-2887: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:03:35,319 [Worker-2887: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 17:03:35,319 [Worker-2887: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:03:35,319 [Worker-2887: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 17:03:57,861 [Worker-2892: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 17:03:57,862 [Worker-2892: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:03:57,862 [Worker-2892: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 17:03:57,863 [Worker-2892: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:03:57,863 [Worker-2892: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 17:04:04,665 [Worker-2891: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 17:04:04,666 [Worker-2891: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:04:04,666 [Worker-2891: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 17:04:04,666 [Worker-2891: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:04:04,666 [Worker-2891: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 17:04:38,488 [Worker-2895: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 17:04:38,489 [Worker-2895: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:04:38,489 [Worker-2895: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 17:04:38,490 [Worker-2895: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:04:38,490 [Worker-2895: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 17:04:43,958 [Worker-2887: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 17:04:43,959 [Worker-2887: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:04:43,960 [Worker-2887: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 17:04:43,960 [Worker-2887: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:04:43,960 [Worker-2887: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 17:04:48,333 [Worker-2892: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 17:04:48,334 [Worker-2892: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:04:48,334 [Worker-2892: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 17:04:48,334 [Worker-2892: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:04:48,334 [Worker-2892: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 17:05:07,604 [Worker-2895: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 17:05:07,605 [Worker-2895: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:05:07,606 [Worker-2895: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 17:05:07,606 [Worker-2895: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:05:07,606 [Worker-2895: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 17:05:08,893 [Worker-2895: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 17:05:08,894 [Worker-2895: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:05:08,894 [Worker-2895: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 17:05:08,895 [Worker-2895: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:05:08,895 [Worker-2895: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 17:05:27,542 [Worker-2896: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 17:05:27,543 [Worker-2896: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:05:27,543 [Worker-2896: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 17:05:27,544 [Worker-2896: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:05:27,544 [Worker-2896: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 17:51:43,525 [Worker-2908: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 17:51:43,528 [Worker-2908: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:51:43,529 [Worker-2908: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 17:51:43,529 [Worker-2908: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:51:43,529 [Worker-2908: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 17:51:52,007 [Worker-2914: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 17:51:52,008 [Worker-2914: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:51:52,009 [Worker-2914: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 17:51:52,009 [Worker-2914: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:51:52,009 [Worker-2914: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 17:52:38,270 [Worker-2912: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 17:52:38,271 [Worker-2912: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:52:38,271 [Worker-2912: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 17:52:38,272 [Worker-2912: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:52:38,272 [Worker-2912: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 17:54:08,211 [Worker-2908: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 17:54:08,213 [Worker-2908: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:54:08,213 [Worker-2908: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 17:54:08,213 [Worker-2908: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:54:08,213 [Worker-2908: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 17:54:28,528 [Worker-2916: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 17:54:28,529 [Worker-2916: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:54:28,529 [Worker-2916: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 17:54:28,529 [Worker-2916: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:54:28,530 [Worker-2916: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 17:54:32,483 [Worker-2916: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 17:54:32,484 [Worker-2916: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:54:32,485 [Worker-2916: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 17:54:32,485 [Worker-2916: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:54:32,485 [Worker-2916: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 17:54:56,388 [Worker-2908: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 17:54:56,390 [Worker-2908: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:54:56,390 [Worker-2908: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 17:54:56,390 [Worker-2908: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:54:56,390 [Worker-2908: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 17:55:52,176 [Worker-2911: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 17:55:52,178 [Worker-2911: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:55:52,178 [Worker-2911: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 17:55:52,178 [Worker-2911: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:55:52,178 [Worker-2911: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 17:56:17,168 [Worker-2915: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 17:56:17,169 [Worker-2915: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:56:17,170 [Worker-2915: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 17:56:17,170 [Worker-2915: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:56:17,170 [Worker-2915: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 17:57:29,335 [Worker-2914: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 17:57:29,336 [Worker-2914: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:57:29,336 [Worker-2914: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 17:57:29,336 [Worker-2914: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:57:29,336 [Worker-2914: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 17:59:02,328 [Worker-2917: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 17:59:02,330 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:59:02,330 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 17:59:02,330 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 17:59:02,330 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:02:23,107 [Worker-2918: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:02:23,108 [Worker-2918: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:02:23,108 [Worker-2918: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:02:23,109 [Worker-2918: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:02:23,109 [Worker-2918: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:02:47,346 [Worker-2917: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:02:47,347 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:02:47,347 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:02:47,347 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:02:47,347 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:03:01,651 [Worker-2919: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:03:01,653 [Worker-2919: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:03:01,653 [Worker-2919: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:03:01,653 [Worker-2919: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:03:01,653 [Worker-2919: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:03:32,884 [Worker-2918: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:03:32,885 [Worker-2918: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:03:32,885 [Worker-2918: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:03:32,885 [Worker-2918: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:03:32,885 [Worker-2918: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:03:46,725 [Worker-2917: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:03:46,726 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:03:46,726 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:03:46,727 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:03:46,727 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:03:57,563 [Worker-2917: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:03:57,564 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:03:57,564 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:03:57,564 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:03:57,564 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:04:37,673 [Worker-2917: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:04:37,675 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:04:37,675 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:04:37,675 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:04:37,675 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:04:53,700 [Worker-2917: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:04:53,701 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:04:53,701 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:04:53,702 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:04:53,702 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:05:18,170 [Worker-2920: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:05:18,171 [Worker-2920: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:05:18,171 [Worker-2920: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:05:18,171 [Worker-2920: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:05:18,171 [Worker-2920: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:05:40,362 [Worker-2917: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:05:40,363 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:05:40,363 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:05:40,364 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:05:40,364 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:06:28,535 [Worker-2919: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:06:28,536 [Worker-2919: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:06:28,536 [Worker-2919: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:06:28,537 [Worker-2919: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:06:28,537 [Worker-2919: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:07:22,480 [Worker-2917: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:07:22,481 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:07:22,481 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:07:22,482 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:07:22,482 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:07:44,649 [Worker-2920: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:07:44,650 [Worker-2920: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:07:44,651 [Worker-2920: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:07:44,651 [Worker-2920: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:07:44,651 [Worker-2920: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:07:53,099 [Worker-2918: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:07:53,099 [Worker-2918: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:07:53,099 [Worker-2918: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:07:53,100 [Worker-2918: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:07:53,100 [Worker-2918: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:08:07,155 [Worker-2917: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:08:07,156 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:08:07,156 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:08:07,157 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:08:07,157 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:08:14,558 [Worker-2917: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:08:14,559 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:08:14,559 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:08:14,559 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:08:14,559 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:08:23,745 [Worker-2918: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:08:23,747 [Worker-2918: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:08:23,747 [Worker-2918: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:08:23,747 [Worker-2918: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:08:23,748 [Worker-2918: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:08:58,981 [Worker-2919: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:08:58,982 [Worker-2919: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:08:58,982 [Worker-2919: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:08:58,983 [Worker-2919: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:08:58,983 [Worker-2919: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:09:05,605 [Worker-2919: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:09:05,606 [Worker-2919: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:09:05,606 [Worker-2919: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:09:05,606 [Worker-2919: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:09:05,606 [Worker-2919: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:09:45,951 [Worker-2921: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:09:45,952 [Worker-2921: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:09:45,952 [Worker-2921: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:09:45,952 [Worker-2921: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:09:45,952 [Worker-2921: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:09:54,854 [Worker-2918: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:09:54,855 [Worker-2918: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:09:54,856 [Worker-2918: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:09:54,856 [Worker-2918: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:09:54,856 [Worker-2918: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:10:08,284 [Worker-2921: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:10:08,285 [Worker-2921: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:10:08,285 [Worker-2921: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:10:08,285 [Worker-2921: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:10:08,286 [Worker-2921: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:10:24,543 [Worker-2919: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:10:24,545 [Worker-2919: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:10:24,545 [Worker-2919: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:10:24,545 [Worker-2919: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:10:24,545 [Worker-2919: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:11:49,752 [Worker-2917: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:11:49,754 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:11:49,754 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:11:49,754 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:11:49,754 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:11:57,932 [Worker-2917: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:11:57,933 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:11:57,933 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:11:57,933 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:11:57,934 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:12:07,113 [Worker-2918: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:12:07,115 [Worker-2918: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:12:07,115 [Worker-2918: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:12:07,115 [Worker-2918: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:12:07,115 [Worker-2918: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:12:24,969 [Worker-2920: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:12:24,971 [Worker-2920: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:12:24,971 [Worker-2920: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:12:24,971 [Worker-2920: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:12:24,971 [Worker-2920: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:12:29,528 [Worker-2920: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:12:29,529 [Worker-2920: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:12:29,530 [Worker-2920: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:12:29,530 [Worker-2920: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:12:29,530 [Worker-2920: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:15:01,385 [Worker-2920: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:15:01,387 [Worker-2920: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:15:01,387 [Worker-2920: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:15:01,387 [Worker-2920: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:15:01,387 [Worker-2920: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:15:22,859 [Worker-2921: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:15:22,861 [Worker-2921: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:15:22,861 [Worker-2921: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:15:22,861 [Worker-2921: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:15:22,861 [Worker-2921: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:15:49,231 [Worker-2920: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:15:49,232 [Worker-2920: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:15:49,232 [Worker-2920: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:15:49,232 [Worker-2920: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:15:49,233 [Worker-2920: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:16:07,317 [Worker-2921: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:16:07,318 [Worker-2921: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:16:07,318 [Worker-2921: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:16:07,319 [Worker-2921: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:16:07,319 [Worker-2921: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:16:15,154 [Worker-2919: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:16:15,156 [Worker-2919: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:16:15,156 [Worker-2919: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:16:15,156 [Worker-2919: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:16:15,156 [Worker-2919: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:16:21,124 [Worker-2919: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:16:21,125 [Worker-2919: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:16:21,125 [Worker-2919: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:16:21,125 [Worker-2919: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:16:21,126 [Worker-2919: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:16:25,687 [Worker-2918: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:16:25,689 [Worker-2918: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:16:25,689 [Worker-2918: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:16:25,689 [Worker-2918: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:16:25,689 [Worker-2918: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:16:36,567 [Worker-2919: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:16:36,568 [Worker-2919: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:16:36,569 [Worker-2919: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:16:36,569 [Worker-2919: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:16:36,569 [Worker-2919: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:17:03,323 [Worker-2917: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:17:03,324 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:17:03,324 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:17:03,325 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:17:03,325 [Worker-2917: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:17:11,946 [Worker-2921: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:17:11,947 [Worker-2921: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:17:11,947 [Worker-2921: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:17:11,947 [Worker-2921: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:17:11,947 [Worker-2921: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:17:18,713 [Worker-2918: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:17:18,715 [Worker-2918: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:17:18,715 [Worker-2918: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:17:18,715 [Worker-2918: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:17:18,715 [Worker-2918: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:17:31,851 [Worker-2918: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:17:31,853 [Worker-2918: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:17:31,853 [Worker-2918: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:17:31,853 [Worker-2918: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:17:31,853 [Worker-2918: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:18:09,948 [Worker-2918: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:18:09,949 [Worker-2918: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:18:09,950 [Worker-2918: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:18:09,950 [Worker-2918: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:18:09,950 [Worker-2918: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:18:26,978 [Worker-2919: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:18:26,979 [Worker-2919: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:18:26,979 [Worker-2919: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:18:26,979 [Worker-2919: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:18:26,979 [Worker-2919: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:19:48,923 [Worker-2918: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:19:48,925 [Worker-2918: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:19:48,925 [Worker-2918: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:19:48,925 [Worker-2918: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:19:48,925 [Worker-2918: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:19:57,096 [Worker-2920: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:19:57,097 [Worker-2920: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:19:57,098 [Worker-2920: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:19:57,098 [Worker-2920: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:19:57,098 [Worker-2920: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:21:48,116 [Worker-2921: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:21:48,117 [Worker-2921: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:21:48,117 [Worker-2921: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:21:48,118 [Worker-2921: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:21:48,118 [Worker-2921: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:21:59,084 [Worker-2921: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:21:59,085 [Worker-2921: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:21:59,085 [Worker-2921: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:21:59,085 [Worker-2921: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:21:59,085 [Worker-2921: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:23:09,324 [Worker-2919: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:23:09,326 [Worker-2919: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:23:09,326 [Worker-2919: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:23:09,326 [Worker-2919: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:23:09,326 [Worker-2919: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:25:34,143 [Worker-2920: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:25:34,144 [Worker-2920: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:25:34,145 [Worker-2920: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:25:34,145 [Worker-2920: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:25:34,145 [Worker-2920: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:25:40,530 [Worker-2923: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:25:40,531 [Worker-2923: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:25:40,532 [Worker-2923: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:25:40,532 [Worker-2923: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:25:40,532 [Worker-2923: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:25:47,152 [Worker-2921: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:25:47,154 [Worker-2921: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:25:47,154 [Worker-2921: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:25:47,154 [Worker-2921: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:25:47,154 [Worker-2921: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:25:58,086 [Worker-2920: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:25:58,087 [Worker-2920: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:25:58,087 [Worker-2920: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:25:58,088 [Worker-2920: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:25:58,088 [Worker-2920: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:26:06,194 [Worker-2923: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:26:06,196 [Worker-2923: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:26:06,196 [Worker-2923: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:26:06,196 [Worker-2923: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:26:06,196 [Worker-2923: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:26:12,149 [Worker-2924: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:26:12,151 [Worker-2924: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:26:12,151 [Worker-2924: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:26:12,151 [Worker-2924: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:26:12,151 [Worker-2924: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:28:11,728 [Worker-2923: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:28:11,730 [Worker-2923: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:28:11,730 [Worker-2923: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:28:11,730 [Worker-2923: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:28:11,730 [Worker-2923: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:28:41,168 [Worker-2924: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:28:41,169 [Worker-2924: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:28:41,169 [Worker-2924: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:28:41,170 [Worker-2924: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:28:41,170 [Worker-2924: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:29:01,547 [Worker-2925: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:29:01,549 [Worker-2925: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:29:01,549 [Worker-2925: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:29:01,550 [Worker-2925: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:29:01,550 [Worker-2925: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:30:19,694 [Worker-2925: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:30:19,695 [Worker-2925: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:30:19,696 [Worker-2925: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:30:19,696 [Worker-2925: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:30:19,696 [Worker-2925: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:31:25,035 [Worker-2921: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:31:25,036 [Worker-2921: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:31:25,036 [Worker-2921: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:31:25,036 [Worker-2921: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:31:25,036 [Worker-2921: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:33:07,924 [Worker-2927: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:33:07,926 [Worker-2927: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:33:07,926 [Worker-2927: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:33:07,926 [Worker-2927: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:33:07,926 [Worker-2927: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:33:33,400 [Worker-2925: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:33:33,401 [Worker-2925: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:33:33,401 [Worker-2925: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:33:33,402 [Worker-2925: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:33:33,402 [Worker-2925: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:33:42,044 [Worker-2925: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:33:42,045 [Worker-2925: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:33:42,045 [Worker-2925: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:33:42,046 [Worker-2925: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:33:42,046 [Worker-2925: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:34:02,464 [Worker-2927: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:34:02,466 [Worker-2927: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:34:02,466 [Worker-2927: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:34:02,466 [Worker-2927: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:34:02,466 [Worker-2927: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:34:16,144 [Worker-2926: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:34:16,145 [Worker-2926: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:34:16,145 [Worker-2926: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:34:16,145 [Worker-2926: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:34:16,145 [Worker-2926: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:34:29,045 [Worker-2928: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:34:29,047 [Worker-2928: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:34:29,047 [Worker-2928: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:34:29,047 [Worker-2928: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:34:29,047 [Worker-2928: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:34:44,313 [Worker-2927: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:34:44,315 [Worker-2927: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:34:44,315 [Worker-2927: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:34:44,315 [Worker-2927: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:34:44,315 [Worker-2927: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:34:57,141 [Worker-2928: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:34:57,142 [Worker-2928: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:34:57,143 [Worker-2928: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:34:57,143 [Worker-2928: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:34:57,143 [Worker-2928: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:35:02,816 [Worker-2921: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:35:02,817 [Worker-2921: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:35:02,817 [Worker-2921: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:35:02,818 [Worker-2921: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:35:02,818 [Worker-2921: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:35:28,578 [Worker-2927: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:35:28,579 [Worker-2927: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:35:28,580 [Worker-2927: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:35:28,580 [Worker-2927: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:35:28,580 [Worker-2927: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:35:59,512 [Worker-2929: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:35:59,514 [Worker-2929: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:35:59,514 [Worker-2929: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:35:59,514 [Worker-2929: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:35:59,514 [Worker-2929: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:36:58,340 [Worker-2921: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:36:58,341 [Worker-2921: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:36:58,341 [Worker-2921: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:36:58,342 [Worker-2921: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:36:58,342 [Worker-2921: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:37:38,093 [Worker-2926: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:37:38,094 [Worker-2926: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:37:38,094 [Worker-2926: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:37:38,094 [Worker-2926: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:37:38,094 [Worker-2926: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:37:59,031 [Worker-2926: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:37:59,032 [Worker-2926: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:37:59,033 [Worker-2926: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:37:59,033 [Worker-2926: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:37:59,033 [Worker-2926: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:38:34,499 [Worker-2926: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:38:34,500 [Worker-2926: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:38:34,500 [Worker-2926: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:38:34,500 [Worker-2926: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:38:34,500 [Worker-2926: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:39:06,857 [Worker-2927: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:39:06,858 [Worker-2927: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:39:06,858 [Worker-2927: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:39:06,858 [Worker-2927: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:39:06,858 [Worker-2927: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:39:19,324 [Worker-2925: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:39:19,326 [Worker-2925: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:39:19,326 [Worker-2925: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:39:19,326 [Worker-2925: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:39:19,326 [Worker-2925: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:39:33,688 [Worker-2927: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:39:33,689 [Worker-2927: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:39:33,689 [Worker-2927: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:39:33,689 [Worker-2927: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:39:33,689 [Worker-2927: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:39:53,782 [Worker-2925: Launching App (1)] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:39:53,784 [Worker-2925: Launching App (1)] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:39:53,784 [Worker-2925: Launching App (1)] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:39:53,784 [Worker-2925: Launching App (1)] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:39:53,784 [Worker-2925: Launching App (1)] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 18:52:11,015 [Worker-2926: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 18:52:11,017 [Worker-2926: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:52:11,017 [Worker-2926: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 18:52:11,017 [Worker-2926: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 18:52:11,017 [Worker-2926: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 20:13:46,767 [Worker-2959: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 20:13:46,770 [Worker-2959: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 20:13:46,770 [Worker-2959: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 20:13:46,771 [Worker-2959: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 20:13:46,771 [Worker-2959: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 20:13:56,907 [Worker-2965: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 20:13:56,909 [Worker-2965: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 20:13:56,909 [Worker-2965: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 20:13:56,910 [Worker-2965: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 20:13:56,910 [Worker-2965: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 20:14:24,291 [Worker-2965: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 20:14:24,292 [Worker-2965: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 20:14:24,292 [Worker-2965: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 20:14:24,293 [Worker-2965: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 20:14:24,293 [Worker-2965: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 20:14:57,183 [Worker-2965: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 20:14:57,184 [Worker-2965: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 20:14:57,185 [Worker-2965: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 20:14:57,185 [Worker-2965: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 20:14:57,185 [Worker-2965: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 20:16:15,690 [Worker-2967: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 20:16:15,691 [Worker-2967: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 20:16:15,691 [Worker-2967: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 20:16:15,692 [Worker-2967: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 20:16:15,692 [Worker-2967: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 21:31:36,203 [Worker-2975: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 21:31:36,207 [Worker-2975: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:31:36,207 [Worker-2975: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 21:31:36,207 [Worker-2975: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:31:36,207 [Worker-2975: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 21:31:37,218 [Worker-2972: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 21:31:37,223 [Worker-2972: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:31:37,223 [Worker-2972: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 21:31:37,223 [Worker-2972: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:31:37,223 [Worker-2972: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 21:31:54,110 [Worker-2974: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 21:31:54,111 [Worker-2974: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:31:54,111 [Worker-2974: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 21:31:54,111 [Worker-2974: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:31:54,111 [Worker-2974: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 21:32:45,164 [Worker-2975: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 21:32:45,165 [Worker-2975: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:32:45,165 [Worker-2975: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 21:32:45,165 [Worker-2975: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:32:45,165 [Worker-2975: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 21:32:52,103 [Worker-2975: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 21:32:52,104 [Worker-2975: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:32:52,104 [Worker-2975: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 21:32:52,105 [Worker-2975: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:32:52,105 [Worker-2975: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 21:32:55,434 [Worker-2977: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 21:32:55,435 [Worker-2977: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:32:55,435 [Worker-2977: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 21:32:55,435 [Worker-2977: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:32:55,435 [Worker-2977: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 21:32:58,635 [Worker-2976: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 21:32:58,637 [Worker-2976: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:32:58,637 [Worker-2976: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 21:32:58,638 [Worker-2976: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:32:58,638 [Worker-2976: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 21:33:02,041 [Worker-2977: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 21:33:02,043 [Worker-2977: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:33:02,043 [Worker-2977: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 21:33:02,044 [Worker-2977: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:33:02,044 [Worker-2977: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 21:33:08,453 [Worker-2980: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 21:33:08,455 [Worker-2980: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:33:08,455 [Worker-2980: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 21:33:08,455 [Worker-2980: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:33:08,455 [Worker-2980: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 21:33:23,203 [Worker-2979: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 21:33:23,204 [Worker-2979: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:33:23,204 [Worker-2979: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 21:33:23,205 [Worker-2979: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:33:23,205 [Worker-2979: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 21:33:29,256 [Worker-2981: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 21:33:29,258 [Worker-2981: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:33:29,258 [Worker-2981: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 21:33:29,258 [Worker-2981: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:33:29,258 [Worker-2981: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 21:33:46,789 [Worker-2974: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 21:33:46,791 [Worker-2974: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:33:46,791 [Worker-2974: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 21:33:46,791 [Worker-2974: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:33:46,791 [Worker-2974: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 21:33:53,810 [Worker-2977: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 21:33:53,811 [Worker-2977: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:33:53,811 [Worker-2977: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 21:33:53,812 [Worker-2977: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:33:53,812 [Worker-2977: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 21:34:11,367 [Worker-2977: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 21:34:11,368 [Worker-2977: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:34:11,368 [Worker-2977: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 21:34:11,369 [Worker-2977: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:34:11,369 [Worker-2977: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 21:34:22,528 [Worker-2981: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 21:34:22,529 [Worker-2981: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:34:22,529 [Worker-2981: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 21:34:22,529 [Worker-2981: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:34:22,530 [Worker-2981: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 21:34:26,589 [Worker-2981: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 21:34:26,592 [Worker-2981: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:34:26,592 [Worker-2981: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 21:34:26,593 [Worker-2981: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:34:26,593 [Worker-2981: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 21:34:46,524 [Worker-2981: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 21:34:46,525 [Worker-2981: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:34:46,525 [Worker-2981: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 21:34:46,525 [Worker-2981: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:34:46,525 [Worker-2981: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 21:34:51,075 [Worker-2977: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 21:34:51,076 [Worker-2977: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:34:51,076 [Worker-2977: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 21:34:51,077 [Worker-2977: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:34:51,077 [Worker-2977: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 21:34:55,226 [Worker-2980: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 21:34:55,227 [Worker-2980: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:34:55,227 [Worker-2980: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 21:34:55,227 [Worker-2980: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:34:55,227 [Worker-2980: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 21:35:05,325 [Worker-2975: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 21:35:05,327 [Worker-2975: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:35:05,327 [Worker-2975: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 21:35:05,327 [Worker-2975: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:35:05,327 [Worker-2975: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 21:35:09,825 [Worker-2972: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 21:35:09,827 [Worker-2972: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:35:09,827 [Worker-2972: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 21:35:09,828 [Worker-2972: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:35:09,828 [Worker-2972: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 21:36:30,037 [Worker-2977: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 21:36:30,039 [Worker-2977: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:36:30,039 [Worker-2977: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 21:36:30,040 [Worker-2977: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:36:30,040 [Worker-2977: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 21:36:35,188 [Worker-2974: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 21:36:35,189 [Worker-2974: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:36:35,189 [Worker-2974: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 21:36:35,189 [Worker-2974: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:36:35,189 [Worker-2974: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 21:36:39,406 [Worker-2985: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 21:36:39,407 [Worker-2985: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:36:39,407 [Worker-2985: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 21:36:39,408 [Worker-2985: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:36:39,408 [Worker-2985: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 21:37:25,077 [Worker-2983: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 21:37:25,079 [Worker-2983: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:37:25,079 [Worker-2983: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 21:37:25,079 [Worker-2983: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:37:25,079 [Worker-2983: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 21:37:42,824 [Worker-2974: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 21:37:42,826 [Worker-2974: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:37:42,826 [Worker-2974: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 21:37:42,826 [Worker-2974: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:37:42,826 [Worker-2974: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 21:37:51,080 [Worker-2982: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 21:37:51,081 [Worker-2982: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:37:51,081 [Worker-2982: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 21:37:51,081 [Worker-2982: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:37:51,081 [Worker-2982: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 21:39:08,312 [Worker-2985: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 21:39:08,313 [Worker-2985: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:39:08,313 [Worker-2985: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 21:39:08,313 [Worker-2985: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:39:08,313 [Worker-2985: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 21:39:17,457 [Worker-2985: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 21:39:17,458 [Worker-2985: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:39:17,458 [Worker-2985: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 21:39:17,458 [Worker-2985: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:39:17,458 [Worker-2985: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 21:41:40,843 [Worker-2986: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 21:41:40,845 [Worker-2986: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:41:40,845 [Worker-2986: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 21:41:40,845 [Worker-2986: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:41:40,845 [Worker-2986: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 21:43:10,566 [Worker-2989: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 21:43:10,567 [Worker-2989: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:43:10,568 [Worker-2989: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 21:43:10,568 [Worker-2989: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:43:10,568 [Worker-2989: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 21:43:25,749 [Worker-2989: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 21:43:25,750 [Worker-2989: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:43:25,750 [Worker-2989: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 21:43:25,750 [Worker-2989: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:43:25,750 [Worker-2989: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 21:43:48,624 [Worker-2987: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 21:43:48,625 [Worker-2987: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:43:48,625 [Worker-2987: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 21:43:48,626 [Worker-2987: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:43:48,626 [Worker-2987: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 21:43:54,345 [Worker-2989: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 21:43:54,347 [Worker-2989: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:43:54,347 [Worker-2989: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 21:43:54,347 [Worker-2989: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:43:54,347 [Worker-2989: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 21:44:36,831 [Worker-2990: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 21:44:36,832 [Worker-2990: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:44:36,833 [Worker-2990: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 21:44:36,833 [Worker-2990: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:44:36,833 [Worker-2990: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 21:44:37,841 [Worker-2989: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 21:44:37,843 [Worker-2989: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:44:37,843 [Worker-2989: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 21:44:37,843 [Worker-2989: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:44:37,843 [Worker-2989: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 21:44:39,358 [Worker-2989: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 21:44:39,360 [Worker-2989: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:44:39,360 [Worker-2989: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 21:44:39,360 [Worker-2989: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:44:39,360 [Worker-2989: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 21:44:40,877 [Worker-2991: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 21:44:40,879 [Worker-2991: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:44:40,879 [Worker-2991: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 21:44:40,879 [Worker-2991: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 21:44:40,879 [Worker-2991: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 22:07:29,552 [Worker-2998: Launching App (1)] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 22:07:29,554 [Worker-2998: Launching App (1)] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:07:29,554 [Worker-2998: Launching App (1)] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 22:07:29,554 [Worker-2998: Launching App (1)] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:07:29,554 [Worker-2998: Launching App (1)] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 22:09:25,077 [Worker-3001: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 22:09:25,079 [Worker-3001: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:09:25,079 [Worker-3001: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 22:09:25,079 [Worker-3001: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:09:25,079 [Worker-3001: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 22:09:26,089 [Worker-3002: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 22:09:26,091 [Worker-3002: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:09:26,091 [Worker-3002: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 22:09:26,091 [Worker-3002: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:09:26,091 [Worker-3002: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 22:09:27,178 [Worker-2998: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 22:09:27,179 [Worker-2998: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:09:27,180 [Worker-2998: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 22:09:27,180 [Worker-2998: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:09:27,180 [Worker-2998: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 22:10:03,811 [Worker-2998: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 22:10:03,812 [Worker-2998: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:10:03,812 [Worker-2998: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 22:10:03,812 [Worker-2998: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:10:03,812 [Worker-2998: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 22:10:05,033 [Worker-3005: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 22:10:05,035 [Worker-3005: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:10:05,035 [Worker-3005: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 22:10:05,035 [Worker-3005: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:10:05,035 [Worker-3005: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 22:10:21,024 [Worker-3003: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 22:10:21,025 [Worker-3003: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:10:21,025 [Worker-3003: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 22:10:21,026 [Worker-3003: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:10:21,026 [Worker-3003: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 22:10:37,404 [Worker-3003: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 22:10:37,406 [Worker-3003: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:10:37,406 [Worker-3003: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 22:10:37,407 [Worker-3003: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:10:37,407 [Worker-3003: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 22:10:38,639 [Worker-3002: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 22:10:38,641 [Worker-3002: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:10:38,641 [Worker-3002: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 22:10:38,641 [Worker-3002: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:10:38,641 [Worker-3002: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 22:11:18,158 [Worker-3002: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 22:11:18,159 [Worker-3002: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:11:18,160 [Worker-3002: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 22:11:18,160 [Worker-3002: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:11:18,160 [Worker-3002: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 22:11:19,167 [Worker-3002: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 22:11:19,168 [Worker-3002: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:11:19,168 [Worker-3002: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 22:11:19,169 [Worker-3002: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:11:19,169 [Worker-3002: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 22:11:38,122 [Worker-3002: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 22:11:38,124 [Worker-3002: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:11:38,124 [Worker-3002: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 22:11:38,124 [Worker-3002: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:11:38,124 [Worker-3002: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 22:11:52,304 [Worker-3004: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 22:11:52,305 [Worker-3004: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:11:52,305 [Worker-3004: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 22:11:52,306 [Worker-3004: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:11:52,306 [Worker-3004: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 22:13:21,062 [Worker-2998: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 22:13:21,064 [Worker-2998: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:13:21,064 [Worker-2998: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 22:13:21,064 [Worker-2998: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:13:21,064 [Worker-2998: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 22:14:25,820 [Worker-2998: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 22:14:25,821 [Worker-2998: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:14:25,822 [Worker-2998: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 22:14:25,822 [Worker-2998: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:14:25,822 [Worker-2998: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 22:14:57,701 [Worker-3005: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 22:14:57,702 [Worker-3005: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:14:57,703 [Worker-3005: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 22:14:57,703 [Worker-3005: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:14:57,703 [Worker-3005: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 22:16:39,408 [Worker-3001: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 22:16:39,410 [Worker-3001: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:16:39,410 [Worker-3001: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 22:16:39,410 [Worker-3001: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:16:39,410 [Worker-3001: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 22:17:14,688 [Worker-3003: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 22:17:14,690 [Worker-3003: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:17:14,690 [Worker-3003: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 22:17:14,690 [Worker-3003: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:17:14,690 [Worker-3003: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 22:17:57,498 [Worker-3004: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 22:17:57,500 [Worker-3004: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:17:57,500 [Worker-3004: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 22:17:57,500 [Worker-3004: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:17:57,500 [Worker-3004: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 22:18:08,622 [Worker-3003: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 22:18:08,624 [Worker-3003: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:18:08,624 [Worker-3003: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 22:18:08,624 [Worker-3003: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:18:08,624 [Worker-3003: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 22:19:31,164 [Worker-3001: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 22:19:31,166 [Worker-3001: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:19:31,166 [Worker-3001: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 22:19:31,166 [Worker-3001: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:19:31,166 [Worker-3001: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 22:19:32,226 [Worker-3004: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 22:19:32,227 [Worker-3004: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:19:32,227 [Worker-3004: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 22:19:32,228 [Worker-3004: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:19:32,228 [Worker-3004: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 22:19:52,089 [Worker-3004: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 22:19:52,099 [Worker-3004: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:19:52,099 [Worker-3004: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 22:19:52,099 [Worker-3004: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:19:52,099 [Worker-3004: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 22:19:59,842 [Worker-3003: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 22:19:59,844 [Worker-3003: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:19:59,844 [Worker-3003: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 22:19:59,844 [Worker-3003: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:19:59,844 [Worker-3003: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 22:20:26,388 [Worker-3006: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 22:20:26,390 [Worker-3006: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:20:26,390 [Worker-3006: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 22:20:26,390 [Worker-3006: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:20:26,390 [Worker-3006: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 22:20:47,497 [Worker-3006: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 22:20:47,498 [Worker-3006: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:20:47,498 [Worker-3006: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 22:20:47,499 [Worker-3006: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:20:47,499 [Worker-3006: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 22:28:00,459 [Worker-2998: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 22:28:00,460 [Worker-2998: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:28:00,460 [Worker-2998: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 22:28:00,460 [Worker-2998: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:28:00,460 [Worker-2998: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 22:28:01,471 [Worker-3017: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 22:28:01,472 [Worker-3017: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:28:01,472 [Worker-3017: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 22:28:01,472 [Worker-3017: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:28:01,472 [Worker-3017: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 22:48:00,639 [Worker-3024: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 22:48:00,640 [Worker-3024: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:48:00,640 [Worker-3024: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 22:48:00,641 [Worker-3024: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:48:00,641 [Worker-3024: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 22:48:01,700 [Worker-3022: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 22:48:01,701 [Worker-3022: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:48:01,701 [Worker-3022: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 22:48:01,702 [Worker-3022: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:48:01,702 [Worker-3022: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 22:48:34,984 [Worker-3024: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 22:48:34,986 [Worker-3024: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:48:34,986 [Worker-3024: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 22:48:34,986 [Worker-3024: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:48:34,986 [Worker-3024: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 22:48:42,551 [Worker-3026: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 22:48:42,553 [Worker-3026: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:48:42,553 [Worker-3026: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 22:48:42,553 [Worker-3026: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:48:42,553 [Worker-3026: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 22:48:56,329 [Worker-3022: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 22:48:56,330 [Worker-3022: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:48:56,330 [Worker-3022: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 22:48:56,330 [Worker-3022: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:48:56,330 [Worker-3022: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 22:49:23,322 [Worker-3022: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 22:49:23,324 [Worker-3022: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:49:23,324 [Worker-3022: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 22:49:23,324 [Worker-3022: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:49:23,324 [Worker-3022: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 22:49:43,554 [Worker-3022: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 22:49:43,556 [Worker-3022: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:49:43,556 [Worker-3022: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 22:49:43,556 [Worker-3022: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:49:43,556 [Worker-3022: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 22:49:56,642 [Worker-3025: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 22:49:56,644 [Worker-3025: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:49:56,645 [Worker-3025: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 22:49:56,645 [Worker-3025: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:49:56,645 [Worker-3025: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 22:50:08,890 [Worker-3025: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 22:50:08,891 [Worker-3025: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:50:08,891 [Worker-3025: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 22:50:08,892 [Worker-3025: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:50:08,892 [Worker-3025: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-11-29 22:50:21,948 [Worker-3026: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-11-29 22:50:21,949 [Worker-3026: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-29 22:50:21,949 [Worker-3026: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-11-29 22:50:21,950 [Worker-3026: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.

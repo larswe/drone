@@ -11,6 +11,14 @@ import org.junit.Test;
 
 import com.mapbox.geojson.Point;
 
+import uk.ac.ed.inf.aqmaps.application.App;
+import uk.ac.ed.inf.aqmaps.drone.MainDrone;
+import uk.ac.ed.inf.aqmaps.drone.ShadowDrone;
+import uk.ac.ed.inf.aqmaps.geometry.EuclideanUtils;
+import uk.ac.ed.inf.aqmaps.geometry.LineSegment;
+import uk.ac.ed.inf.aqmaps.map.Sensor;
+import uk.ac.ed.inf.aqmaps.map.What3WordsLocation;
+
 /**
  * Unit test for simple App.
  */
@@ -349,4 +357,24 @@ public class AppTest {
         
         assertTrue(true);
     }
+    
+    /*@Test
+    public void bigTest() {
+        for (int i = 1; i <= 28; i++) {
+            for (int j = 1; j <= 12; j++) {
+                String day = String.format("%02d", i);
+                String month = String.format("%02d", j);
+                App.main(new String[] {day, month, "2020", "55.9444", "-3.1878", "5678", "80" });
+                assertTrue(EuclideanUtils.computeDistance(App.droneLastPos, Point.fromLngLat(-3.1878, 55.9444)) <= 0.0003);
+                for (boolean b : App.visited) {
+                    assertTrue(b);
+                }
+                App.main(new String[] {day, month, "2021", "55.9444", "-3.1878", "5678", "80" });
+                assertTrue(EuclideanUtils.computeDistance(App.droneLastPos, Point.fromLngLat(-3.1878, 55.9444)) <= 0.0003);
+                for (boolean b : App.visited) {
+                    assertTrue(b);
+                }
+            }
+        }
+    } */
 }
