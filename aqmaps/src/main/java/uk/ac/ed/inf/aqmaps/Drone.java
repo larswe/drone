@@ -22,7 +22,7 @@ public abstract class Drone {
     /* Our drone can move at an angle of 10, 20,..., but not e.g. 26 degrees */
     protected static final double ANGLE_GRANULARITY = 10.0;
     protected static final double MOVE_DISTANCE = 0.0003;
-    protected static final double MAX_READ_DISTANCE = 0.00014;
+    protected static final double MAX_READ_DISTANCE = 0.0002;
     /* Radius of circle in which drone can land, returning to the starting point */
     protected static final double MAX_LANDING_DISTANCE = 0.0003;
     /*
@@ -129,8 +129,9 @@ public abstract class Drone {
                  * none has been found yet.
                  */
                 if (shadowForSecondStep.isInRangeOfPoint(this.currentDestination, maxFinalDistance)) {
+                    //System.out.println("BEFORE " + EuclideanUtils.computeDistance(currentDestination, currentPosition));
                     this.makeMove(angleForCandidateInBetweenMove);
-                    System.out.println(EuclideanUtils.computeDistance(currentDestination, currentPosition));
+                    //System.out.println("AFTER " +EuclideanUtils.computeDistance(currentDestination, currentPosition));
                     System.out.println("Successful parking attempt in 1 move");
                     return true;
 
@@ -149,8 +150,6 @@ public abstract class Drone {
                     }
                 }
             }
-
-            
         }
 
         /*

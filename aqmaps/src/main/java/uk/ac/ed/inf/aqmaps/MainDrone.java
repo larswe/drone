@@ -16,6 +16,8 @@ public class MainDrone extends Drone {
 
     private int currentDestinationIndex;
     private double currentActionRange;
+    
+    private boolean hasCrashed = false;
 
     private boolean[] sensorsVisitedArray;
     private double[] readingsForAllSensors;
@@ -47,7 +49,7 @@ public class MainDrone extends Drone {
     }
 
     public void completeTour() {
-        while (this.currentDestinationIndex < this.sensorTour.size()) {
+        while (this.currentDestinationIndex < this.sensorTour.size() && !hasCrashed) {
             this.currentDestination = this.sensorTour.get(currentDestinationIndex).getPosition();
             var stepsToGetToSensor = this.flyToCurrentDestination();
 
@@ -66,21 +68,29 @@ public class MainDrone extends Drone {
             this.currentDestinationIndex++;
         }
 
-        /* Once all sensors have been read, return to starting position */
-        this.currentActionRange = MAX_LANDING_DISTANCE;
-        this.currentDestination = this.startingPosition;
-        this.flyToCurrentDestination();
+        if (!hasCrashed) {
+            /* Once all sensors have been read, return to starting position */
+            this.currentActionRange = MAX_LANDING_DISTANCE;
+            this.currentDestination = this.startingPosition;
+            this.flyToCurrentDestination();
 
-        System.out.println("Successfully finished the tour after " + this.stepsMade + " steps!");
+            System.out.println("Successfully finished the tour after " + this.stepsMade + " steps!");
+        } else {
+            System.out.println("Sadly, the drone crashed.");
+        }
+        
+        
     }
 
     public int flyToCurrentDestination() {
 
         var moveCountAtStart = this.stepsMade;
 
-        while (!this.isInRangeOfPoint(currentDestination, currentActionRange)) {
+        while (!this.isInRangeOfPoint(currentDestination, currentActionRange) && !hasCrashed) {
 
-            if (this.canGetTowardsDestinationInStraightLine()) {
+            if (this.isInRangeOfPoint(currentDestination, MOVE_DISTANCE)) {
+                park(currentActionRange);
+            } else if (this.canGetTowardsDestinationInStraightLine()) {
                 var straightPath = new LineSegment(this.currentPosition, this.currentDestination);
                 var exactAngle = straightPath.getAngleInDegrees();
                 double scaledAngle = exactAngle / ANGLE_GRANULARITY;
@@ -122,18 +132,26 @@ public class MainDrone extends Drone {
 
         var approxDistanceClockwiseAvoid = leftShadow.distToAvoidObstacleClockwise(obstacle, this.currentActionRange);
 
-        System.out.println("left" + approxDistanceClockwiseAvoid);
-        
+        System.out.println("left: " + approxDistanceClockwiseAvoid);
+
         var rightShadow = new ShadowDrone(this.currentPosition, this.currentDestination);
 
         var approxDistanceCounterClockwiseAvoid = rightShadow.distToAvoidObstacleCounterClockwise(obstacle,
                 this.currentActionRange);
 
-        System.out.println("right:" + approxDistanceCounterClockwiseAvoid);
-        
+        System.out.println("right: " + approxDistanceCounterClockwiseAvoid);
+
         ArrayList<Double> anglesToFlyAt;
 
-        if (approxDistanceClockwiseAvoid < approxDistanceCounterClockwiseAvoid) {
+        if (Double.isInfinite(approxDistanceClockwiseAvoid) && Double.isInfinite(approxDistanceCounterClockwiseAvoid)) {
+            System.out.println("The drone can not find away to get around the obstacle " + obstacle);
+            System.out.println(leftShadow.getObstacleInOurWay());
+            System.out.println(rightShadow.getObstacleInOurWay());
+            this.hasCrashed = true;
+            return;
+        }
+        
+         if (approxDistanceClockwiseAvoid < approxDistanceCounterClockwiseAvoid) {
             // System.out.println();
             // System.out.println("Chose left rotation to avoid obstacle");
             // System.out.println();
@@ -160,13 +178,13 @@ public class MainDrone extends Drone {
 
         } else {
             System.out.println("The drone was asked to read a sensor that was actually out of range!");
-            System.exit(1);
+            this.hasCrashed = true;
         }
 
     }
 
     protected void makeMove(double angle) {
-        
+
         /*
          * System.out.println(); System.out.println(this.currentDestinationIndex);
          * System.out.println(this.currentPosition);
@@ -176,10 +194,10 @@ public class MainDrone extends Drone {
 
         if (!this.canMove(angle)) {
             System.out.println("The main drone was told to make an impossible move.");
-            System.exit(1);
+            this.hasCrashed = true;
         } else if (this.stepsMade >= this.MAX_MOVES) {
             System.out.println("The main drone has run out of battery and has crashed!");
-            System.exit(1);
+            this.hasCrashed = true;
         } else {
             var nextPos = EuclideanUtils.getNextPosition(this.currentPosition, angle, MOVE_DISTANCE);
             this.currentPosition = nextPos;
@@ -219,7 +237,7 @@ public class MainDrone extends Drone {
     public double[] getReadingsForAllSensors() {
         return this.readingsForAllSensors;
     }
-    
+
     public int[] getStepsAfterWhichSensorsWereRead() {
         return this.stepsAfterWhichSensorsWereRead;
     }
