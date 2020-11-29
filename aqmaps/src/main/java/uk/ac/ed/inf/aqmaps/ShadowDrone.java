@@ -195,7 +195,7 @@ public class ShadowDrone extends Drone {
         while (!this.avoidsObstacle(obstacle, maxFinalDistance)) {
             var lineToDestination = new LineSegment(this.currentPosition, this.currentDestination);
             var exactAngle = lineToDestination.getAngleInDegrees();
-
+            
             double scaledAngle = exactAngle / ANGLE_GRANULARITY;
             double roundedCurrentAngle = (ANGLE_GRANULARITY * (int) Math.rint(scaledAngle) + 360) % 360;
 
@@ -267,29 +267,31 @@ public class ShadowDrone extends Drone {
         int stepsChecked = 0;
 
         while (!this.isInRangeOfPoint(this.currentDestination, maxFinalDistance)) {
-
-            // if (stepsChecked >= 2 * Drone.NUM_MOVES_TO_BE_CHECKED_TOWARDS_GOAL)
-            // return true; TODO - figure out
-
-            var nextPos = getNextPosTowardsGoal();
-            var moveLineSegment = new LineSegment(this.currentPosition, nextPos);
-
-            if (!EuclideanUtils.lineSegmentAndPolygonIntersect(moveLineSegment, obstacle)) {
-                /*
-                 * NOTE: Here, we use the setPosition method of the Shadow Drone subclass,
-                 * instead of the general makeMove method. That is because we do not care if the
-                 * move is actually legal - only if it hits the specific obstacle we are trying
-                 * to dodge. We also don't count the moves as being actual moves of the drone.
-                 * We just count how many moves we have checked.
-                 */
-                this.setPosition(nextPos);
-                stepsChecked++;
+            
+            if (this.isInRangeOfPoint(currentDestination, MOVE_DISTANCE)) {
+                this.park(maxFinalDistance);
             } else {
-                this.setPosition(startPos);
-                // System.out.println("Does not avoid obstacle with an angle of " +
-                // moveLineSegment.getAngleInDegrees());
-                return false;
+                var nextPos = getNextPosTowardsGoal();
+                var moveLineSegment = new LineSegment(this.currentPosition, nextPos);
+
+                if (!EuclideanUtils.lineSegmentAndPolygonIntersect(moveLineSegment, obstacle)) {
+                    /*
+                     * NOTE: Here, we use the setPosition method of the Shadow Drone subclass,
+                     * instead of the general makeMove method. That is because we do not care if the
+                     * move is actually legal - only if it hits the specific obstacle we are trying
+                     * to dodge. We also don't count the moves as being actual moves of the drone.
+                     * We just count how many moves we have checked.
+                     */
+                    this.setPosition(nextPos);
+                    stepsChecked++;
+                } else {
+                    this.setPosition(startPos);
+                    // System.out.println("Does not avoid obstacle with an angle of " +
+                    // moveLineSegment.getAngleInDegrees());
+                    return false;
+                }
             }
+            
         }
 
         /*
@@ -316,6 +318,7 @@ public class ShadowDrone extends Drone {
     }
 
     protected void makeMove(double angle) {
+        
         if (!this.canMove(angle)) {
             System.out.println("The shadow drone was told to make an impossible move.");
             System.exit(1);

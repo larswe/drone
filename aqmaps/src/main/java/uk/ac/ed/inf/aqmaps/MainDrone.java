@@ -122,11 +122,15 @@ public class MainDrone extends Drone {
 
         var approxDistanceClockwiseAvoid = leftShadow.distToAvoidObstacleClockwise(obstacle, this.currentActionRange);
 
+        System.out.println("left" + approxDistanceClockwiseAvoid);
+        
         var rightShadow = new ShadowDrone(this.currentPosition, this.currentDestination);
 
         var approxDistanceCounterClockwiseAvoid = rightShadow.distToAvoidObstacleCounterClockwise(obstacle,
                 this.currentActionRange);
 
+        System.out.println("right:" + approxDistanceCounterClockwiseAvoid);
+        
         ArrayList<Double> anglesToFlyAt;
 
         if (approxDistanceClockwiseAvoid < approxDistanceCounterClockwiseAvoid) {
@@ -162,7 +166,7 @@ public class MainDrone extends Drone {
     }
 
     protected void makeMove(double angle) {
-
+        
         /*
          * System.out.println(); System.out.println(this.currentDestinationIndex);
          * System.out.println(this.currentPosition);
