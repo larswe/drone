@@ -21500,3 +21500,12 @@
 2020-12-01 20:12:02,126 [Worker-3613: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2020-12-01 20:12:02,127 [Worker-3613: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
 2020-12-01 20:12:02,127 [Worker-3613: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-12-01 20:12:02,127 [Worker-3613: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
+2020-12-01 20:12:50,747 [main] INFO  o.e.m2e.actions.ExecutePomAction - Using existing launch configuration
+2020-12-01 20:12:50,810 [Worker-3608: Launching aqmaps] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\larsw\drone\aqmaps
+2020-12-01 20:12:50,810 [Worker-3608: Launching aqmaps] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B package
+2020-12-01 20:21:23,547 [Worker-3623: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2020-12-01 20:21:23,549 [Worker-3623: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-12-01 20:21:23,549 [Worker-3623: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\main\resources
+2020-12-01 20:21:23,549 [Worker-3623: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-12-01 20:21:23,549 [Worker-3623: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\larsw\drone\aqmaps\src\test\resources
