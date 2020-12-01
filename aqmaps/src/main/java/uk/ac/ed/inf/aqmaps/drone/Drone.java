@@ -111,24 +111,6 @@ public abstract class Drone {
     }
 
     /**
-     * This helper method constructs a line from the drone's position to its
-     * destination, computes its angle and rounds the result to give the "legal"
-     * angle that the drone can use that comes closest to the real direction.
-     * 
-     * @return the angle of the line towards the drone's destination, rounded to be
-     *         a multiple of the angle granularity
-     */
-    protected int computeRoundedAngleOfLineToGoal() {
-        var straightPath = new LineSegment(this.currentPosition, this.currentDestination);
-
-        var exactAngle = straightPath.getAngleInDegrees();
-        var scaledAngle = exactAngle / ANGLE_GRANULARITY;
-        var roundedAngle = (ANGLE_GRANULARITY * (int) Math.round(scaledAngle) + 360) % 360;
-
-        return roundedAngle;
-    }
-
-    /**
      * Assuming that the drone is neither started outside the confinement area, nor
      * inside a No-Fly-Zone, the drone is able to move to a point at the appropriate
      * distance if and only if none of the borders of any of these polygons are
@@ -203,9 +185,10 @@ public abstract class Drone {
         /* The angle that was chosen for the final step of the drone before its goal */
         Integer chosenParkingMoveAngle = null;
 
-        /* Try all possible angles */
+        /* Try all possible angles, starting with the one straight towards the goal */
+        var idealAngle = computeRoundedAngleOfLineToGoal();
         for (int i = 0; i < numAngles; i++) {
-            var angleForCandidateInBetweenMove = i * ANGLE_GRANULARITY;
+            var angleForCandidateInBetweenMove = (idealAngle + i * ANGLE_GRANULARITY) % 360;
 
             /*
              * If the in between move we would like to consider is illegal, we don't need to
@@ -263,6 +246,24 @@ public abstract class Drone {
             return true;
         }
 
+    }
+    
+    /**
+     * This helper method constructs a line from the drone's position to its
+     * destination, computes its angle and rounds the result to give the "legal"
+     * angle that the drone can use that comes closest to the real direction.
+     * 
+     * @return the angle of the line towards the drone's destination, rounded to be
+     *         a multiple of the angle granularity
+     */
+    protected int computeRoundedAngleOfLineToGoal() {
+        var straightPath = new LineSegment(this.currentPosition, this.currentDestination);
+
+        var exactAngle = straightPath.getAngleInDegrees();
+        var scaledAngle = exactAngle / ANGLE_GRANULARITY;
+        var roundedAngle = (ANGLE_GRANULARITY * (int) Math.round(scaledAngle) + 360) % 360;
+
+        return roundedAngle;
     }
 
     /**

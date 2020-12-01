@@ -11,8 +11,8 @@ import com.mapbox.geojson.FeatureCollection;
 import com.mapbox.geojson.Point;
 import com.mapbox.geojson.Polygon;
 
-import uk.ac.ed.inf.aqmaps.map.NoFlyZone;
 import uk.ac.ed.inf.aqmaps.map.Sensor;
+import uk.ac.ed.inf.aqmaps.map.TwoDimensionalMapObject;
 import uk.ac.ed.inf.aqmaps.map.What3WordsLocation;
 import uk.ac.ed.inf.aqmaps.webserver.JsonSensorStub;
 import uk.ac.ed.inf.aqmaps.webserver.JsonWhat3WordsStub;
@@ -23,11 +23,17 @@ import uk.ac.ed.inf.aqmaps.webserver.WebServerFileFetcher;
  * inputs, whether they are provided directly by the user, or fetched from the
  * file server.
  * 
- * Note: It is not responsible for fetching any files from the web server - it
- * merely extracts the relevant information from them, turning it into
- * appropriate objects.
+ * Note: It is assigned a WebServerFileFetcher instance to retrieve any files
+ * from the web server - it then extracts the relevant information from them,
+ * turning it into appropriate objects.
  */
 public class InputProcessor {
+
+    private final WebServerFileFetcher fileFetcher;
+
+    public InputProcessor(int port) {
+        this.fileFetcher = new WebServerFileFetcher(port);
+    }
 
     /**
      * This method turns the command line arguments given by the user into an
@@ -62,8 +68,8 @@ public class InputProcessor {
      * 
      * @return a list of stubs that represent the relevant sensors
      */
-    static ArrayList<Sensor> getSensorsForDate(int day, int month, int year, int port) {
-        var jsonSensorsString = WebServerFileFetcher.getSensorsGeojsonFromServer(day, month, year, port);
+    ArrayList<Sensor> getSensorsForDate(int day, int month, int year) {
+        var jsonSensorsString = fileFetcher.getSensorsGeojsonFromServer(day, month, year);
 
         /*
          * We deserialize the String into an object of type ArrayList<JsonSensorStub>,
@@ -94,7 +100,7 @@ public class InputProcessor {
                 readingDouble = Double.NaN;
             }
 
-            var w3wLocation = processW3wString(sensorStub.getLocation(), port);
+            var w3wLocation = processW3wString(sensorStub.getLocation());
 
             var sensor = new Sensor(battery, readingDouble, w3wLocation);
             sensors.add(sensor);
@@ -114,7 +120,7 @@ public class InputProcessor {
      *                  to retrieve the information corresponding to the location
      * @return an instance of the What3WordsLocation class
      */
-    private static What3WordsLocation processW3wString(String w3wString, int port) {
+    private What3WordsLocation processW3wString(String w3wString) {
         var w3wParts = w3wString.split("\\.");
         assert (w3wParts.length == 3);
         /*
@@ -124,12 +130,12 @@ public class InputProcessor {
         var first = w3wParts[0];
         var second = w3wParts[1];
         var third = w3wParts[2];
-        var jsonW3wString = WebServerFileFetcher.getW3wJsonFromServer(first, second, third, port);
+        var jsonW3wString = fileFetcher.getW3wJsonFromServer(first, second, third);
 
         /* Turn the textual information into w3wStub, then "proper object" */
         var w3wStub = new Gson().fromJson(jsonW3wString, JsonWhat3WordsStub.class);
 
-        var w3wLocation = InputProcessor.processW3wStub(w3wStub);
+        var w3wLocation = processW3wStub(w3wStub);
         return w3wLocation;
     }
 
@@ -142,7 +148,7 @@ public class InputProcessor {
      * @return the What3WordsLocation instance that was initially represented by the
      *         stub
      */
-    static What3WordsLocation processW3wStub(JsonWhat3WordsStub stub) {
+    What3WordsLocation processW3wStub(JsonWhat3WordsStub stub) {
 
         /* Get coordinates of square corresponding to W3W Location */
         var northEastLng = stub.getSquare().getNortheast().getLng();
@@ -166,12 +172,8 @@ public class InputProcessor {
 
         /* Extract the remaining information from the JSON stub */
         var words = stub.getWords();
-        var country = stub.getCountry();
-        var language = stub.getLanguage();
-        var map = stub.getMap();
-        var nearestPlace = stub.getNearestPlace();
 
-        var w3wLocation = new What3WordsLocation(words, country, language, map, nearestPlace, square, position);
+        var w3wLocation = new What3WordsLocation(words, square, position);
         return w3wLocation;
     }
 
@@ -186,17 +188,17 @@ public class InputProcessor {
      * @param port the port that shall be used to connect to the file server
      * @return a list of all no fly zones declared on the file server
      */
-    static ArrayList<NoFlyZone> loadNoFlyZonesFromServer(int port) {
+    ArrayList<TwoDimensionalMapObject> loadNoFlyZonesFromServer() {
         /* Load Geo-JSON file from server and extract FeatureCollection */
-        var jsonNoFlyZonesString = WebServerFileFetcher.getBuildingsGeojsonFromServer(port);
+        var jsonNoFlyZonesString = fileFetcher.getBuildingsGeojsonFromServer();
         var noFlyZonesFeatCol = FeatureCollection.fromJson(jsonNoFlyZonesString);
 
         /*
          * Instantiate NoFlyZone objects from FeatureCollection and add to list
          */
-        var noFlyZones = new ArrayList<NoFlyZone>();
+        var noFlyZones = new ArrayList<TwoDimensionalMapObject>();
         for (Feature feat : noFlyZonesFeatCol.features()) {
-            NoFlyZone building = new NoFlyZone(feat);
+            var building = new TwoDimensionalMapObject(feat);
             noFlyZones.add(building);
         }
 

@@ -243,13 +243,12 @@ public class MainDrone extends Drone {
      *              move.
      */
     protected void makeMove(int angle) {
-
         /* The first two options can only ever occur if our program is buggy. */
         if (hasCrashed) {
             System.out.println("The main drone has crashed! It can no longer move! "
                     + "Stopping program execution to avoid an infinite loop.");
             System.exit(1);
-        } else if (!canMove(angle)) {
+        } else if (!canMove(angle) || angle % ANGLE_GRANULARITY != 0) {
             System.out.println("The main drone was told to make an impossible move.");
             hasCrashed = true;
         } else if (this.stepsMade >= MAX_MOVES) {

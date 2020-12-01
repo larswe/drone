@@ -6,9 +6,17 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse.BodyHandlers;
 
+/**
+ * Instances of this class are directly responsible for retrieving files from
+ * the web server that is used to store data relevant to this application.
+ */
 public class WebServerFileFetcher {
 
-    /* The address of the web server on which our research data is stored */
+    /*
+     * The address of the web server on which our research data is stored, as well
+     * as other constants that point us to the location of each relevant file on the
+     * server.
+     */
     private static final String SERVER = "localhost";
     private static final String BUILDINGS_FOLDER_PATH = "/buildings";
     private static final String BUILDINGS_FILE_NAME = "no-fly-zones.geojson";
@@ -17,16 +25,46 @@ public class WebServerFileFetcher {
     private static final String WORDS_FOLDER_PATH = "/words";
     private static final String WORDS_FILE_NAME = "details.json";
 
-    public static String getBuildingsGeojsonFromServer(int port) {
+    private int port;
+
+    /**
+     * The constructor of the WebServerFileFetcher class. All information it needs
+     * to retrieve files is static, except the port, which depends on the command
+     * line arguments used when running this application.
+     * 
+     * @param port the port the web server runs on.
+     */
+    public WebServerFileFetcher(int port) {
+        this.port = port;
+    }
+
+    /**
+     * This method can be used to retrieve the file contents corresponding to the no
+     * fly zones used in this scenario from the web server.
+     * 
+     * @return the no-fly-zones.geojson file contents as a String
+     */
+    public String getBuildingsGeojsonFromServer() {
         var stringBuilder = new StringBuilder();
         stringBuilder.append(BUILDINGS_FOLDER_PATH);
         stringBuilder.append("/");
         stringBuilder.append(BUILDINGS_FILE_NAME);
 
-        return getStringFromFileAtPort(stringBuilder.toString(), port);
+        return extractStringFromFile(stringBuilder.toString());
     }
 
-    public static String getSensorsGeojsonFromServer(int day, int month, int year, int port) {
+    /**
+     * This method can be used to retrieve the file contents corresponding to the
+     * sensors to be read on a given date from the web server.
+     * 
+     * @param day   the day of month corresponding to this program execution
+     * @param month the month corresponding to this program execution
+     * @param year  the year corresponding to this program execution
+     * 
+     * @return the String contents of the air-quality-data.json file for the given
+     *         date
+     */
+    public String getSensorsGeojsonFromServer(int day, int month, int year) {
         var stringBuilder = new StringBuilder();
         stringBuilder.append(SENSOR_MAP_FOLDER_PATH);
         stringBuilder.append("/");
@@ -38,10 +76,20 @@ public class WebServerFileFetcher {
         stringBuilder.append("/");
         stringBuilder.append(SENSOR_MAP_FILE_NAME);
 
-        return getStringFromFileAtPort(stringBuilder.toString(), port);
+        return extractStringFromFile(stringBuilder.toString());
     }
 
-    public static String getW3wJsonFromServer(String first, String second, String third, int port) {
+    /**
+     * This method can be used to retrieve the file contents corresponding to the
+     * W3W location with the given identifier.
+     * 
+     * @param first  the first word of the W3W identifier
+     * @param second the second word of the W3W identifier
+     * @param third  the third word of the W3W identifier
+     * 
+     * @return the String contents of the details.json file for the given location
+     */
+    public String getW3wJsonFromServer(String first, String second, String third) {
         var stringBuilder = new StringBuilder();
         stringBuilder.append(WORDS_FOLDER_PATH);
         stringBuilder.append("/");
@@ -53,17 +101,33 @@ public class WebServerFileFetcher {
         stringBuilder.append("/");
         stringBuilder.append(WORDS_FILE_NAME);
 
-        return getStringFromFileAtPort(stringBuilder.toString(), port);
+        return extractStringFromFile(stringBuilder.toString());
     }
 
-    private static String getStringFromFileAtPort(String filePath, int port) {
-        var request = generateHttpRequest(filePath, port);
-        var responseBody = getResponseBodyForRequest(request, port);
+    /**
+     * This helper method is used to extract the string contents of the file with
+     * the given path.
+     * 
+     * @param filePath the path of the file to be retrieved
+     * 
+     * @return the String contents of the file
+     */
+    private String extractStringFromFile(String filePath) {
+        var request = generateHttpRequest(filePath);
+        var responseBody = getResponseBodyForRequest(request);
 
         return responseBody;
     }
 
-    private static HttpRequest generateHttpRequest(String filePath, int port) {
+    /**
+     * This helper method generates a HTTP request to access the file that lies on
+     * the web server at the specified path
+     * 
+     * @param filePath the path of the file to be retrieved
+     * 
+     * @return the HttpRequest instance capturing the request
+     */
+    private HttpRequest generateHttpRequest(String filePath) {
         var stringBuilder = new StringBuilder();
         stringBuilder.append("http://");
         stringBuilder.append(SERVER);
@@ -79,8 +143,15 @@ public class WebServerFileFetcher {
         return request;
     }
 
-    /* We send a synchronous request since the files we retrieve are small */
-    private static String getResponseBodyForRequest(HttpRequest request, int port) {
+    /**
+     * This helper method takes the previously generated HTTP request, sends it to
+     * the server and returns the according response body.
+     * 
+     * @param request a HTTP request to be sent to the server
+     * 
+     * @return the body of the server's response
+     */
+    private String getResponseBodyForRequest(HttpRequest request) {
         var client = HttpClient.newHttpClient();
         String responseBody = "";
         try {

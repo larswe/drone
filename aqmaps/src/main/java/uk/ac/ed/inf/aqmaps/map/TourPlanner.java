@@ -9,36 +9,70 @@ import com.mapbox.geojson.Point;
 import uk.ac.ed.inf.aqmaps.drone.Drone;
 import uk.ac.ed.inf.aqmaps.drone.MainDrone;
 
+/**
+ * The TourPlanner class solves the Travelling Salesman Problem that is induced
+ * by a list of sensors that needs to be visited in an order that is as
+ * efficient as possible.
+ */
 public class TourPlanner {
 
+    /* The number of nodes of the tour */
     private int numPoints;
+
+    /*
+     * The distance matrix, where entry (i,j) is an estimation of the number of
+     * steps a drone needs from sensor i to sensor j.
+     */
     private int[][] distanceMatrix;
-    private List<Point> initialPoints;
+
+    /*
+     * We use this attribute to keep track of the best tour found so far. Its (i-1)
+     * entry is the initial index of the node that is visited i-th.
+     */
     private int[] currentPointPermutation;
 
+    /**
+     * The constructor of the TourPlanner class. I decided to initialise a
+     * TourPlanner instance for a list of nodes to be "sorted", and view the
+     * distance matrix that defines the problem as an attribute of the planner, as
+     * opposed to e.g. using a static approach.
+     * 
+     * @param points the list of points that leads to the Travelling Salesman
+     *               Problem
+     */
     public TourPlanner(List<Point> points) {
         this.distanceMatrix = computeDistanceMatrix(points);
-        this.initialPoints = points;
         this.numPoints = points.size();
 
-        /* Initialize the permutation of nodes to be the identity */
-        currentPointPermutation = new int[numPoints];
+        /* Initialise the permutation of nodes to be the identity */
+        this.currentPointPermutation = new int[numPoints];
         for (int i = 0; i < numPoints; i++) {
             currentPointPermutation[i] = i;
         }
     }
 
-    /*
+    /**
+     * This method computes the order in which the list of points described by the
+     * distance matrix of this object shall be visited by our drone.
+     * 
      * The last point in the given input list is assumed to be the starting/landing
-     * point of the drone.
+     * point of the drone, and ultimately removed. That is because it is simply not
+     * needed in our scenario - our drone will know when to return to its starting
+     * point.
+     * 
+     * Note: Admittedly, the name is slightly misleading, because a shorter tour may
+     * exist. But since this is the shortest tour that our algorithm finds, I deemed
+     * this name to be appropriate nevertheless.
+     * 
+     * @return the array of indices that defines the tour across the nodes that is
+     *         deemed shortest
      */
     public int[] findShortestTour() {
 
         applyTwoOptAlgorithm();
 
         /*
-         * Lastly we remove the starting point from the permutation of indices since it
-         * is implied.
+         * Lastly we remove the starting point from the tour since it is implied.
          */
         var shortestSensorTourIndices = new int[numPoints - 1];
         var j = 0;
@@ -52,15 +86,21 @@ public class TourPlanner {
         return shortestSensorTourIndices;
     }
 
+    /**
+     * An instance of the Travelling Salesman Problem can be identified by its
+     * distance matrix. This method computes that matrix by simulating how long it
+     * will take our main drone to get from each node i to each node j, pairwise.
+     * 
+     * @param points the initial list of nodes, where the last point is assumed to
+     *               be the start/end point of the tour
+     * 
+     * @return the distance matrix for the Travelling Salesman Problem we are facing
+     */
     private int[][] computeDistanceMatrix(List<Point> points) {
 
         var numPoints = points.size();
         var distanceMatrix = new int[numPoints][numPoints];
 
-        /*
-         * First, we compute the distance between each sensor pair naively, without
-         * considering No-Fly-Zones.
-         */
         for (int i = 0; i < numPoints; i++) {
             for (int j = 0; j < numPoints; j++) {
                 var pointA = points.get(i);
@@ -72,11 +112,11 @@ public class TourPlanner {
                  * 
                  * To this end, we create a mock sensor at point B.
                  */
-                var w3w = new What3WordsLocation("a.b.c", "", "", "", "", null, pointB);
-                Sensor destinationSensor = new Sensor(0.0f, 0.0, w3w);
+                var w3w = new What3WordsLocation("a.b.c", null, pointB);
+                var destinationSensor = new Sensor(0.0f, 0.0, w3w);
                 var listContainingDestinationSensor = new ArrayList<Sensor>(Arrays.asList(destinationSensor));
 
-                MainDrone drone = new MainDrone(pointA, listContainingDestinationSensor);
+                var drone = new MainDrone(pointA, listContainingDestinationSensor);
 
                 /*
                  * If the destination is the last point in our list, it is the starting/landing
@@ -98,7 +138,8 @@ public class TourPlanner {
                     drone.park();
                 }
                 distanceMatrix[i][j] = drone.getStepsMade();
-                
+
+                /* We print the distance to the console for testing purposes */
                 System.out.println("i " + i + " , j " + j + " : " + drone.getStepsMade());
             }
         }
@@ -106,25 +147,42 @@ public class TourPlanner {
         return distanceMatrix;
     }
 
-    private int tourValue(int[] tourIndices) {
-        var tourCostCount = 0;
+    /**
+     * This method applies the 2-opt algorithm to our tour.
+     * 
+     * This algorithm was chosen because it is rather simple, yields decent results
+     * and is very fast (compared to more complex algorithms, such as
+     * Lin-Kernighan).
+     * 
+     * We consider each pair of indices and see if reverting the path between the
+     * two nodes yields a better cost overall. We stop as soon as no reversion
+     * improves the tour cost.
+     */
+    private void applyTwoOptAlgorithm() {
+        var improvedTourOnPreviousLoop = true;
 
-        /*
-         * Note : Here we start at the first point of the tour and wrap around at the
-         * end to account for the fact that we are dealing with a closed cycle.
-         */
-        for (int i = 0; i < numPoints; i++) {
-            tourCostCount += distanceMatrix[tourIndices[i]][tourIndices[(i + 1) % numPoints]];
+        while (improvedTourOnPreviousLoop) {
+            improvedTourOnPreviousLoop = false;
+            for (int j = 0; j < numPoints - 1; j++) {
+                for (int i = 0; i < j; i++) {
+                    if (tryReverse(i, j)) {
+                        improvedTourOnPreviousLoop = true;
+                    }
+                }
+            }
         }
-
-        return tourCostCount;
     }
 
-    /*
-     * Consider the effect of reversing the segment between the current i-th and
-     * j-th points of our tour. If this improves the tour value, commit to the
-     * reversal and return true. Otherwise leave the tour unchanged and return
-     * false.
+    /**
+     * This method considers the effect of reversing the segment between the points
+     * of our tour that currently have index i and j. If this lowers the tour cost,
+     * commit to the reversal and return true. Otherwise leave the tour unchanged
+     * and return false.
+     * 
+     * @param i the index at which the attempted reversal starts
+     * @param j the index at which the attempted reversal ends
+     * 
+     * @return whether the reversal leads to a better tour cost
      */
     private boolean tryReverse(int i, int j) {
 
@@ -171,7 +229,7 @@ public class TourPlanner {
                 newTour[j + 1 + k] = unchangedEnd[k];
             }
 
-            this.currentPointPermutation = newTour;
+            currentPointPermutation = newTour;
             return true;
         } else {
             /*
@@ -181,22 +239,6 @@ public class TourPlanner {
             return false;
         }
 
-    }
-
-    /* Applies the 2-Opt algorithm to our Traveling Salesman Problem */
-    private void applyTwoOptAlgorithm() {
-        var improvedTourOnPreviousLoop = true;
-
-        while (improvedTourOnPreviousLoop) {
-            improvedTourOnPreviousLoop = false;
-            for (int j = 0; j < numPoints - 1; j++) {
-                for (int i = 0; i < j; i++) {
-                    if (tryReverse(i, j)) {
-                        improvedTourOnPreviousLoop = true;
-                    }
-                }
-            }
-        }
     }
 
 }

@@ -231,10 +231,8 @@ public class OutputGenerator {
         var positionHistory = drone.getPositionHistory();
         var angleHistory = drone.getMoveAngleHistory();
         var sensorReadHistory = drone.getSensorReadHistory();
-        var allReadings = drone.getReadingsForAllSensors();
 
         var numMoves = positionHistory.size() - 1;
-        var numSensors = allReadings.length;
 
         if (numMoves != angleHistory.size() || numMoves != sensorReadHistory.size()) {
             System.out.println("Critical failure while writing flight path to file: " + "Inconsistent number of moves");

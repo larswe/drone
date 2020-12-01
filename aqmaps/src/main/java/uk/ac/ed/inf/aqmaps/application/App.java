@@ -7,8 +7,6 @@ import com.mapbox.geojson.Point;
 import com.mapbox.geojson.Polygon;
 
 import uk.ac.ed.inf.aqmaps.drone.MainDrone;
-
-import uk.ac.ed.inf.aqmaps.map.NoFlyZone;
 import uk.ac.ed.inf.aqmaps.map.Sensor;
 import uk.ac.ed.inf.aqmaps.map.TourPlanner;
 import uk.ac.ed.inf.aqmaps.map.TwoDimensionalMapObject;
@@ -34,7 +32,13 @@ public class App {
     /* The confinement area that the drone cannot leave, as a Mapbox Polygon */
     private static TwoDimensionalMapObject confinementArea;
     /* The zones the drone is not allowed to enter */
-    private static List<NoFlyZone> noFlyZones;
+    private static List<TwoDimensionalMapObject> noFlyZones;
+
+    /*
+     * TESTING ZONE - see comment at end of main method. 
+     * public static boolean[] visited; 
+     * public static Point droneLastPos;
+     */
 
     static {
         /* Initialising the confinement area from the given boundaries */
@@ -70,11 +74,12 @@ public class App {
         var droneStartLongitude = startInfo.getDroneStartLongitude();
         var droneStartLatitude = startInfo.getDroneStartLatitude();
 
-        noFlyZones = InputProcessor.loadNoFlyZonesFromServer(startInfo.getPort());
+        var inputProcessor = new InputProcessor(port);
+        noFlyZones = inputProcessor.loadNoFlyZonesFromServer();
 
         /* Preparing drone parameters for its tour of the day */
         var droneStartingPoint = Point.fromLngLat(droneStartLongitude, droneStartLatitude);
-        var sensors = InputProcessor.getSensorsForDate(day, month, year, port);
+        var sensors = inputProcessor.getSensorsForDate(day, month, year);
 
         var tourNodes = new ArrayList<Point>();
         for (Sensor s : sensors) {
@@ -111,6 +116,13 @@ public class App {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        /*
+         * TESTING ZONE - Uncomment to run massive unit test on all drone paths at the end of AppTest.java. 
+         * visited = mainDrone.getSensorsVisitedArray(); 
+         * droneLastPos = mainDrone.getCurrentPosition();
+         */
+
     }
 
     /*
@@ -132,7 +144,7 @@ public class App {
         return confinementArea;
     }
 
-    public static List<NoFlyZone> getNoFlyZones() {
+    public static List<TwoDimensionalMapObject> getNoFlyZones() {
         return noFlyZones;
     }
 
