@@ -4,57 +4,94 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import com.mapbox.geojson.Point;
-import com.mapbox.geojson.Polygon;
 
-import uk.ac.ed.inf.aqmaps.drone.Drone.DroneAction;
 import uk.ac.ed.inf.aqmaps.geometry.EuclideanUtils;
-import uk.ac.ed.inf.aqmaps.geometry.LineSegment;
 import uk.ac.ed.inf.aqmaps.map.Sensor;
+import uk.ac.ed.inf.aqmaps.map.TwoDimensionalMapObject;
 
+/**
+ * The MainDrone class captures the properties of the drone that is used to take
+ * the sensor readings. It is different from the "ShadowDrone" in that there
+ * will only ever be one main drone, whereas shadow drones simply simulate the
+ * future steps of the main drone, thereby aiding its decision making.
+ *
+ */
 public class MainDrone extends Drone {
 
+    /*
+     * The list of sensors that the drone is supposed to read in exactly the given
+     * order.
+     */
     private ArrayList<Sensor> sensorTour;
 
+    /*
+     * The MainDrone needs to remember its starting position to return to it later.
+     */
     private final Point startingPosition;
 
+    /* The index of the sensor the drone is meant to read next */
     private int currentDestinationIndex;
-    private double currentActionRange;
-    
+
+    /*
+     * Once a critical error has occurred, the drone is assumed to have crashed and
+     * can no longer make moves. This is preferable to simply exiting the
+     * application, because in real scenarios, the drone may e.g. run out of
+     * battery, in which case we would still like to see the output up to this
+     * point.
+     */
     private boolean hasCrashed = false;
 
+    /*
+     * Log information about the sensors the drone has or hasn't read.
+     */
     private boolean[] sensorsVisitedArray;
     private double[] readingsForAllSensors;
     private ArrayList<String> sensorReadHistory;
 
+    /*
+     * All positions the drone had at some point over the course of the current day.
+     */
     private ArrayList<Point> positionHistory;
 
-    public MainDrone(Point startingPoint, ArrayList<Sensor> tour) {
-        super(startingPoint);
+    /**
+     * The constructor of the MainDrone class
+     * 
+     * @param startingPosition the position the drone starts at on move 0
+     * @param tour             the list of sensors the drone is expected to read
+     */
+    public MainDrone(Point startingPosition, ArrayList<Sensor> tour) {
+        super(startingPosition);
 
-        this.startingPosition = this.currentPosition;
-        var startingPosAsList = Arrays.asList(startingPosition);
+        this.startingPosition = currentPosition;
+        var startingPosAsList = Arrays.asList(this.startingPosition);
         this.positionHistory = new ArrayList<Point>(startingPosAsList);
-
         this.sensorTour = tour;
-        this.currentDestinationIndex = 0;
-        this.sensorsVisitedArray = new boolean[sensorTour.size()];
-        this.readingsForAllSensors = new double[sensorTour.size()];
-        this.sensorReadHistory = new ArrayList<String>();
 
-        if (tour == null) {
-            System.out.println(tour);
-        }
+        /* Initialising instance variables the obvious way */
+        currentDestinationIndex = 0;
+        sensorsVisitedArray = new boolean[tour.size()];
+        readingsForAllSensors = new double[tour.size()];
+        sensorReadHistory = new ArrayList<String>();
 
         if (tour.size() > 0) {
-            super.currentDestination = tour.get(0).getPosition();
+            currentDestination = tour.get(0).getPosition();
             currentActionRange = MAX_READ_DISTANCE;
+        } else {
+            System.out.println("The main drone was given an empty tour.");
+            currentDestination = startingPosition;
+            currentActionRange = MAX_LANDING_DISTANCE;
         }
     }
 
+    /**
+     * This acts as the "main method" of this class. The drone visits and reads all
+     * sensors in the given order and eventually returns to its starting location
+     * (if it hasn't crashed).
+     */
     public void completeTour() {
-        while (this.currentDestinationIndex < this.sensorTour.size() && !hasCrashed) {
-            this.currentDestination = this.sensorTour.get(currentDestinationIndex).getPosition();
-            var stepsToGetToSensor = this.flyToCurrentDestination();
+        while (currentDestinationIndex < sensorTour.size() && !hasCrashed) {
+            currentDestination = sensorTour.get(currentDestinationIndex).getPosition();
+            var stepsToGetToSensor = flyToCurrentDestination();
 
             /*
              * We can only take one reading per move. Thus, if the drone is already in range
@@ -62,10 +99,10 @@ public class MainDrone extends Drone {
              * range of the next sensor turns out to be impossible).
              */
             if (stepsToGetToSensor == 0) {
-                this.park(this.currentActionRange);
+                this.park();
             }
 
-            this.downloadReadingsFromSensor(this.sensorTour.get(this.currentDestinationIndex));
+            readSensor(sensorTour.get(currentDestinationIndex));
 
             /* Preparing drone for next sensor to be read */
             this.currentDestinationIndex++;
@@ -73,153 +110,166 @@ public class MainDrone extends Drone {
 
         if (!hasCrashed) {
             /* Once all sensors have been read, return to starting position */
-            this.currentActionRange = MAX_LANDING_DISTANCE;
-            this.currentDestination = this.startingPosition;
-            this.flyToCurrentDestination();
-            
-            System.out.println("Successfully finished the tour after " + this.stepsMade + " steps!");
+            currentActionRange = MAX_LANDING_DISTANCE;
+            currentDestination = startingPosition;
+            flyToCurrentDestination();
+
+            System.out.println("Successfully finished the tour after " + stepsMade + " steps!");
         } else {
             System.out.println("Sadly, the drone crashed.");
         }
-        
-        
+
     }
 
+    /**
+     * This high-level method guides the drone to its next destination, returning
+     * the number of steps it took to get there after the method call was made.
+     * 
+     * @return The number of steps the drone made to reach its destination
+     */
     public int flyToCurrentDestination() {
-        
-        var moveCountAtStart = this.stepsMade;
 
-        while (!this.isInRangeOfPoint(currentDestination, currentActionRange) && !hasCrashed) {
+        var moveCountAtStart = stepsMade;
 
-            if (this.isInRangeOfPoint(currentDestination, MOVE_DISTANCE)) {
-                park(currentActionRange);
-            } else if (this.canGetTowardsDestinationInStraightLine()) {
-                var straightPath = new LineSegment(this.currentPosition, this.currentDestination);
-                var exactAngle = straightPath.getAngleInDegrees();
-                double scaledAngle = exactAngle / ANGLE_GRANULARITY;
-                double roundedAngle = (ANGLE_GRANULARITY * (int) Math.rint(scaledAngle) + 360) % 360;
+        while (!isInRangeOfDestination() && !hasCrashed) {
 
-                this.makeMove(roundedAngle);
+            if (EuclideanUtils.computeDistance(currentPosition, currentDestination) <= MOVE_DISTANCE) {
+                park();
+            } else if (canMoveTowardsGoal()) {
+                makeMoveTowardsGoal();
             } else {
-                this.avoidObstacle(this.obstacleInOurWay);
+                avoidObstacle(obstacleInOurWay);
             }
 
         }
 
-        var moveCountAtEnd = this.stepsMade;
+        var moveCountAtEnd = stepsMade;
 
         /*
-         * Return the number of steps it takes to get from A to B
+         * The difference of the move counter before and after flying to the goal is the
+         * number of steps it took to get there.
          */
         return moveCountAtEnd - moveCountAtStart;
 
     }
 
-    @Override
-    public boolean canGetTowardsDestinationInStraightLine() {
+    /**
+     * Given an obstacle which keeps the drone from moving straight towards its
+     * destination, this method lets the main drone spawn shadow drones to compare
+     * the cost of dodging the obstacle in a left/clockwise and in a
+     * right/counterclockwise manner.
+     * 
+     * The moves of the shadow drone that yielded the more promising solution are
+     * then adopted.
+     * 
+     * If both shadow drones fail their task for whatever reason, the drone crashes.
+     * This however did not happen once during testing.
+     * 
+     * @param obstacleInOurWay the obstacle which last kept the drone from moving
+     *                         towards its destination.
+     */
+    public void avoidObstacle(TwoDimensionalMapObject obstacleInOurWay) {
 
-        var shadow = new ShadowDrone(this.currentPosition, this.currentDestination);
+        System.out.println("The main drone tries to avoid " + obstacleInOurWay.getName());
 
-        shadow.setPosition(this.currentPosition);
-        shadow.setStepsMade(0);
+        /* Estimate the cost of a left rotation */
+        var leftShadow = new ShadowDrone(currentPosition, currentDestination);
+        var approxCostClockwiseAvoid = leftShadow.costOfAvoidingObstacle(obstacleInOurWay, currentActionRange, true);
 
-        var answer = shadow.canGetTowardsDestinationInStraightLine();
-        this.obstacleInOurWay = shadow.getObstacleInOurWay();
+        System.out.println("A clockwise rotation leads to estimated cost: " + approxCostClockwiseAvoid);
 
-        return answer;
-    }
+        /* Estimate the cost of a right rotation */
+        var rightShadow = new ShadowDrone(currentPosition, currentDestination);
+        var approxCostCounterClockwiseAvoid = rightShadow.costOfAvoidingObstacle(obstacleInOurWay, currentActionRange,
+                false);
 
-    public void avoidObstacle(Polygon obstacle) {
+        System.out.println("A counter-clockwise rotation leads to estimated cost: " + approxCostCounterClockwiseAvoid);
 
-        var leftShadow = new ShadowDrone(this.currentPosition, this.currentDestination);
-
-        var approxDistanceClockwiseAvoid = leftShadow.distToAvoidObstacleClockwise(obstacle, this.currentActionRange);
-
-        //System.out.println("left: " + approxDistanceClockwiseAvoid);
-
-        var rightShadow = new ShadowDrone(this.currentPosition, this.currentDestination);
-
-        var approxDistanceCounterClockwiseAvoid = rightShadow.distToAvoidObstacleCounterClockwise(obstacle,
-                this.currentActionRange);
-
-        //System.out.println("right: " + approxDistanceCounterClockwiseAvoid);
-
-        ArrayList<Double> anglesToFlyAt;
-
-        if (Double.isInfinite(approxDistanceClockwiseAvoid) && Double.isInfinite(approxDistanceCounterClockwiseAvoid)) {
-            System.out.println("The drone can not find away to get around the obstacle " + obstacle);
-            this.hasCrashed = true;
+        /*
+         * If both shadow drones returned infinite cost, we have no way out - the drone
+         * crashes
+         */
+        if (Double.isInfinite(approxCostClockwiseAvoid) && Double.isInfinite(approxCostCounterClockwiseAvoid)) {
+            System.out.println("The drone can not find away to get around the obstacle " + obstacleInOurWay);
+            hasCrashed = true;
             return;
         }
-        
-         if (approxDistanceClockwiseAvoid < approxDistanceCounterClockwiseAvoid) {
-            System.out.println("Chose left rotation to avoid obstacle");
+
+        /*
+         * If things have gone well, we copy the moves of the drone that gave the
+         * cheaper solution.
+         */
+        ArrayList<Integer> anglesToFlyAt;
+        if (approxCostClockwiseAvoid < approxCostCounterClockwiseAvoid) {
+            System.out.println("Chose clockwise rotation to avoid obstacle " + obstacleInOurWay.getName());
             anglesToFlyAt = leftShadow.getMoveAngleHistory();
         } else {
-            System.out.println("Chose right rotation to avoid obstacle");
+            System.out.println("Chose counter-clockwise rotation to avoid obstacle " + obstacleInOurWay.getName());
             anglesToFlyAt = rightShadow.getMoveAngleHistory();
         }
-
         for (var angle : anglesToFlyAt) {
             makeMove(angle);
         }
     }
 
-    private void downloadReadingsFromSensor(Sensor sensor) {
+    /**
+     * This method is used to take a reading from a given sensor. This only works if
+     * the sensor is indeed in the required range. The reading is stored in order to
+     * later serve as part of the output of this application.
+     * 
+     * @param sensor the sensor to be read
+     */
+    private void readSensor(Sensor sensor) {
 
-        if (isInRangeOfPoint(sensor.getPosition(), MAX_READ_DISTANCE)) {
+        if (EuclideanUtils.computeDistance(currentPosition, sensor.getPosition()) <= MAX_READ_DISTANCE) {
             System.out.println("Read sensor " + currentDestinationIndex);
-            this.sensorsVisitedArray[currentDestinationIndex] = true;
-            this.readingsForAllSensors[currentDestinationIndex] = sensor.outputReading();
-            this.sensorReadHistory.set(stepsMade - 1, sensor.getW3wLocation().toString());
+            sensorsVisitedArray[currentDestinationIndex] = true;
+            readingsForAllSensors[currentDestinationIndex] = sensor.outputReading();
+            sensorReadHistory.set(stepsMade - 1, sensor.getW3wLocation().toString());
 
         } else {
-            System.out.println("The drone was asked to read a sensor that was actually out of range!");
-            this.hasCrashed = true;
+            System.out.println("The drone was asked to read a sensor that was out of range! "
+                    + "Because this is an illegal action, the drone crashes.");
+            hasCrashed = true;
         }
 
     }
 
-    protected void makeMove(double angle) {
+    /**
+     * This method is the only way in which our main drone can move. If this is
+     * impossible for whatever reason, the drone gives the appropriate response.
+     * 
+     * @param angle the angle that specifies in what direction the drone should
+     *              move.
+     */
+    protected void makeMove(int angle) {
 
-        /*
-         * System.out.println(); System.out.println(this.currentDestinationIndex);
-         * System.out.println(this.currentPosition);
-         * System.out.println(this.currentDestination);
-         * System.out.println(this.stepsMade); System.out.println();
-         */
-
-        if (!this.canMove(angle)) {
+        /* The first two options can only ever occur if our program is buggy. */
+        if (hasCrashed) {
+            System.out.println("The main drone has crashed! It can no longer move! "
+                    + "Stopping program execution to avoid an infinite loop.");
+            System.exit(1);
+        } else if (!canMove(angle)) {
             System.out.println("The main drone was told to make an impossible move.");
-            this.hasCrashed = true;
-        } else if (this.stepsMade >= this.MAX_MOVES) {
+            hasCrashed = true;
+        } else if (this.stepsMade >= MAX_MOVES) {
             System.out.println("The main drone has run out of battery and has crashed!");
-            this.hasCrashed = true;
+            hasCrashed = true;
         } else {
             var nextPos = EuclideanUtils.getNextPosition(this.currentPosition, angle, MOVE_DISTANCE);
-            this.currentPosition = nextPos;
-            this.moveAngleHistory.add(angle);
-            /* 
-             * We add null to the sensor reading log - if we do take a reading on this step, we will
-             * update this value in the downloadReadingsFromSensor method. 
+            currentPosition = nextPos;
+            moveAngleHistory.add(angle);
+            /*
+             * We add null to the sensor reading log - if we do take a reading on this step,
+             * we will update this value in the downloadReadingsFromSensor method.
              */
-            this.sensorReadHistory.add("null");
-            this.positionHistory.add(nextPos);
-            this.stepsMade++;
+            sensorReadHistory.add("null");
+            positionHistory.add(nextPos);
+            stepsMade++;
         }
     }
 
-    /*
-     * This method is needed when we want another class to tell the drone to land at
-     * its next destination, even if that is not its starting point, or if it has
-     * not completed its tour yet.
-     * 
-     * In our scenario, that only happens if we use a drone to find the distance
-     * between a sensor and the starting point via our TourPlanner class.
-     */
-    public void setActionRangeToLanding() {
-        this.currentActionRange = MAX_LANDING_DISTANCE;
-    }
+    /* Getters and Setters */
 
     public ArrayList<Point> getPositionHistory() {
         return positionHistory;

@@ -84,7 +84,7 @@ public class TourPlanner {
                  * our drone aims at.
                  */
                 if (j == numPoints - 1) {
-                    drone.setActionRangeToLanding();
+                    drone.setCurrentActionRange(Drone.getMaxLandingDistance());
                 }
 
                 var stepsNeeded = drone.flyToCurrentDestination();
@@ -95,7 +95,7 @@ public class TourPlanner {
                  * thus requiring one or two in between moves.
                  */
                 if (stepsNeeded == 0 && i != j) {
-                    drone.park(Drone.getMaxReadDistance());
+                    drone.park();
                 }
                 distanceMatrix[i][j] = drone.getStepsMade();
                 
@@ -192,7 +192,6 @@ public class TourPlanner {
             for (int j = 0; j < numPoints - 1; j++) {
                 for (int i = 0; i < j; i++) {
                     if (tryReverse(i, j)) {
-                        System.out.println("Current best tour value: " + this.tourValue(currentPointPermutation));
                         improvedTourOnPreviousLoop = true;
                     }
                 }

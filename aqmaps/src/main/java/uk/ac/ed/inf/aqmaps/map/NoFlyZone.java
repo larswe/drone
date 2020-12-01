@@ -12,27 +12,13 @@ import com.mapbox.geojson.Polygon;
  * of more than one "block", but for our drone, each such block simply represents one obstacle to 
  * be avoided. 
  */
-public class NoFlyZone {
+public class NoFlyZone extends TwoDimensionalMapObject {
 
-    private String name;
     private String rgbColourString;
-    private Polygon polygon;
     private List<Point> corners;
 
     public NoFlyZone(Feature feature) {
-
-        var geometry = feature.geometry();
-
-        try {
-            if (geometry instanceof Polygon && ((Polygon) geometry).coordinates().size() == 1) {
-                this.polygon = (Polygon) geometry;
-            } else {
-                throw new IllegalArgumentException("One of the specified No-Fly-Zones is not a (solid) polygon!");
-            }
-        } catch (IllegalArgumentException e) {
-            e.printStackTrace();
-            System.exit(1);
-        }
+        super(feature);
 
         /*
          * If no exception was thrown, we have a legal No Fly Zone on our hands and can

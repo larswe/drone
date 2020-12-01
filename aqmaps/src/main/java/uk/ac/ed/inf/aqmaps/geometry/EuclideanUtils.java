@@ -6,14 +6,14 @@ import com.mapbox.geojson.Point;
 import com.mapbox.geojson.Polygon;
 
 public class EuclideanUtils {
-
-    /*
-     * The orientation of a triplet of points A,B,C. Only needed in this class when
-     * figuring out whether two line segments intersect, therefore made private.
+    
+    /**
+     * The orientation of a triplet of points A,B,C. Used only by the EuclideanUtils
+     * class when figuring out whether two line segments intersect, and therefore made private.
      */
     private enum Orientation {
         CLOCKWISE, COUNTERCLOCKWISE, COLINEAR
-    };
+    }
 
     /* Private constructor that prevents this class from being instantiated */
     private EuclideanUtils() {

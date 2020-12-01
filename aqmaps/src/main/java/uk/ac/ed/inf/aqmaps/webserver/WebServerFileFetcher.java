@@ -22,25 +22,25 @@ public class WebServerFileFetcher {
         stringBuilder.append(BUILDINGS_FOLDER_PATH);
         stringBuilder.append("/");
         stringBuilder.append(BUILDINGS_FILE_NAME);
-        
+
         return getStringFromFileAtPort(stringBuilder.toString(), port);
     }
-    
+
     public static String getSensorsGeojsonFromServer(int day, int month, int year, int port) {
         var stringBuilder = new StringBuilder();
         stringBuilder.append(SENSOR_MAP_FOLDER_PATH);
         stringBuilder.append("/");
-        stringBuilder.append(String.format("%04d",  year));
+        stringBuilder.append(String.format("%04d", year));
         stringBuilder.append("/");
-        stringBuilder.append(String.format("%02d",  month));
+        stringBuilder.append(String.format("%02d", month));
         stringBuilder.append("/");
-        stringBuilder.append(String.format("%02d",  day));
+        stringBuilder.append(String.format("%02d", day));
         stringBuilder.append("/");
         stringBuilder.append(SENSOR_MAP_FILE_NAME);
-        
+
         return getStringFromFileAtPort(stringBuilder.toString(), port);
     }
-    
+
     public static String getW3wJsonFromServer(String first, String second, String third, int port) {
         var stringBuilder = new StringBuilder();
         stringBuilder.append(WORDS_FOLDER_PATH);
@@ -52,18 +52,17 @@ public class WebServerFileFetcher {
         stringBuilder.append(third);
         stringBuilder.append("/");
         stringBuilder.append(WORDS_FILE_NAME);
-        
+
         return getStringFromFileAtPort(stringBuilder.toString(), port);
     }
-    
+
     private static String getStringFromFileAtPort(String filePath, int port) {
         var request = generateHttpRequest(filePath, port);
         var responseBody = getResponseBodyForRequest(request, port);
-        
+
         return responseBody;
     }
-    
-    
+
     private static HttpRequest generateHttpRequest(String filePath, int port) {
         var stringBuilder = new StringBuilder();
         stringBuilder.append("http://");
@@ -76,10 +75,10 @@ public class WebServerFileFetcher {
 
         /* The client assumes the following is a GET request by default */
         var request = HttpRequest.newBuilder().uri(URI.create(url)).build();
-        
+
         return request;
     }
-    
+
     /* We send a synchronous request since the files we retrieve are small */
     private static String getResponseBodyForRequest(HttpRequest request, int port) {
         var client = HttpClient.newHttpClient();
@@ -90,18 +89,18 @@ public class WebServerFileFetcher {
 
             /* I am assuming that a 200 status code is the only acceptable response */
             if (response.statusCode() != 200) {
-                throw new HttpException(response.statusCode());
+                throw new Exception("Http error with return code " + response.statusCode());
             }
 
             responseBody = response.body();
-        } catch (IOException | InterruptedException e) { // IOException is subclassed by ConnectException
+        } catch (IOException | InterruptedException e) { // ConnectException is a subclass of IOException
             System.out.println("Fatal error: Unable to connect to " + SERVER + " at port " + port + ".");
-            System.exit(418); // Evidently, the server is a teapot.
-        } catch (HttpException e) {
+            System.exit(418);
+        } catch (Exception e) {
             e.printStackTrace();
-            System.exit(e.getStatusCode());
+            System.exit(1);
         }
-        
+
         return responseBody;
     }
 

@@ -150,7 +150,7 @@ public class AppTest {
         
         MainDrone d = new MainDrone(Point.fromLngLat(55.9461, -3.1924), arr);
 
-        assertTrue(d.canGetTowardsDestinationInStraightLine());
+        //assertTrue(d.canMoveTowardsGoal());
 
     }
 
@@ -167,7 +167,7 @@ public class AppTest {
         
         MainDrone d = new MainDrone(Point.fromLngLat(-3.192472, 55.94623), arr);
 
-        assertFalse(d.canGetTowardsDestinationInStraightLine());
+        //assertFalse(d.canFlyStraightAtGoal());
     }
     
     @Test
@@ -181,7 +181,7 @@ public class AppTest {
         
         MainDrone d = new MainDrone(Point.fromLngLat(-3.18971, 55.94284), new ArrayList<Sensor>(Arrays.asList(s)));
 
-        assertFalse(d.canGetTowardsDestinationInStraightLine());
+        //assertFalse(d.canFlyStraightAtGoal());
     }
     
     @Test
@@ -192,11 +192,11 @@ public class AppTest {
         
         ShadowDrone d = new ShadowDrone(Point.fromLngLat(-3.18962, 55.9426170001), destination);
 
-        var obst = App.getNoFlyZones().get(2).getPolygon();
+        var obst = App.getNoFlyZones().get(2);
         
         System.out.println("Obstacle: " + obst);
         
-        double dist = d.distToAvoidObstacleClockwise(obst, 0.0003);
+        double dist = d.costOfAvoidingObstacle(obst, 0.0003, true);
         
         System.out.println("Final result: " + dist);
         assertTrue(true);
@@ -210,11 +210,11 @@ public class AppTest {
         
         ShadowDrone d = new ShadowDrone(Point.fromLngLat(-3.18825, 55.9426170001), destination);
 
-        var obst = App.getNoFlyZones().get(2).getPolygon();
+        var obst = App.getNoFlyZones().get(2);
         
         System.out.println("Obstacle: " + obst);
         
-        double dist = d.distToAvoidObstacleCounterClockwise(obst, 0.0003);
+        double dist = d.costOfAvoidingObstacle(obst, 0.0003, false);
         
         System.out.println("Final result: " + dist);
         assertTrue(true);
@@ -228,11 +228,11 @@ public class AppTest {
         
         ShadowDrone d = new ShadowDrone(Point.fromLngLat(-3.18825, 55.9426170001), destination);
 
-        var obst = App.getNoFlyZones().get(2).getPolygon();
+        var obst = App.getNoFlyZones().get(2);
         
         System.out.println("Obstacle: " + obst);
         
-        double dist = d.distToAvoidObstacleClockwise(obst, 0.0003);
+        double dist = d.costOfAvoidingObstacle(obst, 0.0003, true);
         
         System.out.println("Final result: " + dist);
         assertTrue(dist == Double.POSITIVE_INFINITY);
@@ -246,11 +246,11 @@ public class AppTest {
         
         ShadowDrone d = new ShadowDrone(Point.fromLngLat(-3.18962, 55.9426170001), destination);
 
-        var obst = App.getNoFlyZones().get(2).getPolygon();
+        var obst = App.getNoFlyZones().get(2);
         
         System.out.println("Obstacle: " + obst);
         
-        double dist = d.distToAvoidObstacleCounterClockwise(obst, 0.0003);
+        double dist = d.costOfAvoidingObstacle(obst, 0.0003, false);
         
         System.out.println("Final result: " + dist);
         assertTrue(dist == Double.POSITIVE_INFINITY);
@@ -266,7 +266,7 @@ public class AppTest {
         
         MainDrone d = new MainDrone(Point.fromLngLat(-3.18962, 55.9426170001), new ArrayList<Sensor>(Arrays.asList(s)));
 
-        var obst = App.getNoFlyZones().get(2).getPolygon();
+        var obst = App.getNoFlyZones().get(2);
         
         System.out.println("Initial Position: " + d.getCurrentPosition());
         
@@ -287,7 +287,7 @@ public class AppTest {
         
         MainDrone d = new MainDrone(Point.fromLngLat(-3.18825, 55.9426170001), new ArrayList<Sensor>(Arrays.asList(s)));
 
-        var obst = App.getNoFlyZones().get(2).getPolygon();
+        var obst = App.getNoFlyZones().get(2);
         
         System.out.println("Initial Position: " + d.getCurrentPosition());
         
