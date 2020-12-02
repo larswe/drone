@@ -28,9 +28,11 @@ public class ShadowDrone extends Drone {
      * 
      * @param startingPoint the starting point of the shadow drone.
      * @param destination   the destination of the shadow drone.
+     * @param verbose       whether we want the drone to print success messages to
+     *                      standard output
      */
-    public ShadowDrone(Point startingPoint, Point destination) {
-        super(startingPoint);
+    public ShadowDrone(Point startingPoint, Point destination, boolean verbose) {
+        super(startingPoint, verbose);
         this.currentDestination = destination;
     }
 
@@ -93,9 +95,9 @@ public class ShadowDrone extends Drone {
              * feasible.
              */
             if (!madeMove || numAttemptedMoves > MAX_MOVES_TO_AVOID_OBSTACLE) {
-                if (clockwise) {
+                if (verbose && clockwise) {
                     System.out.println("Clockwise rotation does not work.");
-                } else {
+                } else if (verbose) {
                     System.out.println("Counter-Clockwise rotation does not work.");
                 }
                 return Double.POSITIVE_INFINITY;
@@ -146,7 +148,7 @@ public class ShadowDrone extends Drone {
              * class)
              */
             if (EuclideanUtils.computeDistance(currentPosition, currentDestination) <= MOVE_DISTANCE) {
-                var parkingShadow = new ShadowDrone(currentPosition, currentDestination);
+                var parkingShadow = new ShadowDrone(currentPosition, currentDestination, verbose);
                 /* Update the action range of the shadow in case we are about to land. */
                 parkingShadow.setCurrentActionRange(currentActionRange);
                 var result = parkingShadow.park();

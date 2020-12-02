@@ -10,7 +10,6 @@ import com.mapbox.geojson.Polygon;
  * They are used by the Drone classes, but its methods may be used by other
  * classes in the future. Conceptually, it really would not make sense for a
  * drone to carry all these methods.
- *
  */
 public class EuclideanUtils {
 

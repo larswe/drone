@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import com.mapbox.geojson.Feature;
@@ -14,13 +13,21 @@ import com.mapbox.geojson.Geometry;
 import com.mapbox.geojson.LineString;
 
 import uk.ac.ed.inf.aqmaps.drone.MainDrone;
-import uk.ac.ed.inf.aqmaps.map.Sensor;
 
 /**
- * This class contains static methods that can be used to turn the data gathered
- * by our drone into output files.
+ * Instances of this class can be used to turn the data gathered by our drone
+ * into output files.
  */
 public class OutputGenerator {
+
+    /*
+     * Integers denoting the date of the drone's journey for which output is
+     * supposed to be written.
+     */
+    private int day, month, year;
+
+    /* The drone which the data generating the output stems from */
+    private MainDrone drone;
 
     /*
      * Maps which assign to each "air pollution tier" its associated colour and
@@ -60,16 +67,90 @@ public class OutputGenerator {
     }
 
     /**
+     * The constructor of the OutputGenerator class.
+     * 
+     * @param day   the day of month of the drone's tour
+     * @param month the month of the drone's tour
+     * @param year  the year of the drone's tour
+     * @param drone the main drone used in this run of the app
+     */
+    public OutputGenerator(int day, int month, int year, MainDrone drone) {
+        this.day = day;
+        this.month = month;
+        this.year = year;
+        this.drone = drone;
+    }
+
+    /**
+     * This helper method computes the "pollution tier" of a given air quality
+     * measurement. The tier later decides the colour and symbol corresponding to
+     * the according sensor.
+     * 
+     * @param reading the reading corresponding to a sensor on a given day (already
+     *                having taken into account the battery)
+     * @return the pollution tier corresponding to the reading (0 for 0-32, 1 for
+     *         32-64, ..., 7 for 224-256)
+     */
+    private int computeTierForReading(double reading) {
+        /*
+         * We need the number of pollution tiers that correspond to legal readings -
+         * this excludes the tiers -1(Battery low) and 404(Reading missing).
+         */
+        var numLegalReadingTiers = pollutionTierToRgb.size() - 2;
+        var tierSize = App.getMaxReading() / numLegalReadingTiers;
+
+        for (int i = 1; i <= numLegalReadingTiers; i++) {
+            if (reading < i * tierSize) {
+                return i - 1;
+            }
+        }
+
+        /*
+         * If the reading is greater than the expected maximum, we simply print a
+         * warning and return the value corresponding to the "missing" tier
+         */
+        System.out.println("Warning! A reading exceeded the expected range! Sensor reported as unread!");
+        return 404;
+    }
+
+    /**
+     * This method generates a String in JSON format for a Mapbox GeoJSON
+     * FeatureCollection it first generates, and writes it to a file with the
+     * appropriate name.
+     */
+    void writeFeatureCollectionToFile() {
+        var featCollection = generateFeatureCollection();
+        var output = featCollection.toJson();
+
+        var fileName = generateGeoJSONFileName();
+
+        /*
+         * We catch possible IO Exceptions immediately, without throwing them back to
+         * our main method first. This differs from the approach I chose in the
+         * readGrid() method, where try-catch blocks would decrease readability.
+         */
+        try {
+            var fileWriter = new FileWriter(fileName);
+            var printWriter = new PrintWriter(fileWriter);
+            printWriter.print(output);
+            printWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.exit(1);
+        }
+    }
+
+    /**
      * Given the list of relevant sensors and our main drone after it has returned
      * from its tour, this method turns the gathered data, consisting of visited
      * locations and sensor readings, into a Mapbox FeatureCollection.
      * 
-     * @param sensors the relevant sensors, assumed to be in the order in which the
-     *                drone visited them
-     * @param drone   our main drone, assumed to have returned from its tour
      * @return a FeatureCollection corresponding to the gathered data
      */
-    static FeatureCollection generateFeatureCollection(List<Sensor> sensors, MainDrone drone) {
+    private FeatureCollection generateFeatureCollection() {
+        /* The sensors the drone visited, in the correct order */
+        var sensors = drone.getSensorTour();
+
         var positionHistory = drone.getPositionHistory();
         var visitedArr = drone.getSensorsVisitedArray();
         var allReadings = drone.getReadingsForAllSensors();
@@ -119,76 +200,13 @@ public class OutputGenerator {
     }
 
     /**
-     * This method computes the "pollution tier" of a given air quality measurement.
-     * The tier later decides the colour and symbol corresponding to the according
-     * sensor.
-     * 
-     * @param reading the reading corresponding to a sensor on a given day (already
-     *                having taken into account the battery)
-     * @return the pollution tier corresponding to the reading (0 for 0-32, 1 for
-     *         32-64, ..., 7 for 224-256)
-     */
-    private static int computeTierForReading(double reading) {
-        /*
-         * We need the number of pollution tiers that correspond to legal readings -
-         * this excludes the tiers -1(Battery low) and 404(Reading missing).
-         */
-        var numLegalReadingTiers = pollutionTierToRgb.size() - 2;
-        var tierSize = App.getMaxReading() / numLegalReadingTiers;
-
-        for (int i = 1; i <= numLegalReadingTiers; i++) {
-            if (reading < i * tierSize) {
-                return i - 1;
-            }
-        }
-
-        /*
-         * If the reading is greater than the expected maximum, we simply return the
-         * value corresponding to the "missing" tier
-         */
-        return 404;
-    }
-
-    /**
-     * This method generates a String in JSON format for a given Mapbox GeoJSON
-     * FeatureCollection and writes it to a file with the specified name.
-     * 
-     * @param featCollection a FeatureCollection corresponding to the sensor
-     *                       information and drone flight path
-     * @param fileName       the intended name of the output file
-     */
-    static void writeFeatureCollectionToFile(FeatureCollection featCollection, int day, int month, int year) {
-        var output = featCollection.toJson();
-
-        var fileName = generateGeoJSONFileName(day, month, year);
-
-        /*
-         * We catch possible IO Exceptions immediately, without throwing them back to
-         * our main method first. This differs from the approach I chose in the
-         * readGrid() method, where try-catch blocks would decrease readability.
-         */
-        try {
-            var fileWriter = new FileWriter(fileName);
-            var printWriter = new PrintWriter(fileWriter);
-            printWriter.print(output);
-            printWriter.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.exit(1);
-        }
-    }
-
-    /**
      * This helper method generates the name of the GeoJSON file corresponding to
      * the drone's output, in the appropriate format.
      * 
-     * @param day   the day of month of the drone's tour
-     * @param month the month of the drone's tour
-     * @param year  the year of the drone's tour
      * 
      * @return the file name of the output .geojson file
      */
-    private static String generateGeoJSONFileName(int day, int month, int year) {
+    private String generateGeoJSONFileName() {
         var stringBuilder = new StringBuilder();
         stringBuilder.append("readings");
         stringBuilder.append("-");
@@ -205,17 +223,11 @@ public class OutputGenerator {
      * This method writes the "move history" of our main drone (in the required
      * format) to a .txt output file, after the drone has returned from its tour.
      * 
-     * @param sensors the relevant sensors, assumed to be in the order in which the
-     *                drone visited them
-     * @param drone   our main drone, assumed to have returned from its tour
-     * @param day     the day of month of the drone's tour
-     * @param month   the month of the drone's tour
-     * @param year    the year of the drone's tour
      * 
-     * @throws IOException
+     * @throws IOException throw an IOException in case something goes wrong - Error
+     *                     Handling done in main method to increase readability
      */
-    static void writeFlightPathToFile(List<Sensor> sensors, MainDrone drone, int day, int month, int year)
-            throws IOException {
+    void writeFlightPathToFile() throws IOException {
 
         /*
          * Generate the appropriate file name and get a PrintWriter object. Note: A
@@ -239,7 +251,7 @@ public class OutputGenerator {
             System.exit(1);
         }
 
-        /* Add a corresponding line for each move our drone made. */ 
+        /* Add a corresponding line for each move our drone made. */
         for (int i = 1; i <= numMoves; i++) {
             var dronePosBefore = positionHistory.get(i - 1);
             var angleOfMove = (int) Math.round(angleHistory.get(i - 1));

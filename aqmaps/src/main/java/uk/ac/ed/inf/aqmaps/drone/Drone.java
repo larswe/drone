@@ -3,7 +3,6 @@ package uk.ac.ed.inf.aqmaps.drone;
 import java.util.ArrayList;
 
 import com.mapbox.geojson.Point;
-import com.mapbox.geojson.Polygon;
 
 import uk.ac.ed.inf.aqmaps.application.App;
 import uk.ac.ed.inf.aqmaps.geometry.EuclideanUtils;
@@ -56,7 +55,19 @@ public abstract class Drone {
      */
     protected Point currentDestination;
 
+    /*
+     * The verbose flag tells the drone whether it should print feedback to standard
+     * output or not. That is because 1000+ drones are created while finding the
+     * best sensor tour. And we do not want them flooding the program's output
+     * (unless we are in a testing phase in which such an extensive output may
+     * actually interest us).
+     * 
+     * Error messages are always printed, because they are always relevant.
+     */
+    protected boolean verbose;
+
     /* After this many moves, the drone runs out of battery and shuts down. */
+
     protected static final int MAX_MOVES = 150;
 
     /* Our drone can move at an angle of 10, 20,..., but not e.g. 26 degrees */
@@ -69,8 +80,18 @@ public abstract class Drone {
     /* Radius of circle around starting point in which drone is allowed to land */
     protected static final double MAX_LANDING_DISTANCE = 0.0003;
 
-    public Drone(Point startingPoint) {
+    /**
+     * The constructor of the abstract Drone (super)class. Has behaviour that is
+     * needed for Main- as well as ShadowDrones.
+     * 
+     * @param startingPoint the starting point of the drone
+     * @param verbose       whether we expect printed output from this drone even if
+     *                      no error occurs
+     */
+    public Drone(Point startingPoint, boolean verbose) {
         this.currentPosition = startingPoint;
+        this.verbose = verbose;
+
         this.currentActionRange = MAX_READ_DISTANCE;
         this.stepsMade = 0;
         this.moveAngleHistory = new ArrayList<Integer>();
@@ -198,7 +219,8 @@ public abstract class Drone {
                 var posAfterCandidateInBetweenMove = EuclideanUtils.getNextPosition(this.currentPosition,
                         angleForCandidateInBetweenMove, MOVE_DISTANCE);
 
-                var shadowForSecondStep = new ShadowDrone(posAfterCandidateInBetweenMove, this.currentDestination);
+                var shadowForSecondStep = new ShadowDrone(posAfterCandidateInBetweenMove, this.currentDestination,
+                        verbose);
 
                 /*
                  * If this single move takes us into the required range, it is all we need from
@@ -233,21 +255,25 @@ public abstract class Drone {
          * - but hopefully we have found a 2-step manoeuvre, which we now go for.
          */
         if (chosenInBetweenMoveAngle == null) {
-            System.out.println("The parking attempt was not successful.");
+            if (verbose) {
+                System.out.println("The parking attempt was not successful.");                                                              
+            }
             return false;
         } else {
             makeMove(chosenInBetweenMoveAngle);
             makeMove(chosenParkingMoveAngle);
             /*
              * 2-move parking attempts are expected to be rare, therefore it's worth taking
-             * note of them.
+             * note of them, but only if the verbose flag is set.
              */
-            System.out.println("Successful parking attempt in 2 moves");
+            if (verbose) {
+                System.out.println("Successful parking attempt in 2 moves");
+            }
             return true;
         }
 
     }
-    
+
     /**
      * This helper method constructs a line from the drone's position to its
      * destination, computes its angle and rounds the result to give the "legal"
@@ -269,6 +295,9 @@ public abstract class Drone {
     /**
      * This method is just a shortcut to find out whether the drone is "close
      * enough" to its current destination.
+     * 
+     * @return whether the distance of drone is no more than the range of the action
+     *         it plans to do next
      */
     protected boolean isInRangeOfDestination() {
         return EuclideanUtils.computeDistance(currentPosition, currentDestination) <= currentActionRange;

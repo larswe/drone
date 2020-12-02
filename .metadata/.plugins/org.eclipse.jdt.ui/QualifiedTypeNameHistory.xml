@@ -10,11 +10,23 @@
     <fullyQualifiedTypeName name="java.net.URI"/>
     <fullyQualifiedTypeName name="java.net.ConnectException"/>
     <fullyQualifiedTypeName name="java.awt.Color"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="com.mapbox.geojson.FeatureCollection"/>
-    <fullyQualifiedTypeName name="com.mapbox.geojson.Feature"/>
-    <fullyQualifiedTypeName name="com.mapbox.geojson.Polygon"/>
+    <fullyQualifiedTypeName name="java.lang.Double"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="uk.ac.ed.inf.aqmaps.EuclideanUtils.Orientation"/>
+    <fullyQualifiedTypeName name="uk.ac.ed.inf.aqmaps.EuclideanUtils"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.Collection"/>
+    <fullyQualifiedTypeName name="java.util.Collections"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="com.mapbox.geojson.LineString"/>
     <fullyQualifiedTypeName name="com.mapbox.geojson.Geometry"/>
     <fullyQualifiedTypeName name="com.mapbox.geojson.Point"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="sun.tools.tree.ThisExpression"/>
+    <fullyQualifiedTypeName name="uk.ac.ed.inf.aqmaps.application.InputProcessor"/>
+    <fullyQualifiedTypeName name="uk.ac.ed.inf.aqmaps.geometry.Orientation"/>
+    <fullyQualifiedTypeName name="com.mapbox.geojson.Polygon"/>
+    <fullyQualifiedTypeName name="com.mapbox.geojson.Feature"/>
+    <fullyQualifiedTypeName name="uk.ac.ed.inf.aqmaps.map.TwoDimensionalMapObject"/>
+    <fullyQualifiedTypeName name="uk.ac.ed.inf.aqmaps.geometry.EuclideanUtils"/>
 </qualifiedTypeNameHistroy>

@@ -58,9 +58,11 @@ public class MainDrone extends Drone {
      * 
      * @param startingPosition the position the drone starts at on move 0
      * @param tour             the list of sensors the drone is expected to read
+     * @param verbose          whether we want the drone to print success messages
+     *                         to standard output
      */
-    public MainDrone(Point startingPosition, ArrayList<Sensor> tour) {
-        super(startingPosition);
+    public MainDrone(Point startingPosition, ArrayList<Sensor> tour, boolean verbose) {
+        super(startingPosition, verbose);
 
         this.startingPosition = currentPosition;
         var startingPosAsList = Arrays.asList(this.startingPosition);
@@ -77,7 +79,7 @@ public class MainDrone extends Drone {
             currentDestination = tour.get(0).getPosition();
             currentActionRange = MAX_READ_DISTANCE;
         } else {
-            System.out.println("The main drone was given an empty tour.");
+            System.out.println("A MainDrone was given an empty tour!");
             currentDestination = startingPosition;
             currentActionRange = MAX_LANDING_DISTANCE;
         }
@@ -114,7 +116,9 @@ public class MainDrone extends Drone {
             currentDestination = startingPosition;
             flyToCurrentDestination();
 
-            System.out.println("Successfully finished the tour after " + stepsMade + " steps!");
+            if (verbose) {
+                System.out.println("Successfully finished the tour after " + stepsMade + " steps!");
+            }
         } else {
             System.out.println("Sadly, the drone crashed.");
         }
@@ -170,26 +174,31 @@ public class MainDrone extends Drone {
      */
     public void avoidObstacle(TwoDimensionalMapObject obstacleInOurWay) {
 
-        System.out.println("The main drone tries to avoid " + obstacleInOurWay.getName());
+        if (verbose) {
+            System.out.println("The main drone tries to avoid " + obstacleInOurWay.getName());
+        }
 
         /* Estimate the cost of a left rotation */
-        var leftShadow = new ShadowDrone(currentPosition, currentDestination);
-        var approxCostClockwiseAvoid = leftShadow.costOfAvoidingObstacle(obstacleInOurWay, currentActionRange, true);
+        var leftShadow = new ShadowDrone(currentPosition, currentDestination, verbose);
+        var approxCostLeftAvoid = leftShadow.costOfAvoidingObstacle(obstacleInOurWay, currentActionRange, true);
 
-        System.out.println("A clockwise rotation leads to estimated cost: " + approxCostClockwiseAvoid);
+        if (verbose) {
+            System.out.println("A clockwise rotation leads to estimated cost: " + approxCostLeftAvoid);
+        }
 
         /* Estimate the cost of a right rotation */
-        var rightShadow = new ShadowDrone(currentPosition, currentDestination);
-        var approxCostCounterClockwiseAvoid = rightShadow.costOfAvoidingObstacle(obstacleInOurWay, currentActionRange,
-                false);
+        var rightShadow = new ShadowDrone(currentPosition, currentDestination, verbose);
+        var approxCostRightAvoid = rightShadow.costOfAvoidingObstacle(obstacleInOurWay, currentActionRange, false);
 
-        System.out.println("A counter-clockwise rotation leads to estimated cost: " + approxCostCounterClockwiseAvoid);
+        if (verbose) {
+            System.out.println("A counter-clockwise rotation leads to estimated cost: " + approxCostRightAvoid);
+        }
 
         /*
          * If both shadow drones returned infinite cost, we have no way out - the drone
          * crashes
          */
-        if (Double.isInfinite(approxCostClockwiseAvoid) && Double.isInfinite(approxCostCounterClockwiseAvoid)) {
+        if (Double.isInfinite(approxCostLeftAvoid) && Double.isInfinite(approxCostRightAvoid)) {
             System.out.println("The drone can not find away to get around the obstacle " + obstacleInOurWay);
             hasCrashed = true;
             return;
@@ -200,11 +209,15 @@ public class MainDrone extends Drone {
          * cheaper solution.
          */
         ArrayList<Integer> anglesToFlyAt;
-        if (approxCostClockwiseAvoid < approxCostCounterClockwiseAvoid) {
-            System.out.println("Chose clockwise rotation to avoid obstacle " + obstacleInOurWay.getName());
+        if (approxCostLeftAvoid < approxCostRightAvoid) {
+            if (verbose) {
+                System.out.println("Chose clockwise rotation to avoid obstacle " + obstacleInOurWay.getName());
+            }
             anglesToFlyAt = leftShadow.getMoveAngleHistory();
         } else {
-            System.out.println("Chose counter-clockwise rotation to avoid obstacle " + obstacleInOurWay.getName());
+            if (verbose) {
+                System.out.println("Chose counter-clockwise rotation to avoid obstacle " + obstacleInOurWay.getName());
+            }
             anglesToFlyAt = rightShadow.getMoveAngleHistory();
         }
         for (var angle : anglesToFlyAt) {
@@ -222,7 +235,9 @@ public class MainDrone extends Drone {
     private void readSensor(Sensor sensor) {
 
         if (EuclideanUtils.computeDistance(currentPosition, sensor.getPosition()) <= MAX_READ_DISTANCE) {
-            System.out.println("Read sensor " + currentDestinationIndex);
+            if (verbose) {
+                System.out.println("Read sensor " + currentDestinationIndex);
+            }
             sensorsVisitedArray[currentDestinationIndex] = true;
             readingsForAllSensors[currentDestinationIndex] = sensor.outputReading();
             sensorReadHistory.set(stepsMade - 1, sensor.getW3wLocation().toString());

@@ -12,4 +12,6 @@
 			<item value="org.eclipse.m2e"/>
 		</list>
 	</section>
+	<section name="BasicNewProjectResourceWizard">
+	</section>
 </section>

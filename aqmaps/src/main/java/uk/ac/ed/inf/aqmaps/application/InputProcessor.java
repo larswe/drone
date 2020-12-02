@@ -19,7 +19,7 @@ import uk.ac.ed.inf.aqmaps.webserver.JsonWhat3WordsStub;
 import uk.ac.ed.inf.aqmaps.webserver.WebServerFileFetcher;
 
 /**
- * This class contains static methods used by the App class to process the given
+ * Instances of this class are used by the App class to process the given
  * inputs, whether they are provided directly by the user, or fetched from the
  * file server.
  * 
@@ -29,8 +29,18 @@ import uk.ac.ed.inf.aqmaps.webserver.WebServerFileFetcher;
  */
 public class InputProcessor {
 
+    /*
+     * The entity that deals with the actual connection to the file server and
+     * returns the needed file contents.
+     */
     private final WebServerFileFetcher fileFetcher;
 
+    /**
+     * The constructor of the InputProcessor class.
+     * 
+     * @param port the port needed to initialise the fileFetcher attribute that is
+     *             responsible for the connection to the relevant file server
+     */
     public InputProcessor(int port) {
         this.fileFetcher = new WebServerFileFetcher(port);
     }
@@ -38,10 +48,12 @@ public class InputProcessor {
     /**
      * This method turns the command line arguments given by the user into an
      * instance of the AppStartInfo class, to be used throughout the runtime of the
-     * application.
+     * application. Input arguments are parsed depending on their expected type.
      * 
      * @param args Command line arguments, consisting of a date, a starting position
      *             for the drone, a random seed and a port.
+     * 
+     * @return an AppStartInfo object encapsulating all command line arguments
      */
     static AppStartInfo parseInputArguments(String[] args) {
         var day = Integer.parseInt(args[0]);
@@ -64,7 +76,6 @@ public class InputProcessor {
      * @param day   the day of month of the drone's tour
      * @param month the month of the drone's tour
      * @param year  the year of the drone's tour
-     * @param port  the port that shall be used to connect to the file server
      * 
      * @return a list of stubs that represent the relevant sensors
      */
@@ -116,8 +127,6 @@ public class InputProcessor {
      * JSON String from the server.
      * 
      * @param w3wString the name of the relevant What3Words Location
-     * @param port      the port that shall be used to connect to the file server,
-     *                  to retrieve the information corresponding to the location
      * @return an instance of the What3WordsLocation class
      */
     private What3WordsLocation processW3wString(String w3wString) {
@@ -185,7 +194,6 @@ public class InputProcessor {
      * before turning it into a Mapbox FeatureCollection and then a list of
      * NoFlyZone objects with the relevant properties.
      * 
-     * @param port the port that shall be used to connect to the file server
      * @return a list of all no fly zones declared on the file server
      */
     ArrayList<TwoDimensionalMapObject> loadNoFlyZonesFromServer() {

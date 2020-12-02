@@ -12,7 +12,6 @@ import com.mapbox.geojson.Point;
  * 
  * And we want to define the direction of the segment in order to be able to
  * model the movement of an object.
- *
  */
 public class LineSegment {
 

@@ -35,10 +35,10 @@ public class App {
     private static List<TwoDimensionalMapObject> noFlyZones;
 
     /*
-     * TESTING ZONE - see comment at end of main method. 
-     * public static boolean[] visited; 
-     * public static Point droneLastPos;
+     * TESTING ZONE - see comment at end of main method.
      */
+    public static boolean[] visited;
+    public static Point droneLastPos;
 
     static {
         /* Initialising the confinement area from the given boundaries */
@@ -65,14 +65,16 @@ public class App {
         /* Load/Parse the Input Data */
         var startInfo = InputProcessor.parseInputArguments(args);
         var port = startInfo.getPort();
-
-        var seed = startInfo.getSeed(); // Currently unused but required according to the task specification
-
         var day = startInfo.getDay();
         var month = startInfo.getMonth();
         var year = startInfo.getYear();
         var droneStartLongitude = startInfo.getDroneStartLongitude();
         var droneStartLatitude = startInfo.getDroneStartLatitude();
+
+        /*
+         * Currently unused but given as argument according to the task specification.
+         */
+        // var seed = startInfo.getSeed();
 
         var inputProcessor = new InputProcessor(port);
         noFlyZones = inputProcessor.loadNoFlyZonesFromServer();
@@ -83,7 +85,6 @@ public class App {
 
         var tourNodes = new ArrayList<Point>();
         for (Sensor s : sensors) {
-            System.out.println("Sensor at " + s.getPosition());
             tourNodes.add(s.getPosition());
         }
         tourNodes.add(droneStartingPoint);
@@ -96,32 +97,36 @@ public class App {
         var shortestTourIndices = tourPlanner.findShortestTour();
         var shortestTour = new ArrayList<Sensor>();
         for (int i = 0; i < shortestTourIndices.length; i++) {
-            shortestTour.add(sensors.get(shortestTourIndices[i]));
+            var sensor = sensors.get(shortestTourIndices[i]);
+            shortestTour.add(sensor);
+            var sensorPos = sensor.getPosition();
 
-            System.out.println("Sensor " + i + " : " + sensors.get(shortestTourIndices[i]).getPosition());
+            System.out.println("Sensor " + i + " : (" + sensorPos.longitude() + "," + sensorPos.latitude() + ") - "
+                    + sensor.getW3wLocation().toString());
         }
 
         /* Initialise main drone and send on its tour */
-        System.out.println("\nThe main drone embarks on its journey!\n");
-        MainDrone mainDrone = new MainDrone(droneStartingPoint, shortestTour);
+        System.out.println("\nThe main drone embarks on its journey! - " + day + " - " + month + " - " + year + "\n");
+        MainDrone mainDrone = new MainDrone(droneStartingPoint, shortestTour, true);
         mainDrone.completeTour();
 
         /* Print path & sensor output to GeoJSON file */
-        var featCollection = OutputGenerator.generateFeatureCollection(shortestTour, mainDrone);
-        OutputGenerator.writeFeatureCollectionToFile(featCollection, day, month, year);
+        var outputGenerator = new OutputGenerator(day, month, year, mainDrone);
+        outputGenerator.writeFeatureCollectionToFile();
 
         /* Print flight path to txt file */
         try {
-            OutputGenerator.writeFlightPathToFile(shortestTour, mainDrone, day, month, year);
+            outputGenerator.writeFlightPathToFile();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
         /*
-         * TESTING ZONE - Uncomment to run massive unit test on all drone paths at the end of AppTest.java. 
-         * visited = mainDrone.getSensorsVisitedArray(); 
-         * droneLastPos = mainDrone.getCurrentPosition();
+         * TESTING ZONE - Uncomment to run massive unit test on all drone paths at the
+         * end of AppTest.java.
          */
+        visited = mainDrone.getSensorsVisitedArray();
+        droneLastPos = mainDrone.getCurrentPosition();
 
     }
 

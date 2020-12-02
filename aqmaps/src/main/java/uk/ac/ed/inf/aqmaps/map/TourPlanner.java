@@ -116,7 +116,7 @@ public class TourPlanner {
                 var destinationSensor = new Sensor(0.0f, 0.0, w3w);
                 var listContainingDestinationSensor = new ArrayList<Sensor>(Arrays.asList(destinationSensor));
 
-                var drone = new MainDrone(pointA, listContainingDestinationSensor);
+                var drone = new MainDrone(pointA, listContainingDestinationSensor, false);
 
                 /*
                  * If the destination is the last point in our list, it is the starting/landing
@@ -138,9 +138,6 @@ public class TourPlanner {
                     drone.park();
                 }
                 distanceMatrix[i][j] = drone.getStepsMade();
-
-                /* We print the distance to the console for testing purposes */
-                System.out.println("i " + i + " , j " + j + " : " + drone.getStepsMade());
             }
         }
 
