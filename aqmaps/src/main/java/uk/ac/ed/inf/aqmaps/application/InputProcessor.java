@@ -2,14 +2,12 @@ package uk.ac.ed.inf.aqmaps.application;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.mapbox.geojson.Feature;
 import com.mapbox.geojson.FeatureCollection;
 import com.mapbox.geojson.Point;
-import com.mapbox.geojson.Polygon;
 
 import uk.ac.ed.inf.aqmaps.map.Sensor;
 import uk.ac.ed.inf.aqmaps.map.TwoDimensionalMapObject;
@@ -43,28 +41,6 @@ public class InputProcessor {
      */
     public InputProcessor(int port) {
         this.fileFetcher = new WebServerFileFetcher(port);
-    }
-
-    /**
-     * This method turns the command line arguments given by the user into an
-     * instance of the AppStartInfo class, to be used throughout the runtime of the
-     * application. Input arguments are parsed depending on their expected type.
-     * 
-     * @param args Command line arguments, consisting of a date, a starting position
-     *             for the drone, a random seed and a port.
-     * 
-     * @return an AppStartInfo object encapsulating all command line arguments
-     */
-    static AppStartInfo parseInputArguments(String[] args) {
-        var day = Integer.parseInt(args[0]);
-        var month = Integer.parseInt(args[1]);
-        var year = Integer.parseInt(args[2]);
-        var latitude = Double.parseDouble(args[3]);
-        var longitude = Double.parseDouble(args[4]);
-        var seed = Integer.parseInt(args[5]);
-        var port = Integer.parseInt(args[6]);
-
-        return new AppStartInfo(day, month, year, latitude, longitude, seed, port);
     }
 
     /**
@@ -159,21 +135,6 @@ public class InputProcessor {
      */
     What3WordsLocation processW3wStub(JsonWhat3WordsStub stub) {
 
-        /* Get coordinates of square corresponding to W3W Location */
-        var northEastLng = stub.getSquare().getNortheast().getLng();
-        var northEastLat = stub.getSquare().getNortheast().getLat();
-        var southWestLng = stub.getSquare().getSouthwest().getLng();
-        var southWestLat = stub.getSquare().getSouthwest().getLat();
-
-        /* Turn the coordinates into a Mapbox Polygon */
-        var upperLeftPoint = Point.fromLngLat(southWestLng, northEastLat);
-        var upperRightPoint = Point.fromLngLat(northEastLng, northEastLat);
-        var lowerRightPoint = Point.fromLngLat(northEastLng, southWestLat);
-        var lowerLeftPoint = Point.fromLngLat(southWestLng, southWestLat);
-        var squareCoordinates = List.of(upperLeftPoint, upperRightPoint, lowerRightPoint, lowerLeftPoint,
-                upperLeftPoint);
-        var square = Polygon.fromLngLats(List.of(squareCoordinates));
-
         /* Extract the specific location of any sensor that may be in this area */
         var longitude = stub.getCoordinates().getLng();
         var latitude = stub.getCoordinates().getLat();
@@ -182,7 +143,7 @@ public class InputProcessor {
         /* Extract the remaining information from the JSON stub */
         var words = stub.getWords();
 
-        var w3wLocation = new What3WordsLocation(words, square, position);
+        var w3wLocation = new What3WordsLocation(words, position);
         return w3wLocation;
     }
 

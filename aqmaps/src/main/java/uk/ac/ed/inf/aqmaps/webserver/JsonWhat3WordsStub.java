@@ -11,16 +11,11 @@ package uk.ac.ed.inf.aqmaps.webserver;
  */
 public class JsonWhat3WordsStub {
 
-    private JsonRectangleStub square;
     private JsonPointStub coordinates;
     private String words;
 
     public String getWords() {
         return words;
-    }
-
-    public JsonRectangleStub getSquare() {
-        return square;
     }
 
     public JsonPointStub getCoordinates() {

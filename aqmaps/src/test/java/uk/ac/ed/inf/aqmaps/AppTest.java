@@ -141,7 +141,7 @@ public class AppTest {
         App.main(new String[] { "15", "06", "2021", "55.9444", "-3.1878", "5678", "80" });
 
         Point destination = Point.fromLngLat(55.944, -3.187);
-        What3WordsLocation w3w = new What3WordsLocation("a.b.c", null, destination);
+        What3WordsLocation w3w = new What3WordsLocation("a.b.c", destination);
         Sensor s = new Sensor(0.0f, 0.0, w3w);
         
         ArrayList<Sensor> arr = new ArrayList<Sensor>(Arrays.asList(s));
@@ -161,7 +161,7 @@ public class AppTest {
 
         Point destination = Point.fromLngLat(-3.193, 55.947);
         
-        What3WordsLocation w3w = new What3WordsLocation("a.b.c", null, destination);
+        What3WordsLocation w3w = new What3WordsLocation("a.b.c", destination);
         Sensor s = new Sensor(0.0f, 0.0, w3w);
         
         ArrayList<Sensor> arr = new ArrayList<Sensor>(Arrays.asList(s));
@@ -178,7 +178,7 @@ public class AppTest {
         
         Point destination = Point.fromLngLat(-3.185, 55.9427);
         
-        What3WordsLocation w3w = new What3WordsLocation("a.b.c", null, destination);
+        What3WordsLocation w3w = new What3WordsLocation("a.b.c", destination);
         Sensor s = new Sensor(0.0f, 0.0, w3w);
         
         MainDrone d = new MainDrone(Point.fromLngLat(-3.18971, 55.94284), new ArrayList<Sensor>(Arrays.asList(s)), true);
@@ -263,7 +263,7 @@ public class AppTest {
         App.main(new String[] { "15", "06", "2021", "55.9444", "-3.1878", "5678", "80" });
         
         Point destination = Point.fromLngLat(-3.18825, 55.9426170001);
-        What3WordsLocation w3w = new What3WordsLocation("a.b.c", null, destination);
+        What3WordsLocation w3w = new What3WordsLocation("a.b.c", destination);
         Sensor s = new Sensor(0.0f, 0.0, w3w);
         
         MainDrone d = new MainDrone(Point.fromLngLat(-3.18962, 55.9426170001), new ArrayList<Sensor>(Arrays.asList(s)), true);
@@ -284,7 +284,7 @@ public class AppTest {
         App.main(new String[] { "15", "06", "2021", "55.9444", "-3.1878", "5678", "80" });
         
         Point destination = Point.fromLngLat(-3.18962, 55.9426170001);
-        What3WordsLocation w3w = new What3WordsLocation("a.b.c", null, destination);
+        What3WordsLocation w3w = new What3WordsLocation("a.b.c", destination);
         Sensor s = new Sensor(0.0f, 0.0, w3w);
         
         MainDrone d = new MainDrone(Point.fromLngLat(-3.18825, 55.9426170001), new ArrayList<Sensor>(Arrays.asList(s)), true);
@@ -305,7 +305,7 @@ public class AppTest {
         App.main(new String[] { "15", "06", "2021", "55.9444", "-3.1878", "5678", "80" });
         
         Point destination = Point.fromLngLat(-3.18432, 55.942618);
-        What3WordsLocation w3w = new What3WordsLocation("a.b.c", null, destination);
+        What3WordsLocation w3w = new What3WordsLocation("a.b.c", destination);
         Sensor s = new Sensor(0.0f, 0.0, w3w);
         
         MainDrone d = new MainDrone(Point.fromLngLat(-3.19247, 55.942618), new ArrayList<Sensor>(Arrays.asList(s)), true);
@@ -325,7 +325,7 @@ public class AppTest {
         App.main(new String[] { "15", "06", "2021", "55.9444", "-3.1878", "5678", "80" });
         
         Point destination = Point.fromLngLat(-3.192473, 55.946233);
-        What3WordsLocation w3w = new What3WordsLocation("a.b.c", null, destination);
+        What3WordsLocation w3w = new What3WordsLocation("a.b.c", destination);
         Sensor s = new Sensor(0.0f, 0.0, w3w);
         
         MainDrone d = new MainDrone(Point.fromLngLat(-3.19247, 55.942618), new ArrayList<Sensor>(Arrays.asList(s)), true);
@@ -345,7 +345,7 @@ public class AppTest {
         App.main(new String[] { "15", "06", "2021", "55.9444", "-3.1878", "5678", "80" });
         
         Point destination = Point.fromLngLat(-3.184319, 55.946233);
-        What3WordsLocation w3w = new What3WordsLocation("a.b.c", null, destination);
+        What3WordsLocation w3w = new What3WordsLocation("a.b.c", destination);
         Sensor s = new Sensor(0.0f, 0.0, w3w);
         
         MainDrone d = new MainDrone(Point.fromLngLat(-3.19247, 55.942618), new ArrayList<Sensor>(Arrays.asList(s)), true);
@@ -360,8 +360,8 @@ public class AppTest {
         assertTrue(true);
     }
     
-    /* Massive unit test - see main method of App class for comment. */
-    @Test
+    /* Massive unit test - need to make slight changes to App class to be able to run. */
+    /*@Test
     public void bigTest() {
         for (int i = 1; i <= 28; i++) {
             for (int j = 1; j <= 12; j++) {
@@ -379,6 +379,6 @@ public class AppTest {
                 }
             }
         }
-    } 
+    } */
     
 }

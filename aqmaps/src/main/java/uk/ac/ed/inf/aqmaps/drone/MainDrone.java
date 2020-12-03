@@ -12,8 +12,9 @@ import uk.ac.ed.inf.aqmaps.map.TwoDimensionalMapObject;
 /**
  * The MainDrone class captures the properties of the drone that is used to take
  * the sensor readings. It is different from the "ShadowDrone" in that there
- * will only ever be one main drone, whereas shadow drones simply simulate the
- * future steps of the main drone, thereby aiding its decision making.
+ * will only ever be one main drone at a time, whereas shadow drones simply
+ * simulate the future steps of the main drone, thereby aiding its decision
+ * making.
  *
  */
 public class MainDrone extends Drone {

@@ -112,7 +112,7 @@ public class TourPlanner {
                  * 
                  * To this end, we create a mock sensor at point B.
                  */
-                var w3w = new What3WordsLocation("a.b.c", null, pointB);
+                var w3w = new What3WordsLocation("a.b.c", pointB);
                 var destinationSensor = new Sensor(0.0f, 0.0, w3w);
                 var listContainingDestinationSensor = new ArrayList<Sensor>(Arrays.asList(destinationSensor));
 

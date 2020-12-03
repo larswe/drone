@@ -18,12 +18,7 @@ import java.io.IOException;
  */
 public class App {
 
-    /*
-     * The largest legal value of an air pollution reading
-     */
-    private static final double MAX_READING = 256.0;
-
-    /* The coordinates that define the drone confinement area */
+    /*In  The coordinates that define the drone confinement area */
     private static final double MIN_LONGITUDE = -3.192473;
     private static final double MAX_LONGITUDE = -3.184319;
     private static final double MIN_LATITUDE = 55.942617;
@@ -33,12 +28,6 @@ public class App {
     private static TwoDimensionalMapObject confinementArea;
     /* The zones the drone is not allowed to enter */
     private static List<TwoDimensionalMapObject> noFlyZones;
-
-    /*
-     * TESTING ZONE - see comment at end of main method.
-     */
-    public static boolean[] visited;
-    public static Point droneLastPos;
 
     static {
         /* Initialising the confinement area from the given boundaries */
@@ -62,19 +51,22 @@ public class App {
      */
     public static void main(String[] args) {
 
+        if (args.length != 7) {
+            System.out.println("The wrong number of arguments was given to the application!");
+            System.exit(1);
+        }
+        
         /* Load/Parse the Input Data */
-        var startInfo = InputProcessor.parseInputArguments(args);
-        var port = startInfo.getPort();
-        var day = startInfo.getDay();
-        var month = startInfo.getMonth();
-        var year = startInfo.getYear();
-        var droneStartLongitude = startInfo.getDroneStartLongitude();
-        var droneStartLatitude = startInfo.getDroneStartLatitude();
-
+        var day = Integer.parseInt(args[0]);
+        var month = Integer.parseInt(args[1]);
+        var year = Integer.parseInt(args[2]);
+        var droneStartLatitude = Double.parseDouble(args[3]);
+        var droneStartLongitude = Double.parseDouble(args[4]);
+        var port = Integer.parseInt(args[6]);
         /*
          * Currently unused but given as argument according to the task specification.
          */
-        // var seed = startInfo.getSeed();
+        // var seed = Integer.parseInt(args[5]);
 
         var inputProcessor = new InputProcessor(port);
         noFlyZones = inputProcessor.loadNoFlyZonesFromServer();
@@ -121,22 +113,6 @@ public class App {
             e.printStackTrace();
         }
 
-        /*
-         * TESTING ZONE - Uncomment to run massive unit test on all drone paths at the
-         * end of AppTest.java.
-         */
-        visited = mainDrone.getSensorsVisitedArray();
-        droneLastPos = mainDrone.getCurrentPosition();
-
-    }
-
-    /*
-     * This getter is needed because OutputGenerator requires this value to compute
-     * the pollution tiers and because the attribute itself makes more sense in the
-     * App class.
-     */
-    static double getMaxReading() {
-        return MAX_READING;
     }
 
     /*

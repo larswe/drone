@@ -21,6 +21,11 @@ import uk.ac.ed.inf.aqmaps.drone.MainDrone;
 public class OutputGenerator {
 
     /*
+     * The largest legal value of an air pollution reading
+     */
+    private static final double MAX_READING = 256.0;
+    
+    /*
      * Integers denoting the date of the drone's journey for which output is
      * supposed to be written.
      */
@@ -97,7 +102,7 @@ public class OutputGenerator {
          * this excludes the tiers -1(Battery low) and 404(Reading missing).
          */
         var numLegalReadingTiers = pollutionTierToRgb.size() - 2;
-        var tierSize = App.getMaxReading() / numLegalReadingTiers;
+        var tierSize = MAX_READING / numLegalReadingTiers;
 
         for (int i = 1; i <= numLegalReadingTiers; i++) {
             if (reading < i * tierSize) {
